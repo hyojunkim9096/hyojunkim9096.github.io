@@ -62,7 +62,7 @@ section.alt{background:var(--paper)}
 .head h2::before{content:"";display:block;width:34px;height:4px;background:var(--orange);margin-bottom:14px}
 .head p{color:var(--muted);margin-top:8px;max-width:44em}
 .grid{display:grid;gap:16px}
-.g4{grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr))}
 .g5{grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr))}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px}
 section.alt .card{background:var(--light);border-color:transparent}
@@ -133,15 +133,15 @@ footer{background:var(--navy);color:#ffffff90;font-size:13px;padding:22px 0;bord
         <b>단조</b><span>DANJO</span>
       </a>
       <nav aria-label="구역">
-        <a href="#work">하는 일</a><a href="#projects">프로젝트</a><a href="#stack">기술</a><a href="#contact">문의</a>
+        <a href="#work">하는 일</a><a href="#projects">프로젝트</a><a href="#ai">AI</a><a href="#stack">기술</a><a href="#contact">문의</a>
       </nav>
     </div>
     <div class="hero" id="top">
       <div class="eyebrow">SOFTWARE ENGINEER</div>
-      <h1>웹과 앱, 그리고 서비스를<br><em>설계부터 구현</em>까지.</h1>
+      <h1>웹과 앱, 그리고 AI 서비스를<br><em>설계부터 구현</em>까지.</h1>
       <p class="lead">지식을 벼려, 사람을 위한 기술을 만듭니다. 처음 쓰는 사람도 금방 쓰는 화면과, 믿고 맡길 수 있는 서버를 함께 만듭니다.</p>
       <div class="who"><b>김효준</b><span>KIM HYOJUN · 소프트웨어 엔지니어</span></div>
-      <ul class="facts"><li><b>7년차</b>개발 경력</li><li><b>금융 · 공공 · 제조</b>업무 시스템</li><li><b>정보처리기사</b>자격</li></ul>
+      <ul class="facts"><li><b>7년차</b>개발 경력</li><li><b>금융 · 공공 · 제조</b>업무 시스템</li><li><b>정보처리기사</b>자격</li><li><b>AI 에이전트</b>로 개발</li></ul>
       <div class="cta"><a class="btn main" href="#projects">프로젝트 보기</a><a class="btn sub" href="#contact">문의하기</a></div>
     </div>
   </div>
@@ -151,11 +151,12 @@ footer{background:var(--navy);color:#ffffff90;font-size:13px;padding:22px 0;bord
 <section id="work">
   <div class="wrap">
     <div class="head"><h2>하는 일</h2><p>기획된 업무를 실제로 돌아가는 시스템으로 만듭니다. 설계부터 개발, 데이터베이스, 운영까지 맡습니다.</p></div>
-    <div class="grid g4">
+    <div class="grid g5">
       <div class="card"><div class="num">01</div><h3>기업 업무 시스템</h3><p>권한과 결재, 감사 기록이 필요한 사내 업무 시스템을 만듭니다.</p></div>
       <div class="card"><div class="num">02</div><h3>웹 플랫폼</h3><p>관리자, 사용자, 공개 홈이 한 줄기로 이어지는 서비스를 만듭니다.</p></div>
       <div class="card"><div class="num">03</div><h3>관리자 페이지</h3><p>메뉴가 많아도 헤매지 않는 관리 화면을 만듭니다.</p></div>
       <div class="card"><div class="num">04</div><h3>SaaS와 앱</h3><p>여러 고객이 접속해 쓰는 서비스형 소프트웨어와 모바일 앱을 만듭니다.</p></div>
+      <div class="card"><div class="num">05</div><h3>AI 서비스</h3><p>문서 요약, 챗봇, 채점 자동화처럼 AI를 넣은 기능을 만듭니다.</p></div>
     </div>
   </div>
 </section>
@@ -206,6 +207,18 @@ footer{background:var(--navy);color:#ffffff90;font-size:13px;padding:22px 0;bord
   </div>
 </section>
 
+<section id="ai" class="alt">
+  <div class="wrap">
+    <div class="head"><h2>AI와 함께 일합니다</h2><p>AI를 도구로 쓰는 데서 그치지 않고, 여러 AI 에이전트를 한 팀처럼 운영해 개발합니다. 혼자서도 설계, 구현, 검토, 검증을 나눠 돌릴 수 있는 까닭입니다.</p></div>
+    <div class="grid g4">
+      <div class="card"><div class="num">HOW</div><h3>역할을 나눈 AI 팀</h3><p>설계, 구현, 코드 검토, 보안 판단을 서로 다른 AI에게 맡기고, 결과를 서로 대조하게 합니다.</p></div>
+      <div class="card"><div class="num">HOW</div><h3>증거로 닫기</h3><p>AI가 「됐다」고 해도 시험과 화면 확인으로 증거가 나와야 끝냅니다. 사람이 최종 결정을 합니다.</p></div>
+      <div class="card"><div class="num">WHAT</div><h3>AI 기능 개발</h3><p>LLM, RAG, LangChain으로 문서 요약 챗봇과 AI 에이전트를 만들었고, 답안지를 읽어 채점하는 도구를 만들었습니다.</p></div>
+      <div class="card"><div class="num">TOOLS</div><h3>쓰는 도구</h3><p>Claude Code, Codex, ChatGPT API, Python</p></div>
+    </div>
+  </div>
+</section>
+
 <section id="stack">
   <div class="wrap">
     <div class="head"><h2>기술</h2><p>실제로 써서 서비스를 만든 것만 적습니다.</p></div>
@@ -215,7 +228,7 @@ footer{background:var(--navy);color:#ffffff90;font-size:13px;padding:22px 0;bord
       <tr><th scope="row">DATABASE</th><td><b>MySQL · Oracle · MSSQL · MariaDB · PostgreSQL</b><span>설계, 복잡한 조회, 장애 원인 분석</span></td></tr>
       <tr><th scope="row">OPS</th><td><b>Linux · Tomcat · Wildfly · Docker</b><span>서버 배포와 운영, 로그 분석</span></td></tr>
       <tr><th scope="row">DOMAIN</th><td><b>eGovFrame · 인증/권한(RBAC) · 보안 취약점 조치</b><span>공공 · 기업 업무 시스템에서 쓰는 틀과 방식</span></td></tr>
-      <tr><th scope="row">AI</th><td><b>Python · LLM · RAG · LangChain</b><span>교육 과정(2025.11 ~ 2026.02)에서 문서 요약 챗봇과 AI 에이전트를 만들었습니다</span></td></tr>
+      <tr><th scope="row">AI</th><td><b>Python · LLM · RAG · LangChain · Claude Code · Codex</b><span>AI 기능 개발과 AI 에이전트를 활용한 개발</span></td></tr>
     </table>
     <p class="honest">Jenkins는 운영 환경에서 빌드와 배포에 쓴 경험이 있습니다. 설치와 파이프라인 구축은 하지 않았습니다.</p>
   </div>
