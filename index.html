@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>단조 DANJO — 김효준 · Software Engineer</title>
+<!-- 공개할 때 아래 한 줄(noindex)을 지워요 -->
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="웹 플랫폼부터 기업 업무 시스템까지. 김효준의 소프트웨어 개발 포트폴리오.">
+<style>
+/* ── 고치는 곳: 색과 글꼴은 여기 한 곳 ───────────────────────── */
+:root{
+  --navy:#0D1B2A; --navy-2:#16283B; --orange:#FF7A00; --orange-ink:#C25A00;
+  --light:#F3F4F6; --paper:#FFFFFF; --ink:#152536; --muted:#5B6877; --line:#DDE3EA;
+  --font:Pretendard,'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;
+  --wrap:1040px; --gutter:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--light);color:var(--ink);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:auto;padding:0 var(--gutter)}
+h1,h2,h3{line-height:1.3;margin:0;text-wrap:balance}
+p{margin:0}
+body{overflow-wrap:anywhere;word-break:keep-all}
+
+/* 초안 표시 — 빈 칸이 다 채워지면 이 블록(.draft)을 지워요 */
+.draft{background:#FFF1F2;border-bottom:1px solid #FECDD3;color:#9F1239;font-size:14px;padding:10px 0}
+.todo{color:#9AA5B1;border-bottom:1px dashed #C3CBD4}
+
+/* 머리 */
+.top{background:var(--navy);color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{height:30px;width:auto;display:block}
+.logo b{font-size:22px;font-weight:800;letter-spacing:.02em}
+.logo span{font-size:11px;font-weight:700;letter-spacing:.42em;opacity:.8}
+.nav nav{display:flex;gap:22px;font-size:15px}
+.nav nav a{text-decoration:none;opacity:.82}
+.nav nav a:hover{opacity:1;color:var(--orange)}
+.hero{padding:56px 0 72px}
+.eyebrow{color:var(--orange);font-weight:700;font-size:14px;letter-spacing:.08em}
+.hero h1{font-size:clamp(30px,5.2vw,52px);font-weight:800;margin:12px 0 16px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero .lead{font-size:clamp(16px,2vw,19px);opacity:.86;max-width:40em}
+.who{margin-top:32px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.who b{font-size:22px;font-weight:800;letter-spacing:.12em}
+.who span{opacity:.8}
+.facts{list-style:none;display:flex;flex-wrap:wrap;gap:10px 28px;margin:22px 0 0;padding:18px 0 0;border-top:1px solid #ffffff22}
+.facts li{font-size:13px;opacity:.9}
+.facts b{display:block;font-size:17px;color:#fff}
+.cta{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none}
+.btn.main{background:var(--orange);color:var(--navy)}
+.btn.sub{border:1px solid #ffffff55;color:#fff}
+
+/* 구역 */
+section{padding:64px 0}
+section.alt{background:var(--paper)}
+.head{margin-bottom:28px}
+.head h2{font-size:clamp(22px,3vw,30px);font-weight:800}
+.head h2::before{content:"";display:block;width:34px;height:4px;background:var(--orange);margin-bottom:14px}
+.head p{color:var(--muted);margin-top:8px;max-width:44em}
+.grid{display:grid;gap:16px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
+.g5{grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr))}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px}
+section.alt .card{background:var(--light);border-color:transparent}
+.card h3{font-size:18px;font-weight:800;margin-bottom:6px}
+.card p{color:var(--muted);font-size:15px}
+.num{color:var(--orange-ink);font-weight:800;font-size:13px;letter-spacing:.1em;margin-bottom:10px}
+
+/* 프로젝트 */
+.proj{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper)}
+.proj .body{padding:28px;min-width:0}
+.proj .side{background:var(--navy);color:#fff;padding:28px}
+.proj h3{font-size:24px;font-weight:800}
+.tag{display:inline-block;font-size:12px;font-weight:700;color:var(--orange-ink);background:#FFF1E2;border-radius:99px;padding:3px 10px;margin-bottom:10px}
+.proj p{margin-top:10px;color:var(--muted)}
+.proj ul{margin:14px 0 0;padding-left:18px;color:var(--ink)}
+.proj li{margin:5px 0}
+.side h4{margin:0 0 8px;font-size:13px;letter-spacing:.1em;color:var(--orange)}
+.side p{color:#ffffffd0;margin:0 0 18px;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.chips span{font-size:13px;border:1px solid #ffffff40;border-radius:99px;padding:3px 10px}
+.subhead{font-size:19px;font-weight:800;margin:40px 0 14px}
+.jobs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.job .when{color:var(--orange-ink);font-weight:700;font-size:14px;padding-top:2px;white-space:nowrap}
+.job b{font-size:17px}
+.job p{color:var(--muted);font-size:15px;margin-top:2px}
+.job .tech{font-size:13px;color:var(--muted);margin-top:6px}
+
+/* 기술 표 */
+.stack{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.stack th,.stack td{text-align:left;padding:15px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+.stack tr:last-child th,.stack tr:last-child td{border-bottom:0}
+.stack th{width:150px;color:var(--orange-ink);font-size:13px;letter-spacing:.1em;white-space:nowrap}
+.stack td b{display:block;font-size:16px}
+.stack td span{color:var(--muted);font-size:14px}
+.honest{margin-top:14px;font-size:14px;color:var(--muted)}
+
+/* 문의 */
+.contact{background:var(--navy);color:#fff}
+.contact .head p{color:#ffffffc0}
+.rows{display:grid;gap:10px;max-width:520px}
+.row{display:flex;gap:14px;align-items:baseline;border-bottom:1px solid #ffffff22;padding:10px 0}
+.row i{font-style:normal;color:var(--orange);font-weight:700;width:64px;flex:none;font-size:13px;letter-spacing:.08em}
+footer{background:var(--navy);color:#ffffff90;font-size:13px;padding:22px 0;border-top:1px solid #ffffff1c}
+
+@media (max-width:760px){
+  .nav nav{display:none}
+  .hero{padding:36px 0 52px}
+  section{padding:48px 0}
+  .proj{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;gap:4px}
+  .stack th{width:auto;display:block;padding-bottom:0;border-bottom:0}
+  .stack td{display:block;padding-top:6px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- 초안 표시: 아래 빈 칸(.todo)을 다 채우면 이 블록을 지워요 -->
+<div class="draft"><div class="wrap"><b>초안이에요. 아직 공개하지 마세요.</b> 남은 것: 2026.04 ~ 11 에 맡은 일 · 고객사 이름을 밝힐지 · 공개는 12월부터.</div></div>
+
+<header class="top">
+  <div class="wrap">
+    <div class="nav">
+      <a class="logo" href="#top" aria-label="단조 DANJO 처음으로">
+        <svg viewBox="0 0 110 88" aria-hidden="true"><path fill="#fff" d="M34 0H66A44 44 0 0 1 66 88H38L48 62H64A18 18 0 0 0 64 26H24Z"/><path fill="#FF7A00" d="M20 36H42L22 88H0Z"/></svg>
+        <b>단조</b><span>DANJO</span>
+      </a>
+      <nav aria-label="구역">
+        <a href="#work">하는 일</a><a href="#projects">프로젝트</a><a href="#stack">기술</a><a href="#contact">문의</a>
+      </nav>
+    </div>
+    <div class="hero" id="top">
+      <div class="eyebrow">SOFTWARE ENGINEER</div>
+      <h1>웹 플랫폼부터<br><em>기업 업무 시스템</em>까지.</h1>
+      <p class="lead">지식을 벼려, 사람을 위한 기술을 만듭니다. 처음 쓰는 사람도 금방 쓰는 화면과, 믿고 맡길 수 있는 서버를 함께 만듭니다.</p>
+      <div class="who"><b>김효준</b><span>KIM HYOJUN · 소프트웨어 엔지니어</span></div>
+      <ul class="facts"><li><b>7년차</b>개발 경력</li><li><b>금융 · 공공 · 제조</b>업무 시스템</li><li><b>정보처리기사</b>자격</li></ul>
+      <div class="cta"><a class="btn main" href="#projects">프로젝트 보기</a><a class="btn sub" href="#contact">문의하기</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="work">
+  <div class="wrap">
+    <div class="head"><h2>하는 일</h2><p>기획된 업무를 실제로 돌아가는 시스템으로 만듭니다. 설계부터 개발, 데이터베이스, 운영까지 맡습니다.</p></div>
+    <div class="grid g4">
+      <div class="card"><div class="num">01</div><h3>기업 업무 시스템</h3><p>권한과 결재, 감사 기록이 필요한 사내 업무 시스템을 만듭니다.</p></div>
+      <div class="card"><div class="num">02</div><h3>웹 플랫폼</h3><p>관리자, 사용자, 공개 홈이 한 줄기로 이어지는 서비스를 만듭니다.</p></div>
+      <div class="card"><div class="num">03</div><h3>관리자 페이지</h3><p>메뉴가 많아도 헤매지 않는 관리 화면을 만듭니다.</p></div>
+      <div class="card"><div class="num">04</div><h3>SaaS</h3><p>여러 고객이 웹으로 접속해 쓰는 서비스형 소프트웨어를 만듭니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="alt">
+  <div class="wrap">
+    <div class="head"><h2>프로젝트</h2><p>금융, 공공, 제조 분야의 업무 시스템을 만들고 운영해 왔습니다.</p></div>
+
+    <!-- 프로젝트 하나 = .proj 블록 하나. 복사해서 늘려요 -->
+    <article class="proj">
+      <div class="body">
+        <span class="tag">학원 운영 플랫폼 · SaaS</span>
+        <h3>WINO Academy</h3>
+        <p>학원이 웹으로 접속해 쓰는 운영 플랫폼입니다. 본부와 원장, 직원, 강사가 쓰는 관리자 시스템과 학부모 · 학생 포털, 학원 사이트 홈으로 이루어져 있습니다.</p>
+        <ul>
+          <li>학생 · 학부모 · 직원 관리와 역할별 권한(RBAC)</li>
+          <li>로그인 보안: 세션 관리, 2단계 인증, 비밀번호 초기화 통제</li>
+          <li>학원(관)별 데이터 분리와 감사 기록</li>
+          <li>게시판 · 공통코드 · 메뉴 관리 같은 운영 기능</li>
+        </ul>
+      </div>
+      <div class="side">
+        <h4>맡은 범위</h4>
+        <p>개인 프로젝트입니다. 기획과 설계, 개발, 배포를 직접 이끌고 있습니다.</p>
+        <h4>기술</h4>
+        <div class="chips"><span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>React</span><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Docker</span><span>Linux</span></div>
+        <h4>기간</h4>
+        <p>진행 중</p>
+      </div>
+    </article>
+
+    <h3 class="subhead">경력 프로젝트</h3>
+    <!-- 한 줄 = .job 하나. 고객사 이름은 공개해도 되는지 확인한 뒤에 넣어요(지금은 업종으로만 적었어요) -->
+    <ol class="jobs">
+      <li class="job"><div class="when">2026.04 ~ 2026.11</div><div><b>웹 개발</b><p><span class="todo">[맡은 일 확인 뒤 입력]</span></p></div></li>
+      <li class="job"><div class="when">2024.05 ~ 2026.03</div><div><b>제조 대기업 사내 업무 시스템 5개 단독 운영</b><p>통합결재, 자산관리, 소프트웨어 관리, 보안, 홈페이지 다섯 시스템을 혼자 맡았습니다. 기능 개선 요청을 분석부터 개발, 배포까지 처리했고, 모의해킹에서 나온 보안 취약점을 모두 조치했습니다.</p><div class="tech">Java · Spring · Nexacro · Linux · Tomcat · Wildfly · GitLab</div></div></li>
+      <li class="job"><div class="when">2023.03 ~ 2024.04</div><div><b>공공기관 웹사이트 13건 구축 · 유지보수</b><p>새로 5건을 만들고 8건을 유지보수했습니다. 기관 담당자와 직접 협의해 요구사항 정의부터 오픈까지 맡았고, 관리자 페이지와 게시판, 권한 관리, 조회 · 통계 기능을 만들었습니다.</p><div class="tech">Java · eGovFrame · MyBatis · JSP · jQuery · Linux · Tomcat</div></div></li>
+      <li class="job"><div class="when">2022.05 ~ 2023.02</div><div><b>IT 기업 구매 시스템 구축</b><p>React로 구매 · 계약 화면 약 15건을 만들고 서버 API와 연결했습니다.</p><div class="tech">React · Java · MySQL</div></div></li>
+      <li class="job"><div class="when">2022.02 ~ 2022.05</div><div><b>자산신탁사 업무 시스템 단독 투입</b><p>인수인계 문서 없이 코드를 읽어 구조를 파악한 뒤, 새 화면 3건과 기능 고도화 3건을 혼자 마쳤습니다.</p><div class="tech">Java · BXM Framework</div></div></li>
+      <li class="job"><div class="when">2021.05 ~ 2022.02</div><div><b>자산신탁사 인사 시스템 구축</b><p>인사 업무 화면 약 10건을 새로 만들고, 오픈 전에 다른 화면 5건을 교차 점검해 오류를 고쳤습니다.</p><div class="tech">Java · BXM Framework(AngularJS) · Oracle · MySQL</div></div></li>
+      <li class="job"><div class="when">2020.11 ~ 2021.05</div><div><b>대학 연구 프로젝트</b><p>지도와 분포도를 그려 보여 주는 기능을 2인 개발로 만들었습니다.</p><div class="tech">Java · JavaScript</div></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="head"><h2>기술</h2><p>실제로 써서 서비스를 만든 것만 적습니다.</p></div>
+    <table class="stack">
+      <tr><th scope="row">BACKEND</th><td><b>Java · Spring Boot · Spring Security · MyBatis</b><span>업무 규칙, 인증과 권한, API 서버</span></td></tr>
+      <tr><th scope="row">FRONTEND</th><td><b>React · JavaScript · jQuery · JSP · Nexacro</b><span>관리자 화면과 사용자 화면</span></td></tr>
+      <tr><th scope="row">DATABASE</th><td><b>MySQL · Oracle · MSSQL · MariaDB · PostgreSQL</b><span>설계, 복잡한 조회, 장애 원인 분석</span></td></tr>
+      <tr><th scope="row">OPS</th><td><b>Linux · Tomcat · Wildfly · Docker</b><span>서버 배포와 운영, 로그 분석</span></td></tr>
+      <tr><th scope="row">DOMAIN</th><td><b>eGovFrame · 인증/권한(RBAC) · 보안 취약점 조치</b><span>공공 · 기업 업무 시스템에서 쓰는 틀과 방식</span></td></tr>
+      <tr><th scope="row">AI</th><td><b>Python · LLM · RAG · LangChain</b><span>교육 과정(2025.11 ~ 2026.02)에서 문서 요약 챗봇과 AI 에이전트를 만들었습니다</span></td></tr>
+    </table>
+    <p class="honest">Jenkins는 운영 환경에서 빌드와 배포에 쓴 경험이 있습니다. 설치와 파이프라인 구축은 하지 않았습니다.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="head"><h2>일하는 원칙</h2></div>
+    <div class="grid g5">
+      <div class="card"><h3>정직</h3><p>기능과 성과를 부풀리지 않고, 한계를 그대로 알립니다.</p></div>
+      <div class="card"><h3>배움</h3><p>새 기술을 꾸준히 익힙니다.</p></div>
+      <div class="card"><h3>공유</h3><p>지식과 경험을 나눕니다.</p></div>
+      <div class="card"><h3>실천</h3><p>배운 것을 실제로 돌아가는 서비스로 만듭니다.</p></div>
+      <div class="card"><h3>사람 중심</h3><p>기술을 사람에게 맞추고, 쓰기 쉬운 것을 먼저 생각합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="head"><h2>문의</h2><p>만들고 싶은 시스템이 있으면 편하게 연락 주세요.</p></div>
+    <div class="rows">
+      <div class="row"><i>EMAIL</i><a href="mailto:hyojunkim9096@gmail.com">hyojunkim9096@gmail.com</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 단조 DANJO · 김효준</div></footer>
+</body>
+</html>
