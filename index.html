@@ -504,6 +504,51 @@ h1 span{color:var(--sky)}
 }
 @media (prefers-reduced-motion:reduce){.t-sheet.run .t-scan{animation:none;opacity:0}.t-prog i{transition:none}}
 @media print{.try{display:none}}
+
+/* ── 답안 채점기 · 문제 → 해결 · 이력서 링크 (x2-) ───────── */
+.x2-grader{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,4.5vw,72px);align-items:center}
+.x2-gtext{min-width:0}
+.x2-gtext h2{margin:4px 0 16px}
+.x2-lead{color:#2B374C}
+.x2-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:26px 0 8px;counter-reset:x2}
+.x2-flow li{counter-increment:x2;border-top:2px solid var(--navy);padding-top:10px}
+.x2-flow li::before{content:counter(x2);display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font:700 13px/1 var(--disp);margin-bottom:6px}
+.x2-flow b{display:block;font-size:16px;font-weight:700;line-height:1.4}
+.x2-flow span{display:block;font-size:14px;line-height:1.55;color:var(--slate);margin-top:2px}
+.x2-pts{display:grid;gap:12px;margin:22px 0}
+.x2-pts li{position:relative;padding-left:30px;font-size:16px;color:#2B374C}
+.x2-pts li::before{content:"";position:absolute;left:0;top:.42em;width:16px;height:16px;border-radius:50%;border:5px solid var(--navy)}
+.x2-pts b{display:block;color:var(--ink);font-weight:700}
+.x2-fig{min-width:0}
+.x2-desk{background:#DDE7F5;border-radius:20px;padding:clamp(16px,3vw,34px);line-height:0}
+.x2-desk svg{display:block;width:100%;max-width:470px;height:auto;margin-inline:auto;filter:drop-shadow(0 14px 22px #0c377833);font-family:var(--text)}
+.x2-fig figcaption{margin-top:10px;font-size:14px;color:var(--slate);text-align:center}
+.x2-cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,32px)}
+.x2-case{background:#fff;border-radius:20px;padding:clamp(22px,2.4vw,30px);box-shadow:0 1px 0 #c7d4e8,0 14px 30px #0c37780f;display:flex;flex-direction:column;gap:6px;min-width:0}
+.x2-no{font:800 15px/1 var(--disp);color:var(--navy);letter-spacing:.08em}
+.x2-case h3{font-size:22px;margin-bottom:8px}
+.x2-case dl{display:grid;gap:0}
+.x2-case dl>div{display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;padding-block:13px;border-top:1px solid var(--rule)}
+.x2-case dt{font:700 14px/1.75 var(--disp);color:var(--navy)}
+.x2-case dd{font-size:15.5px;line-height:1.7;color:#2B374C}
+.x2-case .x2-res{background:var(--ice);border-radius:12px;border-top:0;padding:13px 14px;margin-top:6px}
+.x2-case .x2-res dd{color:var(--ink);font-weight:600}
+.x2-case dd a{color:var(--navy);text-underline-offset:3px}
+.links a.x2-pdf{border:1.5px solid #ffffff73;border-radius:999px;padding:5px 14px}
+.links a.x2-pdf:hover{background:#ffffff1a}
+.x2-resume{display:inline-flex;align-items:center;min-height:44px;margin-top:18px;padding:0 20px;border:1.5px solid #ffffff73;border-radius:999px;font:700 15px/1 var(--text);color:#fff;text-decoration:none}
+.x2-resume:hover{background:#ffffff1a}
+@media (max-width:1000px){
+  .x2-grader{grid-template-columns:minmax(0,1fr)}
+  .x2-cases{grid-template-columns:minmax(0,1fr)}
+  .x2-case dl>div{grid-template-columns:56px minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .x2-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}
+}
+@media print{.x2-case,.x2-flow li,.x2-fig{break-inside:avoid}.x2-desk,.x2-case .x2-res{-webkit-print-color-adjust:exact;print-color-adjust:exact}.x2-resume{display:none}}
+.cv-row.x2-next .track i{left:auto;right:0;width:14px;min-width:14px;background:var(--paper);border:3px solid var(--navy)}
+.x2-free{display:inline-block;margin-top:6px;font:700 13px/1 var(--disp);color:var(--navy);background:var(--ice);border-radius:999px;padding:5px 10px}
 </style>
 </head>
 <body>
@@ -522,11 +567,11 @@ h1 span{color:var(--sky)}
   <div class="wrap bar-in">
     <a class="logo" href="#top" aria-label="WInO 처음으로"><svg aria-hidden="true"><use href="#wm"/></svg></a>
     <nav class="links" aria-label="구역">
-      <a href="#projects">프로젝트</a><a href="#try">눌러 보기</a><a href="#numbers">숫자</a><a href="#career">경력</a><a href="#ways">일하는 방식</a><a href="#stack">기술</a><a href="#contact">문의</a>
+      <a href="#projects">프로젝트</a><a href="#try">눌러 보기</a><a href="#numbers">숫자</a><a href="#career">경력</a><a href="#ways">일하는 방식</a><a href="#stack">기술</a><a href="#contact">문의</a><a class="x2-pdf" href="resume.pdf" target="_blank" rel="noopener">이력서 PDF</a>
     </nav>
     <details class="menu">
       <summary>메뉴</summary>
-      <ul><li><a href="#projects">프로젝트</a></li><li><a href="#try">눌러 보기</a></li><li><a href="#numbers">숫자</a></li><li><a href="#career">경력</a></li><li><a href="#ways">일하는 방식</a></li><li><a href="#stack">기술</a></li><li><a href="#edu">학력 · 자격</a></li><li><a href="#contact">문의</a></li></ul>
+      <ul><li><a href="#projects">프로젝트</a></li><li><a href="#try">눌러 보기</a></li><li><a href="#numbers">숫자</a></li><li><a href="#career">경력</a></li><li><a href="#ways">일하는 방식</a></li><li><a href="#stack">기술</a></li><li><a href="#edu">학력 · 자격</a></li><li><a href="#contact">문의</a></li><li><a href="resume.pdf" target="_blank" rel="noopener">이력서 PDF</a></li></ul>
     </details>
   </div>
 </div>
@@ -785,9 +830,106 @@ h1 span{color:var(--sky)}
   </div>
 </section>
 
+<section class="sec" id="grader">
+  <div class="wrap">
+    <div class="x2-grader">
+      <div class="x2-gtext">
+        <p class="kind">직접 만든 도구 · Windows PC 프로그램 · AI</p>
+        <h2>손글씨 답안을 AI가 읽고 채점하는 프로그램</h2>
+        <p class="x2-lead">스캔한 답안지를 올리면 AI가 손글씨를 글자로 읽고 정답과 맞춰 봅니다. AI가 자신 없는 칸은 맞다 · 틀리다를 정하지 않고 「확인」으로 남겨, 사람이 원본 그림을 보며 고칩니다. 위노 아카데미 안에 같은 기능이 들어가기 전까지 먼저 쓰는 도구입니다.</p>
+        <ol class="x2-flow">
+          <li><b>스캔 올리기</b><span>시험지 PDF와 정답, 학생 답안 스캔</span></li>
+          <li><b>AI가 읽기</b><span>칸마다 글씨를 읽고 확신도 함께 적음</span></li>
+          <li><b>헷갈리는 칸 확인</b><span>사람이 원본 그림과 나란히 보고 고침</span></li>
+          <li><b>점수 확정</b><span>정답을 고치면 그 문항만 다시 채점</span></li>
+        </ol>
+        <ul class="x2-pts">
+          <li><b>칸 위치는 AI 없이</b>시험지 PDF 속 밑줄 좌표에서 직접 잽니다. 글씨는 두 AI가 따로 읽어 같을 때만 믿습니다.</li>
+          <li><b>짐작으로 맞히지 않게</b>영어 칸과 뜻 칸을 한 번에 보여 주면 AI가 짐작해 적어 틀린 답이 맞다고 나와서, 따로 읽게 나눴습니다.</li>
+          <li><b>시험지 한 종류 140문항 대조</b>눈으로 단 답과 비교해 틀리게 채점된 칸 0, 사람 확인으로 넘어간 칸 32.</li>
+        </ul>
+        <p class="tech">Python · PDF 좌표 · AI 글씨 읽기(LLM) · Windows 설치 프로그램</p>
+      </div>
+      <figure class="x2-fig">
+        <div class="x2-desk">
+          <svg viewBox="0 0 440 420" role="img" aria-label="손글씨 단어 시험 답안지를 AI가 읽어 맞음 셋, 틀림 하나, 확인 하나로 나눈 지어낸 예시 그림">
+            <rect x="12" y="8" width="416" height="404" rx="8" fill="#fff"/>
+            <text x="30" y="44" font-size="18" font-weight="800" fill="#0B1220">단어 시험</text>
+            <text x="410" y="44" text-anchor="end" font-size="14" fill="#526079">이름 ________</text>
+            <path d="M30 56H410" stroke="#0B1220" stroke-width="2"/>
+            <g font-size="15" fill="#0B1220">
+              <text x="30" y="96" fill="#526079">1</text><text x="58" y="96">시작하다</text>
+              <text x="30" y="148" fill="#526079">2</text><text x="58" y="148">달성하다</text>
+              <text x="30" y="200" fill="#526079">3</text><text x="58" y="200">붕괴하다</text>
+              <text x="30" y="252" fill="#526079">4</text><text x="58" y="252">보호하다</text>
+              <text x="30" y="304" fill="#526079">5</text><text x="58" y="304">증가하다</text>
+            </g>
+            <g stroke="#E3EAF4" stroke-width="1.5"><path d="M30 112H410M30 164H410M30 216H410M30 268H410M30 320H410"/></g>
+            <g font-family="'Caveat','Segoe Print','Bradley Hand',cursive" font-size="30" font-weight="600" fill="#1D3F8F">
+              <text x="156" y="100">begin</text><text x="156" y="152">achieve</text><text x="156" y="204">colapse</text><text x="156" y="256">protect</text><text x="156" y="308">decrease</text>
+            </g>
+            <rect x="148" y="74" width="106" height="36" rx="8" fill="none" stroke="#16855B" stroke-width="2"/>
+            <rect x="148" y="126" width="124" height="36" rx="8" fill="none" stroke="#16855B" stroke-width="2"/>
+            <rect x="148" y="178" width="124" height="36" rx="8" fill="#FFF7DF" stroke="#B98200" stroke-width="2.5"/>
+            <text x="156" y="204" font-family="'Caveat','Segoe Print','Bradley Hand',cursive" font-size="30" font-weight="600" fill="#1D3F8F">colapse</text>
+            <rect x="148" y="230" width="116" height="36" rx="8" fill="none" stroke="#16855B" stroke-width="2"/>
+            <rect x="148" y="282" width="132" height="36" rx="8" fill="#FDECED" stroke="#C62F3A" stroke-width="2"/>
+            <text x="156" y="308" font-family="'Caveat','Segoe Print','Bradley Hand',cursive" font-size="30" font-weight="600" fill="#1D3F8F">decrease</text>
+            <g font-size="14" font-weight="800" text-anchor="middle">
+              <rect x="334" y="80" width="62" height="28" rx="14" fill="#E9F7F0"/><text x="365" y="99" fill="#13744F">맞음</text>
+              <rect x="334" y="132" width="62" height="28" rx="14" fill="#E9F7F0"/><text x="365" y="151" fill="#13744F">맞음</text>
+              <rect x="334" y="184" width="62" height="28" rx="14" fill="#FFF7DF" stroke="#B98200" stroke-width="1.5"/><text x="365" y="203" fill="#6E4E00">확인</text>
+              <rect x="334" y="236" width="62" height="28" rx="14" fill="#E9F7F0"/><text x="365" y="255" fill="#13744F">맞음</text>
+              <rect x="334" y="288" width="62" height="28" rx="14" fill="#FDECED"/><text x="365" y="307" fill="#C62F3A">틀림</text>
+            </g>
+            <rect x="30" y="340" width="380" height="54" rx="12" fill="#F3F7FC"/>
+            <text x="46" y="373" font-size="15" font-weight="700" fill="#0C3778">맞음 3 · 틀림 1 · 확인 1</text>
+            <text x="394" y="373" text-anchor="end" font-size="14" fill="#526079">확인 칸은 사람이 결정</text>
+          </svg>
+        </div>
+        <figcaption>답안지 그림은 지어낸 예시입니다. 실제 학생 자료는 쓰지 않았습니다.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<section class="sec sec-ice" id="cases">
+  <div class="wrap">
+    <div class="sec-head"><h2>문제 → 해결, 세 가지 사례</h2><p class="sub">위노 아카데미를 만들며 부딪힌 문제 셋을, 한 일과 결과로 적었습니다.</p></div>
+    <ol class="x2-cases">
+      <li class="x2-case">
+        <p class="x2-no" aria-hidden="true">01</p>
+        <h3>계정마다 다른 메뉴</h3>
+        <dl>
+          <div><dt>문제</dt><dd>본사 · 원장 · 관 관리자 · 학부모는 쓰는 일이 다른데, 메뉴가 177개라 모두에게 같은 화면을 보여 줄 수 없었습니다.</dd></div>
+          <div><dt>한 일</dt><dd>역할 이름을 코드에 박지 않고, 메뉴와 버튼을 읽기 · 쓰기로 나눠 관리자 화면의 그룹권한 관리에서 정하게 했습니다. 서버도 같은 권한으로 다시 확인합니다.</dd></div>
+          <div class="x2-res"><dt>결과</dt><dd>업무 열여섯 묶음, 메뉴 177개가 로그인한 계정에 따라 다르게 보입니다. <a href="#try">직접 눌러 보세요</a>에서 바꿔 볼 수 있습니다.</dd></div>
+        </dl>
+      </li>
+      <li class="x2-case">
+        <p class="x2-no" aria-hidden="true">02</p>
+        <h3>손글씨 답안 채점</h3>
+        <dl>
+          <div><dt>문제</dt><dd>손으로 쓴 답안은 사람이 한 장씩 읽어 채점해야 했고, AI에 통째로 맡기면 글자를 짐작해 읽어 틀린 답이 맞다고 나오기도 했습니다.</dd></div>
+          <div><dt>한 일</dt><dd>칸 위치는 시험지 PDF에서 AI 없이 재고, 글씨는 두 AI가 따로 읽어 같을 때만 믿게 했습니다. 자신 없는 칸만 사람이 확인해 성적표로 잇습니다.</dd></div>
+          <div class="x2-res"><dt>결과</dt><dd>시험지 한 종류 140문항을 눈으로 단 답과 비교해 틀리게 채점된 칸 0, 사람 확인으로 넘어간 칸 32.</dd></div>
+        </dl>
+      </li>
+      <li class="x2-case">
+        <p class="x2-no" aria-hidden="true">03</p>
+        <h3>학원끼리 자료가 섞이지 않게</h3>
+        <dl>
+          <div><dt>문제</dt><dd>여러 관을 둔 학원이 한 시스템을 쓰는데, 한 관의 자료가 다른 관에 보이면 안 됩니다.</dd></div>
+          <div><dt>한 일</dt><dd>관을 나누는 규칙을 서버와 PostgreSQL 행 단위 보안(RLS) 두 곳에 두었습니다. 중요한 저장과 조회는 감사 로그로 남깁니다.</dd></div>
+          <div class="x2-res"><dt>결과</dt><dd>서버에서 거르는 것을 한 군데 빠뜨려도 DB가 한 번 더 막는 두 겹 구조입니다.</dd></div>
+        </dl>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <section class="sec" id="client">
   <div class="wrap">
-    <div class="sec-head"><h2>회사에서 맡은 프로젝트</h2><p class="sub">2026년 4월부터 하이씨엔씨에서 제조, 대학, 교육 고객의 시스템을 맡고 있습니다.</p></div>
+    <div class="sec-head"><h2>고객사에서 맡은 프로젝트</h2><p class="sub">2026년 4월부터 11월까지 하이씨엔씨에서 대학 · 교육 고객의 시스템을 맡았고, 12월부터는 프리랜서로 현대자동차 프로젝트에 들어갑니다.</p></div>
     <div class="duo duo-top">
       <article class="work">
         <div class="shot">
@@ -803,9 +945,9 @@ h1 span{color:var(--sky)}
           </svg>
         </div>
         <div>
-          <p class="kind">2026.10.19 – 진행 중</p>
+          <p class="kind">프리랜서 · 2026.12 –</p>
           <h3>현대자동차 MiPlatform → React 전환</h3>
-          <p class="sub">MiPlatform(마이플랫폼)으로 만든 화면을 React로 옮기는 전환 프로젝트를 진행하고 있습니다.</p>
+          <p class="sub">프리랜서로 투입해 MiPlatform(마이플랫폼)으로 만든 화면을 React로 옮기는 전환 프로젝트를 맡습니다.</p>
           <p class="tech">React · MiPlatform</p>
         </div>
       </article>
@@ -966,8 +1108,8 @@ h1 span{color:var(--sky)}
     <!-- 한 줄 = .cv-row 하나. --s = 2020.11 부터 몇 달째 시작, --d = 몇 달 동안. 2026.04 앞의 고객사는 업종으로만 적었어요 -->
     <p class="cv-group">경력 프로젝트</p>
     <ol>
-      <li class="cv-row now" style="--s:71.6;--d:1.27"><p class="when">2026.10.19 –</p><div class="track"><i></i></div><div class="what"><h3>현대자동차 MiPlatform → React 전환</h3><p>MiPlatform으로 만든 화면을 React로 옮기는 전환 프로젝트를 진행하고 있습니다.</p><p class="tech">React · MiPlatform</p></div></li>
-      <li class="cv-row now" style="--s:65;--d:7.87"><p class="when">2026.04 –</p><div class="track"><i></i></div><div class="what"><h3>하이씨엔씨</h3><ul class="jobs"><li>현대자동차 React 프로젝트</li><li>서정대학교 SSO · 2차 인증 구축 (한컴위드 패스포트 · 얼굴 인증 · PIN · 패턴 · ZOTP)</li><li>서울예술대학교 관리자 시스템 개편</li><li>시대인재 유지보수</li></ul></div></li>
+      <li class="cv-row now x2-next" style="--s:73;--d:0"><p class="when">2026.12 –<br><span class="x2-free">프리랜서</span></p><div class="track"><i></i></div><div class="what"><h3>현대자동차 MiPlatform → React 전환</h3><p>프리랜서로 투입해 MiPlatform으로 만든 화면을 React로 옮기는 전환 프로젝트를 맡습니다.</p><p class="tech">React · MiPlatform</p></div></li>
+      <li class="cv-row now" style="--s:65;--d:8"><p class="when">2026.04 – 2026.11</p><div class="track"><i></i></div><div class="what"><h3>하이씨엔씨</h3><ul class="jobs"><li>서정대학교 SSO · 2차 인증 구축 (한컴위드 패스포트 · 얼굴 인증 · PIN · 패턴 · ZOTP)</li><li>서울예술대학교 관리자 시스템 개편</li><li>시대인재 유지보수</li></ul></div></li>
       <li class="cv-row" style="--s:42;--d:22"><p class="when">2024.05 – 2026.03</p><div class="track"><i></i></div><div class="what"><h3>제조 대기업 사내 업무 시스템 5개 단독 운영</h3><p class="facts"><span><b>5개</b>시스템 단독</span><span><b>연 5~10건</b>개선 요청 처리</span><span><b>전부</b>취약점 조치</span></p><p>통합결재, 자산관리, 소프트웨어 관리, 보안, 홈페이지 다섯 시스템을 혼자 맡았습니다. 기능 개선 요청을 분석부터 개발, 배포까지 처리했고, 모의해킹에서 나온 보안 취약점을 모두 조치했습니다.</p><p class="tech">Java · Spring · Nexacro · Linux · Tomcat · Wildfly · GitLab</p></div></li>
       <li class="cv-row" style="--s:28;--d:13"><p class="when">2023.03 – 2024.04</p><div class="track"><i></i></div><div class="what"><h3>공공기관 웹사이트 13건 구축 · 유지보수</h3><p class="facts"><span><b>13건</b>신규 5 · 유지보수 8</span><span><b>3인</b>개발 · 퍼블 · 디자인</span></p><p>새로 5건을 만들고 8건을 유지보수했습니다. 기관 담당자와 직접 협의해 요구사항 정의부터 오픈까지 맡았고, 관리자 페이지와 게시판, 권한 관리, 조회 · 통계 기능을 만들었습니다.</p><p class="tech">Java · eGovFrame · MyBatis · JSP · jQuery · Linux · Tomcat</p></div></li>
       <li class="cv-row" style="--s:18;--d:9"><p class="when">2022.05 – 2023.02</p><div class="track"><i></i></div><div class="what"><h3>IT 기업 구매 시스템 구축</h3><p class="facts"><span><b>15건</b>React 화면</span></p><p>React로 구매 · 계약 화면 약 15건을 만들고 서버 API와 연결했습니다.</p><p class="tech">React · Java · MySQL</p></div></li>
@@ -1045,7 +1187,7 @@ h1 span{color:var(--sky)}
   <div class="wrap">
     <h2>만들고 싶은 시스템이 있으면<br>편하게 연락 주세요.</h2>
     <p class="mail"><a href="mailto:hyojunkim9096@gmail.com">hyojunkim9096@gmail.com</a><button class="copy" id="copy" type="button">주소 복사</button></p>
-    <a class="git" href="https://github.com/hyojunkim9096">github.com/hyojunkim9096</a>
+    <a class="git" href="https://github.com/hyojunkim9096">github.com/hyojunkim9096</a><br><a class="x2-resume" href="resume.pdf" target="_blank" rel="noopener">이력서 PDF 받기 (A4 한 장)</a>
     <svg class="end-mark" viewBox="0 0 925 280" aria-hidden="true"><use href="#wm"/></svg>
   </div>
 </section>
