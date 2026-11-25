@@ -2,368 +2,803 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>단조 DANJO — 김효준 · Software Engineer</title>
-<!-- 공개할 때 아래 한 줄(noindex)을 지워요 -->
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WInO — 김효준 · Software Engineer</title>
+<meta name="theme-color" content="#0C3778">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230C3778'/%3E%3Cpath transform='translate(16 16.5) scale(.24)' fill='%23fff' d='M0 1H83.7V194H99.7V1H183.3V194H199.3V1H283V203A76 76 0 0 1 141.5 241.5A76 76 0 0 1 0 203Z'/%3E%3C/svg%3E">
+<!-- 검색에 나오게 하려면 아래 한 줄(noindex)을 지워요 -->
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="웹 플랫폼부터 기업 업무 시스템까지. 김효준의 소프트웨어 개발 포트폴리오.">
+<meta name="description" content="웹과 앱, 그리고 AI 서비스를 설계부터 구현까지. 김효준의 소프트웨어 개발 포트폴리오.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WInO — 김효준 · Software Engineer">
+<meta property="og:description" content="웹과 앱, 그리고 AI 서비스를 설계부터 구현까지.">
+<meta property="og:url" content="https://hyojunkim9096.github.io/">
+<meta property="og:image" content="https://hyojunkim9096.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap">
 <style>
-/* ── 고치는 곳: 색과 글꼴은 여기 한 곳 ───────────────────────── */
+/* 짜임: 남색 첫 화면에 모니터가 켜져 있고, 그 아래는 흰 종이 위에 프로젝트 · 숫자 · 경력을 그림으로 놓는다.
+   큰 로고 조각은 첫 화면과 끝, 두 곳에만 쓴다. */
+/* ── 고치는 곳: 색 · 글꼴 · 크기는 여기 한 곳 ─────────────── */
 :root{
-  --navy:#0D1B2A; --navy-2:#16283B; --orange:#FF7A00; --orange-ink:#C25A00;
-  --light:#F3F4F6; --paper:#FFFFFF; --ink:#152536; --muted:#5B6877; --line:#DDE3EA;
-  --font:Pretendard,'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;
-  --wrap:1040px; --gutter:20px;
+  --navy:#0C3778; --navy-lift:#12418A; --sky:#A9CBFF; --ice:#EFF4FB;
+  --ink:#0B1220; --slate:#526079; --rule:#D3DDEB; --paper:#FFFFFF;
+  --text:'Pretendard Variable',Pretendard,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',system-ui,sans-serif;
+  --disp:'Outfit','Pretendard Variable',Pretendard,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',system-ui,sans-serif;
+  --t-s:14px; --t-m:17px; --t-l:21px; --t-xl:clamp(26px,3.4vw,40px); --t-hero:clamp(33px,5vw,62px);
+  --gap-sec:clamp(72px,9vw,128px);
+  color-scheme:light;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--light);color:var(--ink);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 var(--t-m)/1.75 var(--text);word-break:keep-all;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0;padding:0}
+ul,ol{list-style:none}
 a{color:inherit}
-.wrap{max-width:var(--wrap);margin:auto;padding:0 var(--gutter)}
-h1,h2,h3{line-height:1.3;margin:0;text-wrap:balance}
-p{margin:0}
-body{overflow-wrap:anywhere;word-break:keep-all}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin-inline:auto;padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
+.sec{padding-block:var(--gap-sec)}
+.sec-ice{background:var(--ice)}
+.sec-head{display:grid;gap:14px;margin-bottom:clamp(32px,4.5vw,60px);max-width:46rem}
+h2{font:800 var(--t-xl)/1.28 var(--disp);letter-spacing:-.025em;word-spacing:.09em;text-wrap:balance}
+h3{font:700 var(--t-l)/1.4 var(--disp);letter-spacing:-.015em;word-spacing:.09em;text-wrap:balance}
+.sub{color:var(--slate)}
+.tech{font:500 var(--t-s)/1.7 var(--disp);word-spacing:.14em;color:var(--slate)}
 
-/* 초안 표시 — 빈 칸이 다 채워지면 이 블록(.draft)을 지워요 */
-.draft{background:#FFF1F2;border-bottom:1px solid #FECDD3;color:#9F1239;font-size:14px;padding:10px 0}
-.todo{color:#9AA5B1;border-bottom:1px dashed #C3CBD4}
+/* ── 위쪽 띠 ─────────────────────────────────────── */
+.bar{position:sticky;top:0;z-index:30;background:var(--navy);color:#fff}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:64px}
+.logo{display:block;line-height:0}
+.logo svg{height:26px;width:86px;fill:#fff}
+.links{display:flex;gap:30px;font-size:15px;font-weight:500}
+.links a{text-decoration:none;color:#D5E4FC;padding-block:6px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.links a:hover,.links a[aria-current]{color:#fff;border-color:var(--sky)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:600;font-size:15px;padding:8px 14px;border:1px solid #ffffff59;border-radius:999px}
+.menu summary::-webkit-details-marker{display:none}
+.menu ul{position:absolute;right:0;top:calc(100% + 10px);min-width:170px;background:#fff;color:var(--ink);border-radius:14px;padding:8px;box-shadow:0 18px 44px #06214a59}
+.menu li a{display:block;padding:11px 14px;text-decoration:none;border-radius:9px;font-size:16px;font-weight:500}
+.menu li a:hover{background:var(--ice)}
 
-/* 머리 */
-.top{background:var(--navy);color:#fff}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo svg{height:30px;width:auto;display:block}
-.logo b{font-size:22px;font-weight:800;letter-spacing:.02em}
-.logo span{font-size:11px;font-weight:700;letter-spacing:.42em;opacity:.8}
-.nav nav{display:flex;gap:22px;font-size:15px}
-.nav nav a{text-decoration:none;opacity:.82}
-.nav nav a:hover{opacity:1;color:var(--orange)}
-.hero{padding:56px 0 72px}
-.eyebrow{color:var(--orange);font-weight:700;font-size:14px;letter-spacing:.08em}
-.hero h1{font-size:clamp(30px,5.2vw,52px);font-weight:800;margin:12px 0 16px;letter-spacing:-.01em}
-.hero h1 em{font-style:normal;color:var(--orange)}
-.hero .lead{font-size:clamp(16px,2vw,19px);opacity:.86;max-width:40em}
-.who{margin-top:32px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
-.who b{font-size:22px;font-weight:800;letter-spacing:.12em}
-.who span{opacity:.8}
-.facts{list-style:none;display:flex;flex-wrap:wrap;gap:10px 28px;margin:22px 0 0;padding:18px 0 0;border-top:1px solid #ffffff22}
-.facts li{font-size:13px;opacity:.9}
-.facts b{display:block;font-size:17px;color:#fff}
-.cta{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
-.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none}
-.btn.main{background:var(--orange);color:var(--navy)}
-.btn.sub{border:1px solid #ffffff55;color:#fff}
+/* ── 첫 화면 ─────────────────────────────────────── */
+.hero{position:relative;overflow:hidden;background:var(--navy);color:#fff}
+.giant{position:absolute;left:-1.5%;bottom:-.9vw;width:103%;fill:var(--navy-lift);pointer-events:none}
+.hero .wrap{position:relative}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);gap:clamp(28px,4vw,64px);align-items:center;padding-block:clamp(36px,5vw,72px) clamp(40px,5vw,76px)}
+.me{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;font:500 16px/1.5 var(--disp);color:var(--sky)}
+.me b{font:800 20px/1.4 var(--text);color:#fff;letter-spacing:.14em}
+h1{font:800 var(--t-hero)/1.2 var(--disp);letter-spacing:-.035em;word-spacing:.1em;margin:18px 0 22px;text-wrap:balance}
+h1 span{color:var(--sky)}
+.lead{color:#DCE8FC;font-size:clamp(17px,1.5vw,19px);max-width:33em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 26px;border-radius:999px;font:700 16px/1 var(--text);text-decoration:none;transition:transform .16s,background .16s,color .16s}
+.btn:hover{transform:translateY(-2px)}
+.btn-a{background:#fff;color:var(--navy)}
+.btn-b{border:1.5px solid #ffffff73;color:#fff}
+.btn-b:hover{background:#ffffff1a}
+.desk svg{display:block;width:100%;height:auto;overflow:visible}
+.desk text{font-family:var(--text)}
+.boot{opacity:0;animation:boot .9s .25s ease-out backwards}
+.grow{transform-box:fill-box;transform-origin:bottom;animation:grow .7s backwards cubic-bezier(.2,.8,.2,1)}
+.rise{animation:rise .7s .5s backwards cubic-bezier(.2,.8,.2,1)}
+@keyframes boot{from{opacity:1}}
+@keyframes grow{from{transform:scaleY(.05)}}
+@keyframes rise{from{transform:translateY(26px);opacity:0}}
+.does{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(18px,2.4vw,36px);padding-block:34px 60px;border-top:1px solid #ffffff2e}
+.does svg{width:38px;height:38px;fill:none;stroke:#fff;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.does li:nth-child(1) svg{margin-left:-7px}.does li:nth-child(4) svg{margin-left:-10px}.does li:nth-child(n+2):not(:nth-child(4)) svg{margin-left:-3px}
+.does b{display:block;font-size:17px;font-weight:700;margin-top:8px}
+.does span{display:block;font-size:14px;line-height:1.6;color:#C6D9F8;margin-top:2px}
 
-/* 구역 */
-section{padding:64px 0}
-section.alt{background:var(--paper)}
-.head{margin-bottom:28px}
-.head h2{font-size:clamp(22px,3vw,30px);font-weight:800}
-.head h2::before{content:"";display:block;width:34px;height:4px;background:var(--orange);margin-bottom:14px}
-.head p{color:var(--muted);margin-top:8px;max-width:44em}
-.grid{display:grid;gap:16px}
-.g4{grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr))}
-.g5{grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr))}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px}
-section.alt .card{background:var(--light);border-color:transparent}
-.card h3{font-size:18px;font-weight:800;margin-bottom:6px}
-.card p{color:var(--muted);font-size:15px}
-.num{color:var(--orange-ink);font-weight:800;font-size:13px;letter-spacing:.1em;margin-bottom:10px}
+/* ── 시작한 이유 ─────────────────────────────────── */
+.why{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:start}
+.why h2{font-size:clamp(28px,3.9vw,46px)}
+.why p+p{margin-top:16px}
+.why p{color:#2B374C}
 
-/* 프로젝트 */
-.proj{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper)}
-.proj .body{padding:28px;min-width:0}
-.proj .side{background:var(--navy);color:#fff;padding:28px}
-.proj h3{font-size:24px;font-weight:800}
-.tag{display:inline-block;font-size:12px;font-weight:700;color:var(--orange-ink);background:#FFF1E2;border-radius:99px;padding:3px 10px;margin-bottom:10px}
-.proj p{margin-top:10px;color:var(--muted)}
-.proj ul{margin:14px 0 0;padding-left:18px;color:var(--ink)}
-.proj li{margin:5px 0}
-.side h4{margin:0 0 8px;font-size:13px;letter-spacing:.1em;color:var(--orange)}
-.side p{color:#ffffffd0;margin:0 0 18px;font-size:15px}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
-.chips span{font-size:13px;border:1px solid #ffffff40;border-radius:99px;padding:3px 10px}
-.subhead{font-size:19px;font-weight:800;margin:40px 0 14px}
-.jobs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.job{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
-.job .when{color:var(--orange-ink);font-weight:700;font-size:14px;padding-top:2px;white-space:nowrap}
-.job b{font-size:17px}
-.job p{color:var(--muted);font-size:15px;margin-top:2px}
-.job .tech{font-size:13px;color:var(--muted);margin-top:6px}
+/* ── 프로젝트 ────────────────────────────────────── */
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(28px,4.5vw,72px);align-items:center}
+.kind{font-size:15px;font-weight:600;color:var(--navy)}
+.feature h2{font:800 clamp(32px,4.1vw,50px)/1.2 var(--disp);letter-spacing:-.03em;margin:4px 0 18px}
+.ticks{display:grid;gap:9px;margin:22px 0}
+.ticks li{position:relative;padding-left:30px;font-weight:500}
+.ticks li::before{content:"";position:absolute;left:0;top:.42em;width:16px;height:16px;border-radius:50%;border:5px solid var(--navy)}
+.arch{display:grid;gap:0;font-size:15px;line-height:1.5}
+.arch-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.node{background:#fff;border-radius:14px;padding:16px 16px 18px;box-shadow:0 1px 0 #c7d4e8,0 14px 30px #0c37780f}
+.node b{display:block;font-size:16px;font-weight:700;line-height:1.4}
+.node span{display:block;color:var(--slate);font-size:14px;margin-top:2px}
+.node svg{display:block;width:100%;height:auto;margin-bottom:12px}
+.wire{height:30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.wire i{justify-self:center;width:2px;background:var(--navy)}
+.wire-1{grid-template-columns:1fr}
+.core{background:var(--navy);color:#fff;border-radius:14px;padding:20px 22px}
+.core b,.data b{display:block;font:700 20px/1.35 var(--disp)}
+.core p{color:#D2E1FA}
+.data{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:18px 22px}
+.data p{color:var(--slate)}
+.totals{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:2px solid var(--ink);margin-top:clamp(40px,5vw,64px)}
+.totals div{display:flex;flex-direction:column-reverse;justify-content:flex-end;padding:18px 18px 0 0}
+.totals dt{color:var(--slate);font-size:15px}
+.totals dd{font:800 clamp(27px,3vw,39px)/1.15 var(--disp);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.deep{margin-top:clamp(52px,6.4vw,92px)}
+.deep h3{font:800 clamp(22px,2.5vw,30px)/1.35 var(--disp);letter-spacing:-.02em}
+.deep>.sub{margin-top:8px}
+.who,.solve{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,44px);margin-top:24px}
+.who div,.solve div{border-top:2px solid var(--navy);padding-top:16px}
+.solve div{border-top-width:1px;border-color:#B4C6E0}
+.who b,.solve b{display:block;font-size:18px;font-weight:700;line-height:1.45}
+.who p,.solve p{margin-top:6px;font-size:16px;color:#34415A}
+.areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(28px,4.5vw,72px);margin-top:22px;border-bottom:1px solid #C6D4E8}
+.areas li{display:grid;grid-template-columns:150px minmax(0,1fr) 30px;gap:14px;align-items:center;min-height:50px;padding-block:9px;border-top:1px solid #C6D4E8}
+.areas b{font-size:16px;font-weight:600;line-height:1.4}
+.areas span{text-align:right;font:700 18px/1 var(--disp);font-variant-numeric:tabular-nums}
+.cells{display:flex;flex-wrap:wrap;gap:4px}
+.cells i,.key{display:inline-block;width:11px;height:11px;border-radius:2.5px;background:var(--navy)}
+.cells.p i,.key.p{background:#6C9FEA}
+.key{margin-right:8px}
+.more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3.4vw,52px);margin-top:clamp(36px,4.4vw,56px)}
+.more>div{border-top:2px solid var(--ink);padding-top:18px}
+.more h3{font-size:22px;font-weight:800;margin-top:2px}
+.work h3+.sub{margin-top:8px}
+.work .kind+h3{margin-top:2px}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3.4vw,52px);margin-top:clamp(56px,7vw,100px)}
+.duo-top{margin-top:0}
+.work{display:flex;flex-direction:column;gap:20px}
+.shot{background:var(--navy);border-radius:20px;overflow:hidden;line-height:0}
+.shot svg{width:100%;height:auto}
+.shot text{font-family:var(--text)}
+.shot-ice{background:#DCE8FA}
+.work h3{font-size:26px;font-weight:800}
+.work .tech{margin-top:10px}
+.facts{display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:12px;font-size:15px;color:var(--slate)}
+.facts b{font:700 19px/1.3 var(--disp);color:var(--ink);margin-right:5px}
 
-/* 기술 표 */
-.stack{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.stack th,.stack td{text-align:left;padding:15px 18px;border-bottom:1px solid var(--line);vertical-align:top}
-.stack tr:last-child th,.stack tr:last-child td{border-bottom:0}
-.stack th{width:150px;color:var(--orange-ink);font-size:13px;letter-spacing:.1em;white-space:nowrap}
-.stack td b{display:block;font-size:16px}
-.stack td span{color:var(--muted);font-size:14px}
-.honest{margin-top:14px;font-size:14px;color:var(--muted)}
+.punda{background:linear-gradient(155deg,#4A0B73,#26003A 68%);color:#fff;border-radius:28px;padding:clamp(24px,4.4vw,60px)}
+.punda-top{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1fr);gap:clamp(28px,3.6vw,48px);align-items:center}
+.punda-top>div{min-width:0}
+.punda .kind{color:#FFC53D}
+.punda h3{display:flex;align-items:center;gap:14px;font:800 clamp(34px,4.2vw,52px)/1.25 var(--disp);letter-spacing:-.02em;margin:6px 0 6px}
+.punda h3 img{width:1.1em;height:auto}
+.punda p{color:#E9DFF8}
+.punda .one{font-size:var(--t-l);font-weight:700;color:#fff;margin-bottom:12px}
+.punda .ticks li{color:#fff}
+.punda .ticks li::before{border-color:#FFC53D}
+.punda .tech{color:#C4A5F5}
+.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start}
+.phones figure:nth-child(2){margin-top:38px}
+.phones figure:nth-child(3){margin-top:12px}
+.ph{background:#10001A;border-radius:24px;padding:6px;box-shadow:0 18px 40px rgba(0,0,0,.34)}
+.ph img,.ph svg{display:block;width:100%;height:auto;border-radius:18px}
+.ph text{font-family:var(--text)}
+.phones figcaption{margin-top:10px;text-align:center;font-size:15px;color:#E9DFF8}
+.punda-low{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1fr);gap:clamp(28px,3.6vw,48px);align-items:center;margin-top:clamp(40px,5vw,64px)}
+.punda-low dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px}
+.punda-low dl div{display:flex;flex-direction:column-reverse;justify-content:flex-end;border-top:1px solid rgba(196,165,245,.45);padding-top:14px}
+.punda-low dd{font:800 clamp(30px,3.2vw,42px)/1.15 var(--disp);letter-spacing:-.03em;color:#fff}
+.punda-low dt{font-size:14px;line-height:1.5;color:#D8C4F7}
+.punda-low figure img{display:block;width:100%;height:auto;border-radius:14px}
+.punda .note{margin-top:26px;color:#C4A5F5}
+.work-row{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(36px,4.6vw,64px)}
 
-/* 숫자 카드 */
-.kpis{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
-.kpi{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
-.kpi .v{font-size:34px;font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-.01em}
-.kpi .v small{font-size:17px;font-weight:700;margin-left:2px}
-.kpi .t{font-weight:700;margin-top:8px}
-.kpi .s{color:var(--muted);font-size:14px;margin-top:2px}
-.kpi .bar{height:4px;width:36px;border-radius:2px;background:var(--orange);margin-top:14px}
-/* 경력 숫자 칩 */
-.ms{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}
-.ms span{font-size:13px;color:var(--muted);background:var(--light);border-radius:8px;padding:4px 10px}
-.ms span b{font-size:15px;color:var(--orange-ink);margin-right:6px}
-/* 이야기 */
-.story{max-width:46em;font-size:17px}
-.story p+p{margin-top:12px}
-/* 이력 */
-.hist{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
-.hist ul{list-style:none;margin:6px 0 0;padding:0}
-.hist li{padding:12px 0;border-bottom:1px solid var(--line)}
-.hist li:last-child{border-bottom:0}
-.hist li b{display:block}
-.hist li span{color:var(--muted);font-size:14px}
-.values{margin-top:18px;color:var(--muted);font-size:14px}
-.values b{color:var(--ink)}
+/* ── 숫자 ───────────────────────────────────────── */
+.figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(40px,5vw,68px) clamp(28px,4vw,64px)}
+.fig{display:grid;grid-template-rows:auto auto 1fr;gap:6px;align-content:start}
+.fig .v{font:800 clamp(50px,5.4vw,74px)/1 var(--disp);letter-spacing:-.045em;color:var(--navy)}
+.fig .v small{font:700 22px/1 var(--text);letter-spacing:0;margin-left:5px}
+.fig b{font-size:18px;font-weight:700}
+.fig .sub{font-size:15px}
+.fig .unit{display:block;width:100%;max-width:270px;height:auto;margin-top:14px;overflow:visible}
+.legend{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:34px;font-size:14px;color:var(--slate)}
 
-/* 핵심 강점 넷 */
-.points{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));margin:22px 0 0;padding:18px 0 0;border-top:1px solid #ffffff22;list-style:none}
-.points li{border-left:3px solid var(--orange);padding:2px 0 2px 12px}
-.points b{display:block;font-size:16px;color:#fff}
-.points span{font-size:13px;opacity:.8}
-/* 경력 기간 막대 */
-.gantt{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px 12px;margin-bottom:6px}
-.gr{display:grid;grid-template-columns:168px 1fr;align-items:center;gap:12px;margin:7px 0}
-.gr>span{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gt{position:relative;height:12px;background:var(--light);border-radius:6px}
-.gt i{position:absolute;top:0;bottom:0;border-radius:6px;background:var(--navy)}
-.gr.me .gt i{background:var(--orange)}
-.gr.me>span{color:var(--orange-ink);font-weight:700}
-.gax{display:grid;grid-template-columns:168px 1fr;gap:12px;font-size:12px;color:var(--muted);margin-top:6px}
-.gax div{position:relative;height:14px}
-.gax div span{position:absolute;transform:translateX(-50%)}
-.gnote{font-size:12px;color:var(--muted);margin-top:6px}
-@media (max-width:760px){.gr,.gax{grid-template-columns:96px 1fr}}
+/* ── 경력 ───────────────────────────────────────── */
+.cv-group{font:700 16px/1.4 var(--text);color:var(--navy);padding:34px 0 10px}
+.cv-row,.cv-axis{display:grid;grid-template-columns:158px 250px minmax(0,1fr);gap:clamp(16px,2.6vw,38px)}
+.cv-axis{position:relative;font:600 13px/1 var(--disp);color:var(--slate);align-items:end}
+.cv-axis div{grid-column:2;position:relative;height:16px}
+.cv-axis span{position:absolute;transform:translateX(-50%)}
+.cv-row{padding-block:24px;border-top:1px solid var(--rule);align-items:start}
+.when{font:600 16px/1.55 var(--disp);font-variant-numeric:tabular-nums;white-space:nowrap}
+.track{position:relative;height:26px;background:
+  linear-gradient(var(--rule),var(--rule)) 2.74% 0/1px 100% no-repeat,linear-gradient(var(--rule),var(--rule)) 19.18% 0/1px 100% no-repeat,
+  linear-gradient(var(--rule),var(--rule)) 35.62% 0/1px 100% no-repeat,linear-gradient(var(--rule),var(--rule)) 52.05% 0/1px 100% no-repeat,
+  linear-gradient(var(--rule),var(--rule)) 68.49% 0/1px 100% no-repeat,linear-gradient(var(--rule),var(--rule)) 84.93% 0/1px 100% no-repeat}
+.track i{position:absolute;top:6px;height:14px;border-radius:7px;min-width:6px;left:calc(var(--s)/73*100%);width:calc(var(--d)/73*100%);background:#8FA6C9}
+.mine .track i,.now .track i{background:var(--navy)}
+.jobs{margin-top:8px;display:grid;gap:5px;color:#34415A}
+.jobs li{position:relative;padding-left:16px}
+.jobs li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--navy)}
+.what p{margin-top:6px;color:#34415A}
+.what .tech{margin-top:8px}
+.what .facts{margin-top:8px}
 
-/* 문의 */
-.contact{background:var(--navy);color:#fff}
-.contact .head p{color:#ffffffc0}
-.rows{display:grid;gap:10px;max-width:520px}
-.row{display:flex;gap:14px;align-items:baseline;border-bottom:1px solid #ffffff22;padding:10px 0}
-.row i{font-style:normal;color:var(--orange);font-weight:700;width:64px;flex:none;font-size:13px;letter-spacing:.08em}
-footer{background:var(--navy);color:#ffffff90;font-size:13px;padding:22px 0;border-top:1px solid #ffffff1c}
+/* ── 일하는 방식 ─────────────────────────────────── */
+.flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-bottom:clamp(44px,5.4vw,76px)}
+.flow li{position:relative;padding-right:14px}
+.flow li::before{content:"";display:block;width:34px;height:34px;border-radius:50%;border:10px solid var(--sky);margin-bottom:16px;position:relative;z-index:1;background:var(--navy)}
+.flow li::after{content:"";position:absolute;left:34px;right:0;top:16px;height:2px;background:#ffffff59}
+.flow li:last-child::before{border-color:#fff;background:#fff}
+.flow li:last-child::after{display:none}
+.flow b{display:block;font-size:19px;font-weight:700}
+.flow span{display:block;font-size:15px;line-height:1.6;color:#C6D9F8}
+.dark{background:var(--navy);color:#fff}
+.dark .sub{color:#D2E1FA}
+.ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(30px,3.6vw,52px) clamp(24px,3.4vw,56px);padding-top:clamp(34px,4vw,52px);border-top:1px solid #ffffff2e}
+.ways p{color:#D2E1FA;margin-top:6px;font-size:16px}
+.tools{margin-top:44px;color:#D2E1FA;font-size:16px}
+.tools b{color:#fff;margin-right:12px}
 
-@media (max-width:760px){
-  .nav nav{display:none}
-  .hero{padding:36px 0 52px}
-  section{padding:48px 0}
-  .proj{grid-template-columns:1fr}
-  .job{grid-template-columns:1fr;gap:4px}
-  .stack th{width:auto;display:block;padding-bottom:0;border-bottom:0}
-  .stack td{display:block;padding-top:6px}
+/* ── 기술 ───────────────────────────────────────── */
+.stack>div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px clamp(16px,3vw,48px);padding-block:22px;border-top:1px solid var(--rule)}
+.stack dt{font-weight:700;color:var(--navy);padding-top:5px}
+.stack dd b{display:block;font:600 clamp(19px,2vw,25px)/1.45 var(--disp);letter-spacing:-.01em;word-spacing:.12em}
+.stack dd span{color:var(--slate);font-size:15px}
+.note{margin-top:20px;font-size:15px;color:var(--slate)}
+
+/* ── 학력 ───────────────────────────────────────── */
+.edu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,5vw,84px)}
+.edu li{padding-block:16px;border-top:1px solid #C6D4E8}
+.edu h3{margin-bottom:12px}
+.edu b{display:block;font-weight:700}
+.edu span{display:block;color:var(--slate);font-size:15px}
+
+/* ── 문의 ───────────────────────────────────────── */
+.end{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding-block:var(--gap-sec) 0}
+.end .wrap{position:relative}
+.mail{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;margin-top:34px}
+.mail a{font:700 clamp(21px,3.3vw,42px)/1.3 var(--disp);letter-spacing:-.02em;text-decoration:none;border-bottom:2px solid #ffffff66}
+.mail a:hover{border-color:#fff}
+.copy{font:700 15px/1 var(--text);min-height:44px;padding:0 18px;color:#fff;background:none;border:1.5px solid #ffffff73;border-radius:999px;cursor:pointer}
+.copy:hover{background:#ffffff1a}
+.git{display:inline-block;margin-top:18px;color:#D2E1FA;text-underline-offset:5px}
+.end-mark{display:block;width:100%;height:auto;fill:var(--navy-lift);margin-top:clamp(50px,7vw,100px);margin-bottom:-7.4%}
+.foot{position:relative;background:#082A5E;color:#B9CDEE;font-size:14px;padding-block:20px calc(20px + env(safe-area-inset-bottom,0px))}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:4px 20px;justify-content:space-between}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+@media (max-width:1000px){
+  .links{display:none}.menu{display:block}
+  .hero-grid,.why,.feature,.punda-top,.punda-low{grid-template-columns:minmax(0,1fr)}
+  .desk{max-width:640px}
+  .does{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .figs,.ways,.solve{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .totals{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .areas{grid-template-columns:minmax(0,1fr)}
+  .flow{grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 0}
+  .flow li:nth-child(3)::after{display:none}
+  .cv-row,.cv-axis{grid-template-columns:150px minmax(0,1fr)}
+  .cv-axis div{grid-column:1/-1}
+  .cv-row .track{grid-column:1/-1;grid-row:2}
+  .cv-row .what{grid-column:1/-1;grid-row:3}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media print{.draft,.nav nav,.cta{display:none}.top,.contact,footer,.proj .side{-webkit-print-color-adjust:exact;print-color-adjust:exact}section{padding:28px 0;break-inside:avoid}}
+@media (max-width:640px){
+  :root{--t-m:16px}
+  .punda{border-radius:22px;padding:30px 20px}
+  .phones{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-20px;padding:4px 20px 12px;scrollbar-width:none}
+  .phones::-webkit-scrollbar{display:none}
+  .phones figure,.phones figure:nth-child(2),.phones figure:nth-child(3){flex:0 0 66%;margin-top:0;scroll-snap-align:center}
+  .work-row{grid-template-columns:minmax(0,1fr)}
+  .does,.ways,.duo,.edu,.who,.solve,.more{grid-template-columns:minmax(0,1fr)}
+  .areas li{grid-template-columns:112px minmax(0,1fr) 26px;gap:12px}.areas b{font-size:15px}.cells{gap:3px}.cells i{width:9px;height:9px}
+  .figs{gap:44px 24px}.fig b{font-size:16px;line-height:1.5}.fig .sub{font-size:14px;line-height:1.6}
+  .does{gap:20px}
+  .does li{display:grid;grid-template-columns:38px minmax(0,1fr);gap:0 18px;align-items:start}
+  .does li:nth-child(n):not(.x) svg{grid-row:1/3;margin-left:0}.does b{margin-top:0}
+  .totals{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .arch-row{gap:8px}.wire{gap:8px}
+  .node{padding:10px 10px 12px;border-radius:12px}
+  .node b{font-size:14px}.node span{font-size:12.5px;line-height:1.45}
+  .flow{grid-template-columns:minmax(0,1fr);gap:0}
+  .flow li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:0 18px;padding:0 0 26px}
+  .flow li::before{grid-row:1/3;margin:0}
+  .flow li::after,.flow li:nth-child(3)::after{display:block;left:16px;right:auto;top:34px;bottom:0;width:2px;height:auto}
+  .flow li:last-child::after{display:none}
+  .stack>div{grid-template-columns:minmax(0,1fr)}
+  .cta .btn{flex:1 1 auto;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.boot,.grow,.rise{animation:none}.btn{transition:none}}
+@media print{.bar{position:static}.links,.menu,.cta,.copy,.giant,.end-mark{display:none}.hero,.dark,.end,.foot,.core,.shot,.punda,.cells i{-webkit-print-color-adjust:exact;print-color-adjust:exact}.sec,.end{padding-block:26px}.cv-row,.fig,.work,.node{break-inside:avoid}}
 </style>
 </head>
 <body>
 
-<!-- 초안 표시: 아래 빈 칸(.todo)을 다 채우면 이 블록을 지워요 -->
-<div class="draft"><div class="wrap"><b>초안이에요. 아직 공개하지 마세요.</b> 남은 것: 2026.04 ~ 11 에 맡은 일 · 고객사 이름을 밝힐지 · 공개는 12월부터.</div></div>
+<!-- 같이 쓰는 그림 조각 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="wm" viewBox="0 0 925 280"><path fill-rule="evenodd" d="M0 1H83.7V194H99.7V1H183.3V194H199.3V1H283V203A76 76 0 0 1 141.5 241.5A76 76 0 0 1 0 203ZM319 1H403V271H319ZM445 271V159.5A87.5 87.5 0 0 1 620 159.5V271H546V157A13 13 0 0 0 520 157V271ZM785 0A139.5 139.5 0 1 1 784.9 0ZM785 81A58.5 58.5 0 1 0 785.1 81Z"/></symbol>
+    <pattern id="uS" width="20" height="19" patternUnits="userSpaceOnUse"><rect x=".6" y=".6" width="15.4" height="13.4" rx="2.5" fill="#0C3778"/></pattern>
+    <pattern id="uL" width="20" height="19" patternUnits="userSpaceOnUse"><rect x="1.6" y="1.6" width="13.4" height="11.4" rx="2" fill="none" stroke="#0C3778" stroke-width="2"/></pattern>
+    <pattern id="uR" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="5" fill="none" stroke="#0C3778" stroke-width="5"/></pattern>
+  </defs>
+</svg>
 
-<header class="top">
+<div class="bar" id="top">
+  <div class="wrap bar-in">
+    <a class="logo" href="#top" aria-label="WInO 처음으로"><svg aria-hidden="true"><use href="#wm"/></svg></a>
+    <nav class="links" aria-label="구역">
+      <a href="#projects">프로젝트</a><a href="#numbers">숫자</a><a href="#career">경력</a><a href="#ways">일하는 방식</a><a href="#stack">기술</a><a href="#contact">문의</a>
+    </nav>
+    <details class="menu">
+      <summary>메뉴</summary>
+      <ul><li><a href="#projects">프로젝트</a></li><li><a href="#numbers">숫자</a></li><li><a href="#career">경력</a></li><li><a href="#ways">일하는 방식</a></li><li><a href="#stack">기술</a></li><li><a href="#edu">학력 · 자격</a></li><li><a href="#contact">문의</a></li></ul>
+    </details>
+  </div>
+</div>
+
+<header class="hero">
+  <svg class="giant" viewBox="0 0 925 280" aria-hidden="true"><use href="#wm"/></svg>
   <div class="wrap">
-    <div class="nav">
-      <a class="logo" href="#top" aria-label="단조 DANJO 처음으로">
-        <svg viewBox="0 0 110 88" aria-hidden="true"><path fill="#fff" d="M34 0H66A44 44 0 0 1 66 88H38L48 62H64A18 18 0 0 0 64 26H24Z"/><path fill="#FF7A00" d="M20 36H42L22 88H0Z"/></svg>
-        <b>단조</b><span>DANJO</span>
-      </a>
-      <nav aria-label="구역">
-        <a href="#impact">성과</a><a href="#projects">프로젝트</a><a href="#ai">AI</a><a href="#stack">기술</a><a href="#history">이력</a><a href="#contact">문의</a>
-      </nav>
+    <div class="hero-grid">
+      <div>
+        <p class="me"><b>김효준</b>Full-stack Software Engineer</p>
+        <h1>웹과 앱, 그리고 <span>AI 서비스</span>를 설계부터 구현까지.</h1>
+        <p class="lead">금융 · 공공 · 제조 · 교육, 네 분야의 업무 시스템을 만들고 운영해 온 7년차 풀스택 개발자입니다. 처음 쓰는 사람도 금방 쓰는 화면과, 믿고 맡길 수 있는 서버를 함께 만듭니다.</p>
+        <div class="cta"><a class="btn btn-a" href="#projects">프로젝트 보기</a><a class="btn btn-b" href="#contact">문의하기</a></div>
+      </div>
+
+      <figure class="desk">
+        <svg viewBox="-34 6 748 496" role="img" aria-label="모니터에 켜진 관리자 화면과 휴대폰 단어 학습 앱을 그린 그림">
+          <defs><clipPath id="scr"><rect x="60" y="50" width="560" height="308" rx="5"/></clipPath><clipPath id="ph"><rect x="574" y="266" width="112" height="206" rx="17"/></clipPath></defs>
+          <!-- 받침 -->
+          <path d="M300 424 290 474H390L380 424" fill="none" stroke="#fff" stroke-width="4"/>
+          <rect x="236" y="470" width="208" height="14" rx="7" fill="#0C3778" stroke="#fff" stroke-width="4"/>
+          <!-- 몸체 -->
+          <rect x="42" y="32" width="596" height="394" rx="17" fill="#0C3778" stroke="#fff" stroke-width="4"/>
+          <path d="M42 49a17 17 0 0 1 17-17H621a17 17 0 0 1 17 17V376H42Z" fill="#fff"/>
+          <circle cx="340" cy="401" r="6" fill="#fff"/>
+          <!-- 화면 -->
+          <g clip-path="url(#scr)">
+            <rect x="60" y="50" width="560" height="308" fill="#EAF1FB"/>
+            <rect x="60" y="50" width="132" height="308" fill="#0C3778"/>
+            <svg x="77" y="66" width="62" height="19" viewBox="0 0 925 280"><use href="#wm" fill="#fff"/></svg>
+            <rect x="71" y="102" width="110" height="27" rx="7" fill="#fff"/>
+            <g font-size="12.5" font-weight="600">
+              <text x="84" y="120" fill="#0C3778">대시보드</text>
+              <g fill="#C6DAFA" font-weight="500"><text x="84" y="151">학생 · 학부모</text><text x="84" y="181">직원 · 권한</text><text x="84" y="211">게시판</text><text x="84" y="241">공통코드</text><text x="84" y="271">메뉴 관리</text><text x="84" y="301">감사 기록</text></g>
+            </g>
+            <rect x="192" y="50" width="428" height="42" fill="#fff"/>
+            <text x="210" y="76" font-size="15" font-weight="700" fill="#0B1220">대시보드</text>
+            <rect x="468" y="60" width="104" height="22" rx="11" fill="#EAF1FB"/>
+            <circle cx="594" cy="71" r="8" fill="none" stroke="#0C3778" stroke-width="5"/>
+            <!-- 위 칸 셋 -->
+            <g fill="#fff"><rect x="208" y="108" width="126" height="62" rx="9"/><rect x="344" y="108" width="126" height="62" rx="9"/><rect x="480" y="108" width="126" height="62" rx="9"/></g>
+            <g fill="#B8C9E3"><rect x="222" y="122" width="46" height="7" rx="3.5"/><rect x="358" y="122" width="38" height="7" rx="3.5"/><rect x="494" y="122" width="52" height="7" rx="3.5"/></g>
+            <g fill="#0C3778"><rect x="222" y="140" width="62" height="16" rx="5"/><rect x="358" y="140" width="46" height="16" rx="5"/><rect x="494" y="140" width="70" height="16" rx="5"/></g>
+            <!-- 막대 -->
+            <rect x="208" y="182" width="262" height="162" rx="9" fill="#fff"/>
+            <rect x="224" y="198" width="66" height="8" rx="4" fill="#0B1220"/>
+            <g stroke="#E3EBF7" stroke-width="1.5"><path d="M224 238H454M224 270H454M224 302H454M224 328H454"/></g>
+            <g fill="#A9CBFF">
+              <rect class="grow" style="animation-delay:.35s" x="230" y="286" width="20" height="42" rx="4"/><rect class="grow" style="animation-delay:.41s" x="262" y="268" width="20" height="60" rx="4"/><rect class="grow" style="animation-delay:.47s" x="294" y="276" width="20" height="52" rx="4"/><rect class="grow" style="animation-delay:.53s" x="326" y="252" width="20" height="76" rx="4"/><rect class="grow" style="animation-delay:.59s" x="358" y="260" width="20" height="68" rx="4"/><rect class="grow" style="animation-delay:.65s" x="390" y="240" width="20" height="88" rx="4"/></g>
+            <rect class="grow" style="animation-delay:.71s" x="422" y="224" width="20" height="104" rx="4" fill="#0C3778"/>
+            <!-- 목록 -->
+            <rect x="480" y="182" width="126" height="162" rx="9" fill="#fff"/>
+            <rect x="494" y="198" width="44" height="8" rx="4" fill="#0B1220"/>
+            <g fill="none" stroke="#0C3778" stroke-width="4"><circle cx="501" cy="228" r="5"/><circle cx="501" cy="254" r="5"/><circle cx="501" cy="280" r="5"/></g>
+            <g fill="#CBD8EC"><rect x="516" y="224" width="62" height="8" rx="4"/><rect x="516" y="250" width="48" height="8" rx="4"/><rect x="516" y="276" width="56" height="8" rx="4"/></g>
+            <rect class="boot" x="60" y="50" width="560" height="308" fill="#082A5E"/>
+          </g>
+          <!-- 휴대폰 -->
+          <g class="rise">
+            <rect x="566" y="256" width="128" height="228" rx="25" fill="#082A5E" stroke="#fff" stroke-width="4"/>
+            <g clip-path="url(#ph)">
+              <rect x="574" y="266" width="112" height="206" fill="#fff"/>
+              <rect x="586" y="284" width="50" height="7" rx="3.5" fill="#0B1220"/>
+              <circle cx="670" cy="288" r="5" fill="none" stroke="#0C3778" stroke-width="4"/>
+              <rect x="586" y="304" width="88" height="96" rx="13" fill="#E3EDFC"/>
+              <text x="630" y="352" text-anchor="middle" font-size="24" font-weight="800" fill="#0C3778" style="font-family:var(--disp)">begin</text>
+              <text x="630" y="376" text-anchor="middle" font-size="13" font-weight="600" fill="#526079">시작하다</text>
+              <rect x="586" y="412" width="88" height="30" rx="15" fill="#0C3778"/>
+              <text x="630" y="431.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">외웠어요</text>
+              <rect x="586" y="453" width="88" height="6" rx="3" fill="#DCE7F8"/><rect x="586" y="453" width="56" height="6" rx="3" fill="#0C3778"/>
+            </g>
+          </g>
+          <!-- 명함에 있는 두 조각 -->
+          <g fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+            <rect x="-28" y="232" width="50" height="50" rx="5"/><path d="M-13 249-20 257-13 265M7 249 14 257 7 265M1 246-7 268"/>
+            <path d="M664 24H706V62H658L664 54Z"/>
+          </g>
+          <g fill="#fff"><circle cx="674" cy="44" r="3"/><circle cx="685" cy="44" r="3"/><circle cx="696" cy="44" r="3"/></g>
+        </svg>
+        <figcaption class="vh">화면 그림은 예시입니다.</figcaption>
+      </figure>
     </div>
-    <div class="hero" id="top">
-      <div class="eyebrow">FULL-STACK · SOFTWARE ENGINEER</div>
-      <h1>웹과 앱, 그리고 AI 서비스를<br><em>설계부터 구현</em>까지.</h1>
-      <p class="lead">금융 · 공공 · 제조, 세 분야의 업무 시스템을 만들고 운영해 온 7년차 풀스택 개발자입니다. 처음 쓰는 사람도 금방 쓰는 화면과, 믿고 맡길 수 있는 서버를 함께 만듭니다.</p>
-      <div class="who"><b>김효준</b><span>KIM HYOJUN · 소프트웨어 엔지니어</span></div>
-      <ul class="points">
-        <li><b>풀스택 웹 · 앱</b><span>Java · Spring Boot · React · React Native</span></li>
-        <li><b>업무 시스템 운영 · 보안</b><span>시스템 5개 단독 운영 · 모의해킹 조치</span></li>
-        <li><b>금융 · 공공 · 제조</b><span>세 분야 7년차 · 정보처리기사</span></li>
-        <li><b>AI 활용 개발</b><span>역할별 AI 에이전트 30+ 운영</span></li>
-      </ul>
-      <div class="cta"><a class="btn main" href="#projects">프로젝트 보기</a><a class="btn sub" href="#contact">문의하기</a></div>
-    </div>
+
+    <ul class="does">
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 5h20l8 8v30H10ZM30 5v8h8M17 29l5 5 10-11"/></svg><div><b>기업 업무 시스템</b><span>권한과 결재, 감사 기록이 필요한 사내 시스템</span></div></li>
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 8h40v32H4ZM4 16h40M18 23l-5 5 5 5M30 23l5 5-5 5M26 21l-4 14"/></svg><div><b>웹 플랫폼</b><span>관리자, 사용자, 공개 홈이 한 줄기로 이어지는 서비스</span></div></li>
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 6h38v36H5ZM17 6v36M17 18h26M9 14h4M9 21h4M9 28h4M24 35v-6M30 35V25M36 35v-9"/></svg><div><b>관리자 페이지</b><span>메뉴가 많아도 헤매지 않는 관리 화면</span></div></li>
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="13" y="3" width="22" height="42" rx="4"/><path d="M21 8h6M21 40h6"/></svg><div><b>SaaS와 앱</b><span>여러 고객이 접속해 쓰는 소프트웨어와 모바일 앱</span></div></li>
+      <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 8h38v28H27l-8 8v-8H5ZM15 22h.01M24 22h.01M33 22h.01"/><path stroke-width="4" d="M15 22h.01M24 22h.01M33 22h.01"/></svg><div><b>AI 서비스</b><span>문서 요약, 챗봇, 채점 자동화처럼 AI를 넣은 기능</span></div></li>
+    </ul>
   </div>
 </header>
 
 <main>
-<section id="impact">
-  <div class="wrap">
-    <div class="head"><h2>숫자로 본 일</h2><p>이력서에 적은 숫자 그대로입니다.</p></div>
-    <div class="kpis">
-      <div class="kpi"><div class="v">13<small>건</small></div><div class="t">공공기관 웹사이트</div><div class="s">새로 5건 · 유지보수 8건 · 1년 2개월</div><div class="bar"></div></div>
-      <div class="kpi"><div class="v">5<small>개</small></div><div class="t">혼자 운영한 사내 업무 시스템</div><div class="s">통합결재 · 자산관리 · 보안 등</div><div class="bar"></div></div>
-      <div class="kpi"><div class="v">40<small>건+</small></div><div class="t">직접 만든 업무 화면</div><div class="s">JSP · JavaScript · jQuery · React</div><div class="bar"></div></div>
-      <div class="kpi"><div class="v">6<small>건</small></div><div class="t">인수인계 없이 혼자 끝낸 기능</div><div class="s">코드만 읽고 구조 파악 · 새 화면 3 · 고도화 3</div><div class="bar"></div></div>
-      <div class="kpi"><div class="v">전부</div><div class="t">모의해킹 취약점 조치</div><div class="s">첨부파일 허용 목록 · URL 인코딩 오류 등</div><div class="bar"></div></div>
-      <div class="kpi"><div class="v">30<small>+</small></div><div class="t">역할별로 운영하는 AI 에이전트</div><div class="s">설계 · 구현 · 검토 · 보안을 나눠 맡김</div><div class="bar"></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="head"><h2>개발을 시작한 이유</h2></div>
-    <div class="story">
+<section class="sec">
+  <div class="wrap why">
+    <h2>불편한 프로그램을 직접 고치고 싶어 개발자가 되었습니다.</h2>
+    <div>
       <p>학원에서 행정 일을 하던 때, 컴퓨터는 새것으로 바뀌는데 업무 프로그램의 불편함은 그대로인 것이 늘 아쉬웠습니다. 직접 고쳐 보자는 마음으로 독학을 시작했고, Java · 웹 · DB 과정을 마치며 개발자가 되었습니다. 일하면서 응용소프트웨어를 전공해 졸업하고 정보처리기사를 땄습니다.</p>
-      <p>그 뒤 금융, 공공, 제조 현장에서 구축과 운영을 고루 해 왔습니다. 지금은 처음 출발점이었던 학원을 위해, 학원 운영 플랫폼 WINO Academy를 만들고 있습니다.</p>
+      <p>그 뒤 금융, 공공, 제조 현장에서 구축과 운영을 고루 해 왔습니다. 지금은 처음 출발점이었던 학원을 위해, 이언에듀케이션의 학원 운영 시스템을 만들고 있습니다.</p>
     </div>
   </div>
 </section>
 
-<section id="work">
+<section class="sec sec-ice" id="projects">
   <div class="wrap">
-    <div class="head"><h2>하는 일</h2><p>기획된 업무를 실제로 돌아가는 시스템으로 만듭니다. 설계부터 개발, 데이터베이스, 운영까지 맡습니다.</p></div>
-    <div class="grid g5">
-      <div class="card"><div class="num">01</div><h3>기업 업무 시스템</h3><p>권한과 결재, 감사 기록이 필요한 사내 업무 시스템을 만듭니다.</p></div>
-      <div class="card"><div class="num">02</div><h3>웹 플랫폼</h3><p>관리자, 사용자, 공개 홈이 한 줄기로 이어지는 서비스를 만듭니다.</p></div>
-      <div class="card"><div class="num">03</div><h3>관리자 페이지</h3><p>메뉴가 많아도 헤매지 않는 관리 화면을 만듭니다.</p></div>
-      <div class="card"><div class="num">04</div><h3>SaaS와 앱</h3><p>여러 고객이 접속해 쓰는 서비스형 소프트웨어와 모바일 앱을 만듭니다.</p></div>
-      <div class="card"><div class="num">05</div><h3>AI 서비스</h3><p>문서 요약, 챗봇, 채점 자동화처럼 AI를 넣은 기능을 만듭니다.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="projects" class="alt">
-  <div class="wrap">
-    <div class="head"><h2>프로젝트</h2><p>금융, 공공, 제조 분야의 업무 시스템을 만들고 운영해 왔습니다.</p></div>
-
-    <!-- 프로젝트 하나 = .proj 블록 하나. 복사해서 늘려요 -->
-    <article class="proj">
-      <div class="body">
-        <span class="tag">학원 운영 플랫폼 · SaaS</span>
-        <h3>WINO Academy</h3>
-        <div class="ms"><span><b>8,989</b>커밋</span><span><b>1년 3개월+</b>2025.08 시작</span><span><b>894개</b>DB 마이그레이션</span><span><b>30+</b>AI 에이전트</span></div><p>학원이 웹으로 접속해 쓰는 운영 플랫폼입니다. 본부와 원장, 직원, 강사가 쓰는 관리자 시스템과 학부모 · 학생 포털, 학원 사이트 홈으로 이루어져 있습니다. 기획부터 배포까지 역할을 나눈 AI 에이전트 팀과 함께 만들고 있습니다.</p>
-        <ul>
-          <li>학생 · 학부모 · 직원 관리와 역할별 권한(RBAC)</li>
-          <li>로그인 보안: 세션 관리, 2단계 인증, 비밀번호 초기화 통제</li>
-          <li>학원(관)별 데이터 분리와 감사 기록</li>
-          <li>게시판 · 공통코드 · 메뉴 관리 같은 운영 기능</li>
-        </ul>
+    <article>
+      <div class="feature">
+        <div>
+          <p class="kind">구축 진행 중 · 학원 통합 운영 시스템 · SaaS</p>
+          <h2>이언에듀케이션 시스템 구축</h2>
+          <p>여러 관을 둔 학원이 상담, 반 편성, 출결, 시험과 성적표, 교재, 수납, 문자, 홈페이지까지 한곳에서 운영하도록 만드는 시스템입니다. 제품 이름은 WInO Academy입니다. 기획부터 설계, 개발, 배포까지 직접 이끌며 역할을 나눈 AI 에이전트 팀과 함께 만들고 있습니다.</p>
+          <ul class="ticks">
+            <li>관리자 · 학부모와 학생 포털 · 공개 홈을 서버 하나로 연결</li>
+            <li>메뉴와 버튼까지 계정마다 다르게 보이는 그룹 권한(RBAC)</li>
+            <li>로그인 보안: 세션 관리, 2단계 인증, 비밀번호 초기화 통제</li>
+            <li>학원(관)별 데이터 분리와 감사 기록</li>
+          </ul>
+          <p class="tech">Java · Spring Boot · Spring Security · React · Next.js · TypeScript · PostgreSQL · Docker · Linux</p>
+        </div>
+        <div class="arch" role="group" aria-label="이언에듀케이션 시스템 구조: 화면 셋이 서버 하나를 거쳐 데이터베이스로 이어집니다">
+        <div class="arch-row">
+          <div class="node"><svg viewBox="0 0 120 74" aria-hidden="true"><rect width="120" height="74" rx="8" fill="#EAF1FB"/><path d="M0 8a8 8 0 0 1 8-8H30V74H8a8 8 0 0 1-8-8Z" fill="#0C3778"/><rect x="40" y="11" width="32" height="22" rx="4" fill="#fff"/><rect x="78" y="11" width="32" height="22" rx="4" fill="#fff"/><rect x="40" y="40" width="70" height="24" rx="4" fill="#fff"/><path d="M47 58V52M56 58V48M65 58V50M74 58V45M83 58V51M92 58V46M101 58V48" stroke="#0C3778" stroke-width="4"/></svg><b>관리자 시스템</b><span>본부 · 원장 · 직원 · 강사</span></div>
+          <div class="node"><svg viewBox="0 0 120 74" aria-hidden="true"><rect width="120" height="74" rx="8" fill="#EAF1FB"/><rect x="38" y="6" width="44" height="76" rx="8" fill="#fff" stroke="#0C3778" stroke-width="3"/><circle cx="60" cy="26" r="8" fill="none" stroke="#0C3778" stroke-width="5"/><rect x="47" y="42" width="26" height="5" rx="2.5" fill="#A9CBFF"/><rect x="47" y="52" width="26" height="5" rx="2.5" fill="#A9CBFF"/><rect x="47" y="62" width="16" height="5" rx="2.5" fill="#A9CBFF"/></svg><b>학부모 · 학생 포털</b><span>가정에서 보는 화면</span></div>
+          <div class="node"><svg viewBox="0 0 120 74" aria-hidden="true"><rect width="120" height="74" rx="8" fill="#EAF1FB"/><rect x="8" y="9" width="104" height="30" rx="5" fill="#0C3778"/><rect x="18" y="18" width="44" height="6" rx="3" fill="#fff"/><rect x="18" y="28" width="28" height="5" rx="2.5" fill="#A9CBFF"/><rect x="8" y="46" width="31" height="20" rx="4" fill="#fff"/><rect x="44.5" y="46" width="31" height="20" rx="4" fill="#fff"/><rect x="81" y="46" width="31" height="20" rx="4" fill="#fff"/></svg><b>학원 사이트 홈</b><span>누구나 보는 공개 홈</span></div>
+        </div>
+        <div class="wire" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="core"><b>Spring Boot API</b><p>로그인 보안 · 역할별 권한 · 감사 기록</p></div>
+        <div class="wire wire-1" aria-hidden="true"><i></i></div>
+        <div class="data"><b>PostgreSQL</b><p>학원(관)별 데이터 분리</p></div>
       </div>
-      <div class="side">
-        <h4>맡은 범위</h4>
-        <p>개인 프로젝트입니다. 기획과 설계, 개발, 배포를 직접 이끌고 있습니다.</p>
-        <h4>기술</h4>
-        <div class="chips"><span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>React</span><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Docker</span><span>Linux</span></div>
-        <h4>기간</h4>
-        <p>2025.08 ~ 진행 중</p>
+      </div>
+
+      <dl class="totals">
+        <div><dt>메뉴</dt><dd>177</dd></div>
+        <div><dt>화면</dt><dd>358</dd></div>
+        <div><dt>서버 API</dt><dd>1,500+</dd></div>
+        <div><dt>DB 마이그레이션</dt><dd>936</dd></div>
+        <div><dt>화면 자동 시험</dt><dd>34,308</dd></div>
+        <div><dt>커밋</dt><dd>9,000+</dd></div>
+      </dl>
+      <p class="note">2026년 11월 26일 저장소에서 잰 값입니다. 2025년 8월에 시작해 진행 중이며, 역할을 나눈 AI 에이전트 30개 이상을 함께 운영합니다.</p>
+
+      <div class="deep">
+        <h3>누가 무엇을 하나요</h3>
+        <div class="who">
+          <div><b>본사 · 원장</b><p>전관 통합 조회, 과목과 반 규칙, 장학 정책, 사업자와 급여 자료, 가맹 현황을 관리합니다.</p></div>
+          <div><b>관 관리자 · 강사 · 직원</b><p>상담과 반 편성, 출석부, 관리일지, 숙제, 시험 출제와 채점, 청구와 수납, 문자 발송을 처리합니다.</p></div>
+          <div><b>학부모 · 학생</b><p>시간표, 출결, 성적표, 숙제, 가정통신문, 특강 신청, 차량 정보를 휴대폰에서 확인합니다.</p></div>
+        </div>
+      </div>
+
+      <div class="deep">
+        <h3>업무 열여섯 묶음, 메뉴 177개</h3>
+        <p class="sub">칸 하나가 메뉴 하나입니다. 같은 시스템도 로그인한 계정의 권한에 따라 보이는 메뉴와 버튼이 다릅니다.</p>
+        <ul class="areas">
+          <li><b>수업관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>10</span></li>
+          <li><b>학생관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>12</span></li>
+          <li><b>상담관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i></div><span>3</span></li>
+          <li><b>학습관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>10</span></li>
+          <li><b>시험 · 출제</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>8</span></li>
+          <li><b>성적관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>12</span></li>
+          <li><b>교재 관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>7</span></li>
+          <li><b>수납관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>11</span></li>
+          <li><b>문자관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>11</span></li>
+          <li><b>인트라넷</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>8</span></li>
+          <li><b>게시판</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><span>6</span></li>
+          <li><b>공개홈 · 마케팅</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><span>5</span></li>
+          <li><b>직원 · 급여 · 사업자</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>12</span></li>
+          <li><b>본부 관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><span>6</span></li>
+          <li><b>운영 · 설정</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>20</span></li>
+          <li><b>학부모 · 학생 포털</b><div class="cells p" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>36</span></li>
+        </ul>
+        <p class="legend"><span><i class="key"></i>관리자 화면</span><span><i class="key p"></i>학부모 · 학생 화면</span></p>
+      </div>
+
+      <div class="deep">
+        <h3>어떻게 풀었나요</h3>
+        <div class="solve">
+          <div><b>역할을 코드에 박지 않습니다</b><p>권한은 관리자 화면의 그룹권한 관리에서 정합니다. 메뉴와 버튼을 읽기 · 쓰기로 나누고, 서버도 같은 권한으로 확인합니다.</p></div>
+          <div><b>학원끼리 자료가 섞이지 않습니다</b><p>학원을 나누는 규칙을 서버와 PostgreSQL 행 단위 보안(RLS) 두 곳에 두었습니다.</p></div>
+          <div><b>누가 무엇을 바꿨는지 남습니다</b><p>중요한 저장과 조회를 감사 로그로 남기고, 관리자 화면에서 찾아볼 수 있습니다.</p></div>
+          <div><b>개발자 없이 홈페이지를 고칩니다</b><p>홈 빌더에서 끌어 놓아 화면을 만듭니다. 팝업도 관리자 화면에서 바꿉니다.</p></div>
+          <div><b>시험부터 성적표까지 잇습니다</b><p>문항은행으로 시험지를 만들고, 답안지를 OCR로 읽어 검수한 뒤 성적표로 이어집니다. 코멘트 쓰기는 AI가 돕습니다.</p></div>
+          <div><b>판마다 자동 시험으로 확인합니다</b><p>하루 네 번 새 판을 개발 서버에 올리고, 판마다 화면 시험 34,308개와 서버 시험을 돌립니다.</p></div>
+        </div>
       </div>
     </article>
+  </div>
+</section>
 
-    <h3 class="subhead">직접 만든 서비스</h3>
-    <div class="grid g4">
-      <div class="card"><div class="num">APP</div><h3>더푼다 보카</h3><div class="ms"><span><b>523</b>커밋</span><span><b>40일</b>첫 커밋부터</span><span><b>3곳</b>iOS · 안드로이드 · 웹</span></div><p>영어 단어 학습 앱입니다. iOS, 안드로이드, 웹을 한 코드로 만들었고 학생 앱과 관리자 화면, 서버를 혼자 개발했습니다.</p><p class="tech" style="margin-top:8px;font-size:13px">React Native(Expo) · TypeScript · Next.js · Spring Boot · PostgreSQL</p></div>
-      <div class="card"><div class="num">WEB · CMS</div><h3>영어캠프 홈페이지 · 관리자 CMS</h3><div class="ms"><span><b>15</b>커밋</span><span><b>6일</b>첫 커밋부터</span></div><p>영어캠프 홈페이지와 내용을 고치는 관리자 화면을 만들었습니다. 화면, 관리자 메뉴, DB 마이그레이션까지 맡았습니다.</p><p class="tech" style="margin-top:8px;font-size:13px">Spring Boot 3 · Java 17 · JSP · MariaDB · Flyway</p></div>
+<section class="sec" id="client">
+  <div class="wrap">
+    <div class="sec-head"><h2>회사에서 맡은 프로젝트</h2><p class="sub">2026년 4월부터 하이씨엔씨에서 제조, 대학, 교육 고객의 시스템을 맡고 있습니다.</p></div>
+    <div class="duo duo-top">
+      <article class="work">
+        <div class="shot">
+          <svg viewBox="0 0 560 330" role="img" aria-label="MiPlatform 화면이 React 화면으로 바뀌는 그림">
+            <rect width="560" height="330" fill="#0C3778"/>
+            <rect x="34" y="64" width="212" height="202" rx="8" fill="#DCE7F8"/><path d="M34 72a8 8 0 0 1 8-8H238a8 8 0 0 1 8 8V96H34Z" fill="#8FA6C9"/><text x="48" y="87" font-size="18" font-weight="700" fill="#fff">MiPlatform</text><g fill="#fff"><rect x="212" y="75" width="10" height="10"/><rect x="227" y="75" width="10" height="10"/></g>
+            <g fill="#fff"><rect x="48" y="110" width="184" height="22"/><rect x="48" y="136" width="184" height="22"/><rect x="48" y="162" width="184" height="22"/><rect x="48" y="188" width="184" height="22"/><rect x="48" y="214" width="184" height="22"/></g><rect x="48" y="110" width="184" height="22" fill="#B8C9E3"/><path d="M94 110V236M140 110V236M186 110V236" stroke="#DCE7F8" stroke-width="3"/><g fill="#8FA6C9"><rect x="55" y="144" width="30" height="6"/><rect x="101" y="144" width="26" height="6"/><rect x="147" y="144" width="30" height="6"/><rect x="55" y="170" width="24" height="6"/><rect x="101" y="170" width="30" height="6"/><rect x="193" y="170" width="28" height="6"/><rect x="55" y="196" width="30" height="6"/><rect x="147" y="196" width="22" height="6"/><rect x="193" y="196" width="30" height="6"/></g>
+            <path d="M262 165H306" stroke="#A9CBFF" stroke-width="5" stroke-linecap="round"/><path d="M294 151 309 165 294 179" fill="none" stroke="#A9CBFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="324" y="46" width="206" height="238" rx="14" fill="#fff"/><path d="M324 60a14 14 0 0 1 14-14H516a14 14 0 0 1 14 14V80H324Z" fill="#A9CBFF"/><text x="340" y="70" font-size="18" font-weight="800" fill="#0C3778" style="font-family:var(--disp)">React</text>
+            <rect x="340" y="96" width="82" height="56" rx="10" fill="#E3EDFC"/><rect x="432" y="96" width="82" height="56" rx="10" fill="#E3EDFC"/><rect x="352" y="108" width="36" height="7" rx="3.5" fill="#A9BFE0"/><rect x="352" y="124" width="52" height="13" rx="5" fill="#0C3778"/><rect x="444" y="108" width="36" height="7" rx="3.5" fill="#A9BFE0"/><rect x="444" y="124" width="42" height="13" rx="5" fill="#0C3778"/>
+            <rect x="340" y="164" width="174" height="62" rx="10" fill="#E3EDFC"/><path d="M358 214V200M378 214V188M398 214V194M418 214V180M438 214V186M458 214V176M478 214V190M496 214V182" stroke="#0C3778" stroke-width="9" stroke-linecap="round"/>
+            <rect x="434" y="240" width="80" height="28" rx="14" fill="#0C3778"/><text x="474" y="259" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">저장</text><rect x="340" y="250" width="66" height="8" rx="4" fill="#CBD8EC"/>
+          </svg>
+        </div>
+        <div>
+          <p class="kind">2026.10.19 – 진행 중</p>
+          <h3>현대자동차 MiPlatform → React 전환</h3>
+          <p class="sub">MiPlatform(마이플랫폼)으로 만든 화면을 React로 옮기는 전환 프로젝트를 진행하고 있습니다.</p>
+          <p class="tech">React · MiPlatform</p>
+        </div>
+      </article>
+      <article class="work">
+        <div class="shot shot-ice">
+          <svg viewBox="0 0 560 330" role="img" aria-label="통합 로그인 하나에 패스포트, 얼굴 인증, PIN, 패턴, ZOTP 다섯 가지 2차 인증이 이어진 그림">
+            <rect width="560" height="330" fill="#DCE8FA"/>
+            <rect x="172" y="30" width="216" height="108" rx="16" fill="#0C3778"/><text x="280" y="76" text-anchor="middle" font-size="25" font-weight="800" fill="#fff">통합 로그인</text><text x="280" y="108" text-anchor="middle" font-size="20" font-weight="600" fill="#A9CBFF" style="font-family:var(--disp)">SSO</text>
+            <path d="M280 138V168M66 190V180a12 12 0 0 1 12-12H482a12 12 0 0 1 12 12V190M173 168V190M280 168V190M387 168V190" fill="none" stroke="#0C3778" stroke-width="3"/>
+            <g fill="#fff"><rect x="16" y="190" width="100" height="112" rx="14"/><rect x="123" y="190" width="100" height="112" rx="14"/><rect x="230" y="190" width="100" height="112" rx="14"/><rect x="337" y="190" width="100" height="112" rx="14"/><rect x="444" y="190" width="100" height="112" rx="14"/></g>
+            <g font-size="19" font-weight="700" fill="#0B1220" text-anchor="middle"><text x="66" y="286">패스포트</text><text x="173" y="286">얼굴</text><text x="280" y="286">PIN</text><text x="387" y="286">패턴</text><text x="494" y="286">ZOTP</text></g>
+            <g fill="none" stroke="#0C3778" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="46" y="206" width="40" height="52" rx="7"/><circle cx="66" cy="226" r="8"/><path d="M57 246H75"/>
+              <path d="M153 218V212a6 6 0 0 1 6-6H165M181 206H187a6 6 0 0 1 6 6V218M193 246V252a6 6 0 0 1-6 6H181M165 258H159a6 6 0 0 1-6-6V246M167 224V228M179 224V228M165 241a12 12 0 0 0 16 0"/>
+              <path d="M367 212 387 212 387 232 407 252 367 252"/>
+              <circle cx="494" cy="232" r="25"/><path d="M494 217V232L504 240"/>
+            </g>
+            <g fill="#0C3778"><circle cx="256" cy="232" r="6"/><circle cx="272" cy="232" r="6"/><circle cx="288" cy="232" r="6"/><circle cx="304" cy="232" r="6"/><circle cx="367" cy="212" r="6"/><circle cx="387" cy="212" r="6"/><circle cx="407" cy="212" r="6"/><circle cx="367" cy="232" r="6"/><circle cx="387" cy="232" r="6"/><circle cx="407" cy="232" r="6"/><circle cx="367" cy="252" r="6"/><circle cx="387" cy="252" r="6"/><circle cx="407" cy="252" r="6"/></g>
+          </svg>
+        </div>
+        <div>
+          <p class="kind">대학 · 보안 인증</p>
+          <h3>서정대학교 SSO · 2차 인증 구축</h3>
+          <p class="sub">통합 로그인(SSO)과 2차 인증 구축을 맡았습니다. 인증 수단은 한컴위드 패스포트, 얼굴 인증, PIN, 패턴, ZOTP입니다.</p>
+          <p class="tech">SSO · 2차 인증 · 한컴위드 패스포트 · ZOTP</p>
+        </div>
+      </article>
     </div>
-    <h3 class="subhead">경력 프로젝트</h3>
-    <div class="gantt" role="img" aria-label="2020년 11월부터 2026년 11월까지 경력과 개인 프로젝트 기간">
-<div class="gr"><span>대학 연구 프로젝트</span><div class="gt"><i style="left:0.0%;width:8.3%"></i></div></div>
-<div class="gr"><span>자산신탁 인사 시스템</span><div class="gt"><i style="left:8.3%;width:12.5%"></i></div></div>
-<div class="gr"><span>자산신탁 고도화</span><div class="gt"><i style="left:20.8%;width:4.2%"></i></div></div>
-<div class="gr"><span>IT 기업 구매 시스템</span><div class="gt"><i style="left:25.0%;width:12.5%"></i></div></div>
-<div class="gr"><span>공공기관 웹사이트</span><div class="gt"><i style="left:38.9%;width:18.1%"></i></div></div>
-<div class="gr"><span>사내 업무 시스템 운영</span><div class="gt"><i style="left:58.3%;width:30.6%"></i></div></div>
-<div class="gr"><span>웹 개발</span><div class="gt"><i style="left:90.3%;width:9.7%"></i></div></div>
-<div class="gr me"><span>WINO Academy</span><div class="gt"><i style="left:79.2%;width:20.8%"></i></div></div>
-<div class="gr me"><span>영어캠프 CMS</span><div class="gt"><i style="left:86.1%;width:1.2%"></i></div></div>
-<div class="gr me"><span>더푼다 보카</span><div class="gt"><i style="left:97.2%;width:2.8%"></i></div></div>
-      <div class="gax"><span></span><div><span style="left:2.8%">2021</span><span style="left:19.4%">2022</span><span style="left:36.1%">2023</span><span style="left:52.8%">2024</span><span style="left:69.4%">2025</span><span style="left:86.1%">2026</span></div></div>
-      <p class="gnote">주황 = 개인 프로젝트(일과 함께 진행)</p>
+    <div class="more">
+      <div><p class="kind">대학</p><h3>서울예술대학교 관리자 시스템 개편</h3></div>
+      <div><p class="kind">교육</p><h3>시대인재 유지보수</h3></div>
     </div>
-    <!-- 한 줄 = .job 하나. 고객사 이름은 공개해도 되는지 확인한 뒤에 넣어요(지금은 업종으로만 적었어요) -->
-    <ol class="jobs">
-      <li class="job"><div class="when">2026.04 ~ 2026.11</div><div><b>웹 개발</b><p><span class="todo">[맡은 일 확인 뒤 입력]</span></p></div></li>
-      <li class="job"><div class="when">2024.05 ~ 2026.03</div><div><b>제조 대기업 사내 업무 시스템 5개 단독 운영</b><div class="ms"><span><b>5개</b>시스템 단독</span><span><b>연 5~10건</b>개선 요청 처리</span><span><b>전부</b>취약점 조치</span></div><p>통합결재, 자산관리, 소프트웨어 관리, 보안, 홈페이지 다섯 시스템을 혼자 맡았습니다. 기능 개선 요청을 분석부터 개발, 배포까지 처리했고, 모의해킹에서 나온 보안 취약점을 모두 조치했습니다.</p><div class="tech">Java · Spring · Nexacro · Linux · Tomcat · Wildfly · GitLab</div></div></li>
-      <li class="job"><div class="when">2023.03 ~ 2024.04</div><div><b>공공기관 웹사이트 13건 구축 · 유지보수</b><div class="ms"><span><b>13건</b>신규 5 · 유지보수 8</span><span><b>3인</b>개발 · 퍼블 · 디자인</span></div><p>새로 5건을 만들고 8건을 유지보수했습니다. 기관 담당자와 직접 협의해 요구사항 정의부터 오픈까지 맡았고, 관리자 페이지와 게시판, 권한 관리, 조회 · 통계 기능을 만들었습니다.</p><div class="tech">Java · eGovFrame · MyBatis · JSP · jQuery · Linux · Tomcat</div></div></li>
-      <li class="job"><div class="when">2022.05 ~ 2023.02</div><div><b>IT 기업 구매 시스템 구축</b><div class="ms"><span><b>15건</b>React 화면</span></div><p>React로 구매 · 계약 화면 약 15건을 만들고 서버 API와 연결했습니다.</p><div class="tech">React · Java · MySQL</div></div></li>
-      <li class="job"><div class="when">2022.02 ~ 2022.05</div><div><b>자산신탁사 업무 시스템 단독 투입</b><div class="ms"><span><b>6건</b>혼자 완수</span><span><b>3개월</b>단독 투입</span></div><p>인수인계 문서 없이 코드를 읽어 구조를 파악한 뒤, 새 화면 3건과 기능 고도화 3건을 혼자 마쳤습니다.</p><div class="tech">Java · BXM Framework</div></div></li>
-      <li class="job"><div class="when">2021.05 ~ 2022.02</div><div><b>자산신탁사 인사 시스템 구축</b><div class="ms"><span><b>15건</b>새 화면 10 · 교차 점검 5</span></div><p>인사 업무 화면 약 10건을 새로 만들고, 오픈 전에 다른 화면 5건을 교차 점검해 오류를 고쳤습니다.</p><div class="tech">Java · BXM Framework(AngularJS) · Oracle · MySQL</div></div></li>
-      <li class="job"><div class="when">2020.11 ~ 2021.05</div><div><b>대학 연구 프로젝트</b><p>지도와 분포도를 그려 보여 주는 기능을 2인 개발로 만들었습니다.</p><div class="tech">Java · JavaScript</div></div></li>
+  </div>
+</section>
+
+<section class="sec sec-ice" id="service">
+  <div class="wrap">
+    <div class="sec-head"><h2>직접 만든 서비스</h2></div>
+    <article class="punda">
+      <div class="punda-top">
+        <div>
+          <p class="kind">영어 단어 학습 앱 · 출시 준비 중</p>
+          <h3><img src="img/punda-mark.png" alt="" width="280" height="272">더푼다</h3>
+          <p class="one">하루 5분, 10단어. 푼다랑 같이 풀어요!</p>
+          <p>학원 학생이 매일 10단어씩 익히는 앱입니다. 학생은 선생님이 준 코드로 시작하고, 학원은 관리자 화면에서 단어장과 반별 배정, 신고를 다룹니다. 학생 앱과 관리자 화면, 서버를 혼자 개발했습니다.</p>
+          <ul class="ticks">
+            <li>뜻 고르기 · 철자 쓰기로 출제와 채점, 틀린 단어는 다시 복습</li>
+            <li>학생마다 다르게 섞어 내는 문제</li>
+            <li>경험치 · 레벨 · 연속 학습 · 뱃지 · 랭킹 · 푼다 오락실</li>
+            <li>관리자: 학생 · 단어장 · 반별 배정 · 신고함 · 감사 기록</li>
+          </ul>
+          <p class="tech">React Native(Expo) · TypeScript · Next.js · Spring Boot · PostgreSQL · OpenAPI</p>
+        </div>
+        <div>
+          <div class="phones" tabindex="0" role="group" aria-label="더푼다 화면 세 장">
+            <figure><div class="ph"><img src="img/punda-login.png" alt="더푼다 로그인 화면. 캐릭터 푼다와 학원 연결 코드 입력칸" width="600" height="1131" loading="lazy"></div><figcaption>학원 코드로 시작</figcaption></figure>
+            <figure><div class="ph">
+              <svg viewBox="0 0 382 720" role="img" aria-label="단어 문제를 푸는 화면. 용감한의 영어 단어로 brave를 골랐다">
+                <rect width="382" height="720" fill="#F7F2FE"/>
+                <circle cx="44" cy="52" r="20" fill="#EEE5FD"/><path d="M37 45 51 59M51 45 37 59" stroke="#5E5468" stroke-width="3" stroke-linecap="round"/>
+                <rect x="246" y="34" width="74" height="36" rx="18" fill="#EEE5FD"/><text x="283" y="58" text-anchor="middle" font-size="17" font-weight="800" fill="#5A22B8">3 / 10</text>
+                <clipPath id="pfA"><circle cx="346" cy="52" r="19"/></clipPath><image href="img/punda-face.png" x="327" y="33" width="38" height="38" clip-path="url(#pfA)"/>
+                <rect x="24" y="90" width="334" height="11" rx="5.5" fill="#DCCBF7"/><rect x="24" y="90" width="100" height="11" rx="5.5" fill="#7236E0"/>
+                <rect x="24" y="126" width="334" height="200" rx="24" fill="#fff" stroke="#E6E0ED" stroke-width="1.5"/>
+                <rect x="158" y="146" width="66" height="30" rx="15" fill="#EEE5FD"/><text x="191" y="167" text-anchor="middle" font-size="15" font-weight="700" fill="#5A22B8">형용사</text>
+                <text x="191" y="223" text-anchor="middle" font-size="36" font-weight="800" fill="#1C1224">용감한</text>
+                <text x="191" y="254" text-anchor="middle" font-size="16.5" font-weight="500" fill="#5E5468">알맞은 영어 단어를 골라 보세요</text>
+                <rect x="112" y="272" width="158" height="36" rx="18" fill="#EEE5FD"/><path d="M130 286v8h5l7 6v-20l-7 6Z" fill="#7236E0"/><path d="M147 284a8 8 0 0 1 0 12" fill="none" stroke="#7236E0" stroke-width="2.4" stroke-linecap="round"/><text x="205" y="295" text-anchor="middle" font-size="14.5" font-weight="700" fill="#5A22B8">원어민 발음</text>
+                <g font-size="20" font-weight="700" fill="#1C1224" style="font-family:var(--disp)">
+                  <rect x="24" y="352" width="334" height="58" rx="18" fill="#EEE5FD" stroke="#7236E0" stroke-width="2.5"/><circle cx="56" cy="381" r="15" fill="#7236E0"/><text x="84" y="388" fill="#5A22B8">brave</text><circle cx="330" cy="381" r="12" fill="#7236E0"/><path d="M324 381 329 386 337 376" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="24" y="422" width="334" height="58" rx="18" fill="#fff" stroke="#E6E0ED" stroke-width="1.5"/><circle cx="56" cy="451" r="15" fill="#F3ECFD"/><text x="84" y="458">kind</text><circle cx="330" cy="451" r="11" fill="none" stroke="#DDD4EA" stroke-width="2"/>
+                  <rect x="24" y="492" width="334" height="58" rx="18" fill="#fff" stroke="#E6E0ED" stroke-width="1.5"/><circle cx="56" cy="521" r="15" fill="#F3ECFD"/><text x="84" y="528">quiet</text><circle cx="330" cy="521" r="11" fill="none" stroke="#DDD4EA" stroke-width="2"/>
+                  <rect x="24" y="562" width="334" height="58" rx="18" fill="#fff" stroke="#E6E0ED" stroke-width="1.5"/><circle cx="56" cy="591" r="15" fill="#F3ECFD"/><text x="84" y="598">tired</text><circle cx="330" cy="591" r="11" fill="none" stroke="#DDD4EA" stroke-width="2"/>
+                </g>
+                <g font-size="15" font-weight="800" text-anchor="middle" style="font-family:var(--disp)"><text x="56" y="386.5" fill="#fff">1</text><text x="56" y="456.5" fill="#5A22B8">2</text><text x="56" y="526.5" fill="#5A22B8">3</text><text x="56" y="596.5" fill="#5A22B8">4</text></g>
+                <path d="M0 640H382V720H0Z" fill="#fff"/><rect x="24" y="650" width="334" height="56" rx="18" fill="#5A22B8"/><rect x="24" y="650" width="334" height="51" rx="18" fill="#7236E0"/><text x="191" y="683" text-anchor="middle" font-size="19" font-weight="800" fill="#fff">정답 확인하기</text>
+              </svg>
+            </div><figcaption>하루 10단어 풀기</figcaption></figure>
+            <figure><div class="ph">
+              <svg viewBox="0 0 382 720" role="img" aria-label="푼다 오락실 결과 화면. 12단계를 통과해 보상을 받았다">
+                <rect width="382" height="720" fill="#3C0058"/><circle cx="330" cy="120" r="150" fill="#5A22B8" opacity=".35"/><circle cx="40" cy="600" r="170" fill="#5A22B8" opacity=".28"/>
+                <g fill="#FFC53D"><circle cx="66" cy="112" r="3.5"/><circle cx="322" cy="92" r="3"/><circle cx="300" cy="140" r="2.5"/></g>
+                <circle cx="44" cy="52" r="20" fill="#fff" opacity=".16"/><path d="M37 45 51 59M51 45 37 59" stroke="#fff" stroke-width="3" stroke-linecap="round"/><text x="191" y="59" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">푼다 오락실</text>
+                <rect x="24" y="126" width="334" height="414" rx="26" fill="#fff"/>
+                <rect x="116" y="108" width="150" height="38" rx="19" fill="#FFF3D1" stroke="#FFC53D" stroke-width="2"/><text x="191" y="133" text-anchor="middle" font-size="16" font-weight="800" fill="#8A5E00">최고 기록 달성!</text>
+                <clipPath id="pfB"><circle cx="191" cy="222" r="58"/></clipPath><image href="img/punda-face.png" x="133" y="164" width="116" height="116" clip-path="url(#pfB)"/>
+                <text x="191" y="326" text-anchor="middle" font-size="32" font-weight="800" fill="#1C1224">12단계 통과!</text>
+                <path d="M134.0 345.0L139.9 357.8L154.0 359.5L143.6 369.1L146.3 383.0L134.0 376.1L121.7 383.0L124.4 369.1L114.0 359.5L128.1 357.8Z" fill="#FFC53D" stroke="#26003A" stroke-width="3" stroke-linejoin="round"/><path d="M191.0 336.0L198.3 351.9L215.7 354.0L202.9 365.9L206.3 383.0L191.0 374.5L175.7 383.0L179.1 365.9L166.3 354.0L183.7 351.9Z" fill="#FFC53D" stroke="#26003A" stroke-width="3" stroke-linejoin="round"/><path d="M248.0 345.0L253.9 357.8L268.0 359.5L257.6 369.1L260.3 383.0L248.0 376.1L235.7 383.0L238.4 369.1L228.0 359.5L242.1 357.8Z" fill="#FFC53D" stroke="#26003A" stroke-width="3" stroke-linejoin="round"/>
+                <g fill="#FAF8FC" stroke="#E6E0ED" stroke-width="1.5"><rect x="42" y="404" width="94" height="66" rx="14"/><rect x="144" y="404" width="94" height="66" rx="14"/><rect x="246" y="404" width="94" height="66" rx="14"/></g>
+                <g font-size="14" font-weight="600" fill="#5E5468" text-anchor="middle"><text x="89" y="428">맞힘</text><text x="191" y="428">최대 콤보</text><text x="293" y="428">걸린 시간</text></g>
+                <g font-size="20" font-weight="800" text-anchor="middle"><text x="89" y="456" fill="#18A06A">18개</text><text x="191" y="456" fill="#7236E0">7회</text><text x="293" y="456" fill="#1C1224">42초</text></g>
+                <rect x="42" y="482" width="298" height="42" rx="14" fill="#EEE5FD"/><text x="191" y="509" text-anchor="middle" font-size="16.5" font-weight="700" fill="#5A22B8">+35 XP · 황금 당근 +1</text>
+                <rect x="24" y="572" width="334" height="56" rx="18" fill="#D99A12"/><rect x="24" y="572" width="334" height="51" rx="18" fill="#FFC53D"/><text x="191" y="605" text-anchor="middle" font-size="19" font-weight="800" fill="#26003A">다음 단계</text>
+                <rect x="24" y="640" width="334" height="52" rx="18" fill="#fff"/><text x="191" y="672" text-anchor="middle" font-size="18" font-weight="700" fill="#26003A">다시 하기</text>
+              </svg>
+            </div><figcaption>푼다 오락실</figcaption></figure>
+          </div>
+        </div>
+      </div>
+      <div class="punda-low">
+        <dl>
+          <div><dt>커밋</dt><dd>523</dd></div>
+          <div><dt>첫 커밋부터</dt><dd>40일</dd></div>
+          <div><dt>화면 (학생 22 · 관리자 21)</dt><dd>43</dd></div>
+          <div><dt>iOS · 안드로이드 · 웹</dt><dd>3곳</dd></div>
+        </dl>
+        <figure><img src="img/punda-admin.png" alt="더푼다 관리자 대시보드. 학습한 학생, 완료율, 문제 유형별 정답률" width="1440" height="640" loading="lazy"></figure>
+      </div>
+      <p class="note">로그인과 관리자 화면은 실제 화면, 문제 풀기와 오락실은 앱 디자인을 그린 그림입니다. 관리자 화면 속 숫자는 시험 자료입니다.</p>
+    </article>
+    <article class="work work-row">
+        <div class="shot shot-ice">
+          <svg viewBox="0 0 560 330" role="img" aria-label="관리자 화면에서 고친 내용이 홈페이지에 나타나는 그림">
+            <rect width="560" height="330" fill="#DCE8FA"/>
+            <!-- 홈페이지 -->
+            <rect x="230" y="40" width="288" height="196" rx="12" fill="#fff"/><path d="M230 52a12 12 0 0 1 12-12H506a12 12 0 0 1 12 12V66H230Z" fill="#0C3778"/><g fill="#A9CBFF"><circle cx="247" cy="53" r="4"/><circle cx="261" cy="53" r="4"/><circle cx="275" cy="53" r="4"/></g>
+            <rect x="246" y="80" width="256" height="78" rx="8" fill="#A9CBFF"/><path d="M246 158l58-46 42 32 40-26 116 40v0a8 8 0 0 1-8 8H254a8 8 0 0 1-8-8Z" fill="#0C3778"/><circle cx="462" cy="104" r="12" fill="#fff"/>
+            <text x="318" y="194" font-size="20" font-weight="800" fill="#0B1220">영어캠프</text><rect x="318" y="207" width="96" height="8" rx="4" fill="#CBD8EC"/><rect x="432" y="182" width="70" height="28" rx="14" fill="#0C3778"/>
+            <!-- 관리자 -->
+            <rect x="46" y="112" width="250" height="182" rx="12" fill="#fff" stroke="#0C3778" stroke-width="4"/>
+            <text x="66" y="146" font-size="16" font-weight="700" fill="#0B1220">내용 고치기</text>
+            <rect x="66" y="162" width="210" height="32" rx="7" fill="#EAF1FB"/><text x="78" y="183" font-size="15" font-weight="600" fill="#0C3778">영어캠프</text><rect x="143" y="169" width="2" height="18" fill="#0C3778"/>
+            <rect x="66" y="204" width="210" height="32" rx="7" fill="#EAF1FB"/><rect x="78" y="216" width="112" height="8" rx="4" fill="#B8C9E3"/>
+            <rect x="206" y="248" width="70" height="30" rx="15" fill="#0C3778"/><text x="241" y="268" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">저장</text>
+            <path d="M300 262C352 270 376 258 388 244" fill="none" stroke="#0C3778" stroke-width="4" stroke-linecap="round"/><path d="M376 244 390 240 393 254" fill="none" stroke="#0C3778" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <h3>영어캠프 홈페이지 · 관리자 CMS</h3>
+          <p class="sub">영어캠프 홈페이지와 내용을 고치는 관리자 화면을 만들었습니다. 화면, 관리자 메뉴, DB 마이그레이션까지 맡았습니다.</p>
+          <p class="facts"><span><b>15</b>커밋</span><span><b>6일</b>첫 커밋부터</span></p>
+          <p class="tech">Spring Boot 3 · Java 17 · JSP · MariaDB · Flyway</p>
+        </div>
+      </article>
+  </div>
+</section>
+
+<section class="sec" id="numbers">
+  <div class="wrap">
+    <div class="sec-head"><h2>숫자로 본 일</h2><p class="sub">이력서에 적은 숫자 그대로입니다. 칸 하나가 한 건입니다.</p></div>
+    <div class="figs">
+      <div class="fig"><p class="v">13<small>건</small></p><b>공공기관 웹사이트</b><div><p class="sub">새로 5건 · 유지보수 8건 · 1년 2개월</p><svg class="unit" viewBox="0 0 260 19" aria-hidden="true"><rect width="98" height="16" fill="url(#uS)"/><rect x="100" width="158" height="16" fill="url(#uL)"/></svg></div></div>
+      <div class="fig"><p class="v">5<small>개</small></p><b>혼자 운영한 사내 업무 시스템</b><div><p class="sub">통합결재 · 자산관리 · 소프트웨어 관리 · 보안 · 홈페이지</p><svg class="unit" viewBox="0 0 260 19" aria-hidden="true"><rect width="98" height="16" fill="url(#uS)"/></svg></div></div>
+      <div class="fig"><p class="v">40<small>건+</small></p><b>직접 만든 업무 화면</b><div><p class="sub">JSP · JavaScript · jQuery · React</p><svg class="unit" viewBox="0 0 260 76" aria-hidden="true"><rect width="198" height="73" fill="url(#uS)"/></svg></div></div>
+      <div class="fig"><p class="v">6<small>건</small></p><b>인수인계 없이 혼자 끝낸 기능</b><div><p class="sub">코드만 읽고 구조 파악 · 새 화면 3 · 고도화 3</p><svg class="unit" viewBox="0 0 260 19" aria-hidden="true"><rect width="58" height="16" fill="url(#uS)"/><rect x="60" width="58" height="16" fill="url(#uL)"/></svg></div></div>
+      <div class="fig"><p class="v">전부</p><b>모의해킹 취약점 조치</b><div><p class="sub">첨부파일 허용 목록 · URL 인코딩 오류 등</p><svg class="unit" viewBox="0 0 260 44" aria-hidden="true"><circle cx="22" cy="22" r="15" fill="none" stroke="#0C3778" stroke-width="13"/></svg></div></div>
+      <div class="fig"><p class="v">30+</p><b>역할별로 운영하는 AI 에이전트</b><div><p class="sub">설계 · 구현 · 검토 · 보안을 나눠 맡김</p><svg class="unit" viewBox="0 0 260 60" aria-hidden="true"><rect width="198" height="58" fill="url(#uR)"/></svg></div></div>
+    </div>
+    <p class="legend"><span>채운 칸 = 새로 만든 것 · 맡은 것</span><span>빈 칸 = 유지보수 · 고도화</span></p>
+  </div>
+</section>
+
+<section class="sec" id="career" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>경력</h2><p class="sub">2020년 11월부터 지금까지, 막대 한 줄이 실제 기간입니다.</p></div>
+    <div class="cv-axis" aria-hidden="true"><div><span style="left:2.74%">2021</span><span style="left:19.18%">2022</span><span style="left:35.62%">2023</span><span style="left:52.05%">2024</span><span style="left:68.49%">2025</span><span style="left:84.93%">2026</span></div></div>
+
+    <!-- 한 줄 = .cv-row 하나. --s = 2020.11 부터 몇 달째 시작, --d = 몇 달 동안. 2026.04 앞의 고객사는 업종으로만 적었어요 -->
+    <p class="cv-group">경력 프로젝트</p>
+    <ol>
+      <li class="cv-row now" style="--s:71.6;--d:1.27"><p class="when">2026.10.19 –</p><div class="track"><i></i></div><div class="what"><h3>현대자동차 MiPlatform → React 전환</h3><p>MiPlatform으로 만든 화면을 React로 옮기는 전환 프로젝트를 진행하고 있습니다.</p><p class="tech">React · MiPlatform</p></div></li>
+      <li class="cv-row now" style="--s:65;--d:7.87"><p class="when">2026.04 –</p><div class="track"><i></i></div><div class="what"><h3>하이씨엔씨</h3><ul class="jobs"><li>현대자동차 React 프로젝트</li><li>서정대학교 SSO · 2차 인증 구축 (한컴위드 패스포트 · 얼굴 인증 · PIN · 패턴 · ZOTP)</li><li>서울예술대학교 관리자 시스템 개편</li><li>시대인재 유지보수</li></ul></div></li>
+      <li class="cv-row" style="--s:42;--d:22"><p class="when">2024.05 – 2026.03</p><div class="track"><i></i></div><div class="what"><h3>제조 대기업 사내 업무 시스템 5개 단독 운영</h3><p class="facts"><span><b>5개</b>시스템 단독</span><span><b>연 5~10건</b>개선 요청 처리</span><span><b>전부</b>취약점 조치</span></p><p>통합결재, 자산관리, 소프트웨어 관리, 보안, 홈페이지 다섯 시스템을 혼자 맡았습니다. 기능 개선 요청을 분석부터 개발, 배포까지 처리했고, 모의해킹에서 나온 보안 취약점을 모두 조치했습니다.</p><p class="tech">Java · Spring · Nexacro · Linux · Tomcat · Wildfly · GitLab</p></div></li>
+      <li class="cv-row" style="--s:28;--d:13"><p class="when">2023.03 – 2024.04</p><div class="track"><i></i></div><div class="what"><h3>공공기관 웹사이트 13건 구축 · 유지보수</h3><p class="facts"><span><b>13건</b>신규 5 · 유지보수 8</span><span><b>3인</b>개발 · 퍼블 · 디자인</span></p><p>새로 5건을 만들고 8건을 유지보수했습니다. 기관 담당자와 직접 협의해 요구사항 정의부터 오픈까지 맡았고, 관리자 페이지와 게시판, 권한 관리, 조회 · 통계 기능을 만들었습니다.</p><p class="tech">Java · eGovFrame · MyBatis · JSP · jQuery · Linux · Tomcat</p></div></li>
+      <li class="cv-row" style="--s:18;--d:9"><p class="when">2022.05 – 2023.02</p><div class="track"><i></i></div><div class="what"><h3>IT 기업 구매 시스템 구축</h3><p class="facts"><span><b>15건</b>React 화면</span></p><p>React로 구매 · 계약 화면 약 15건을 만들고 서버 API와 연결했습니다.</p><p class="tech">React · Java · MySQL</p></div></li>
+      <li class="cv-row" style="--s:15;--d:3"><p class="when">2022.02 – 2022.05</p><div class="track"><i></i></div><div class="what"><h3>자산신탁사 업무 시스템 단독 투입</h3><p class="facts"><span><b>6건</b>혼자 완수</span><span><b>3개월</b>단독 투입</span></p><p>인수인계 문서 없이 코드를 읽어 구조를 파악한 뒤, 새 화면 3건과 기능 고도화 3건을 혼자 마쳤습니다.</p><p class="tech">Java · BXM Framework</p></div></li>
+      <li class="cv-row" style="--s:6;--d:9"><p class="when">2021.05 – 2022.02</p><div class="track"><i></i></div><div class="what"><h3>자산신탁사 인사 시스템 구축</h3><p class="facts"><span><b>15건</b>새 화면 10 · 교차 점검 5</span></p><p>인사 업무 화면 약 10건을 새로 만들고, 오픈 전에 다른 화면 5건을 교차 점검해 오류를 고쳤습니다.</p><p class="tech">Java · BXM Framework(AngularJS) · Oracle · MySQL</p></div></li>
+      <li class="cv-row" style="--s:0;--d:6"><p class="when">2020.11 – 2021.05</p><div class="track"><i></i></div><div class="what"><h3>대학 연구 프로젝트</h3><p>지도와 분포도를 그려 보여 주는 기능을 2인 개발로 만들었습니다.</p><p class="tech">Java · JavaScript</p></div></li>
+    </ol>
+    <p class="cv-group">함께 이어 온 프로젝트</p>
+    <ol class="mine">
+      <li class="cv-row" style="--s:70;--d:2.87"><p class="when">2026.09 –</p><div class="track"><i></i></div><div class="what"><h3>더푼다</h3><p>영어 단어 학습 앱을 학생 앱, 관리자 화면, 서버까지 혼자 만들고 있습니다.</p></div></li>
+      <li class="cv-row" style="--s:62;--d:.9"><p class="when">2026.01</p><div class="track"><i></i></div><div class="what"><h3>영어캠프 홈페이지 · 관리자 CMS</h3></div></li>
+      <li class="cv-row" style="--s:57;--d:15.87"><p class="when">2025.08 –</p><div class="track"><i></i></div><div class="what"><h3>이언에듀케이션 시스템 구축</h3><p>학원 통합 운영 시스템 WInO Academy를 기획부터 배포까지 이끌고 있습니다.</p></div></li>
     </ol>
   </div>
 </section>
 
-<section id="ai" class="alt">
+<section class="sec dark" id="ways">
   <div class="wrap">
-    <div class="head"><h2>AI와 함께 일합니다</h2><p>AI를 도구로 쓰는 데서 그치지 않고, 여러 AI 에이전트를 한 팀처럼 운영해 개발합니다. 혼자서도 설계, 구현, 검토, 검증을 나눠 돌릴 수 있는 까닭입니다.</p></div>
-    <div class="grid g4">
-      <div class="card"><div class="num">TEAM</div><h3>역할을 나눈 AI 팀</h3><p>설계, 구현, 코드 검토, 보안 판단을 서로 다른 AI에게 맡기고, 결과를 서로 대조하게 합니다.</p></div>
-      <div class="card"><div class="num">MODEL</div><h3>일에 맞는 모델</h3><p>판단과 설계는 큰 모델에, 반복 구현과 검토는 빠른 모델에 맡깁니다. 동시에 도는 에이전트 수와 사용 한도를 보며 비용을 관리합니다.</p></div>
-      <div class="card"><div class="num">PROOF</div><h3>증거로 닫기</h3><p>AI가 「됐다」고 해도 시험과 화면 확인으로 증거가 나와야 끝냅니다. 사람이 최종 결정을 합니다.</p></div>
-      <div class="card"><div class="num">BUILD</div><h3>AI 기능 개발</h3><p>LLM, RAG, LangChain으로 문서 요약 챗봇과 AI 에이전트를 만들었고, 답안지를 읽어 채점하는 도구를 만들었습니다.</p></div>
+    <div class="sec-head"><h2>AI 팀을 운영해 혼자서도 끝까지 만듭니다.</h2><p class="sub">AI를 도구로 쓰는 데서 그치지 않고, 여러 AI 에이전트를 한 팀처럼 운영해 개발합니다. 설계, 구현, 검토, 검증을 서로 다른 AI가 맡고 결정은 사람이 합니다.</p></div>
+    <ol class="flow">
+      <li><b>정리</b><span>목표 · 범위 · 위험 · 완료 기준</span></li>
+      <li><b>설계</b><span>판단은 큰 모델에</span></li>
+      <li><b>구현</b><span>반복 작업은 빠른 모델에</span></li>
+      <li><b>검토 · 보안</b><span>다른 AI가 서로 대조</span></li>
+      <li><b>증거</b><span>시험과 화면 확인</span></li>
+      <li><b>사람이 결정</b><span>마지막 판단은 직접</span></li>
+    </ol>
+    <div class="ways">
+      <div><h3>증거로 닫습니다</h3><p>AI가 「됐다」고 해도 시험과 화면 확인으로 증거가 나와야 끝냅니다.</p></div>
+      <div><h3>일에 맞는 모델을 씁니다</h3><p>동시에 도는 에이전트 수와 사용 한도를 보며 비용을 관리합니다.</p></div>
+      <div><h3>AI 기능도 만듭니다</h3><p>LLM, RAG, LangChain으로 문서 요약 챗봇과 AI 에이전트를, 그리고 답안지를 읽어 채점하는 도구를 만들었습니다.</p></div>
+      <div><h3>시작 전에 정리합니다</h3><p>목표, 범위, 위험, 완료 기준을 먼저 적고 시작합니다. 중간에 고치느라 늦어지는 일을 줄입니다.</p></div>
+      <div><h3>장애는 세 단계로 풉니다</h3><p>빠른 임시 조치로 먼저 멈추고, 로그와 DB로 원인을 찾고, 다시 생기지 않게 근본을 고칩니다.</p></div>
+      <div><h3>현업과 직접 이야기합니다</h3><p>요구사항 정의부터 오픈까지 담당자와 직접 맞춥니다. 바뀌는 요구에도 빨리 따라갑니다.</p></div>
     </div>
-    <p class="values"><b>쓰는 도구</b> — Claude Code · Codex · ChatGPT API · LangChain · Python</p>
+    <p class="tools"><b>쓰는 도구</b>Claude Code · Codex · ChatGPT API · LangChain · Python</p>
   </div>
 </section>
 
-<section id="stack">
+<section class="sec" id="stack">
   <div class="wrap">
-    <div class="head"><h2>기술</h2><p>실제로 써서 서비스를 만든 것만 적습니다.</p></div>
-    <table class="stack">
-      <tr><th scope="row">BACKEND</th><td><b>Java · Spring Boot · Spring Security · MyBatis</b><span>업무 규칙, 인증과 권한, API 서버</span></td></tr>
-      <tr><th scope="row">FRONTEND</th><td><b>React · React Native · Next.js · TypeScript · JavaScript · jQuery · Nexacro</b><span>웹과 앱의 화면, 관리자 화면</span></td></tr>
-      <tr><th scope="row">DATABASE</th><td><b>MySQL · Oracle · MSSQL · MariaDB · PostgreSQL</b><span>설계, 복잡한 조회, 장애 원인 분석</span></td></tr>
-      <tr><th scope="row">OPS</th><td><b>Linux · Tomcat · Wildfly · Docker</b><span>서버 배포와 운영, 로그 분석</span></td></tr>
-      <tr><th scope="row">DOMAIN</th><td><b>eGovFrame · 인증/권한(RBAC) · 보안 취약점 조치</b><span>공공 · 기업 업무 시스템에서 쓰는 틀과 방식</span></td></tr>
-      <tr><th scope="row">AI</th><td><b>Python · LLM · RAG · LangChain · Claude Code · Codex</b><span>AI 기능 개발과 AI 에이전트를 활용한 개발</span></td></tr>
-    </table>
-    <p class="honest">Jenkins는 운영 환경에서 빌드와 배포에 쓴 경험이 있습니다. 설치와 파이프라인 구축은 하지 않았습니다.</p>
+    <div class="sec-head"><h2>기술</h2><p class="sub">실제로 써서 서비스를 만든 것만 적습니다.</p></div>
+    <dl class="stack">
+      <div><dt>화면</dt><dd><b>React · React Native · Next.js · TypeScript · JavaScript · jQuery · Nexacro</b><span>웹과 앱의 화면, 관리자 화면</span></dd></div>
+      <div><dt>서버</dt><dd><b>Java · Spring Boot · Spring Security · MyBatis</b><span>업무 규칙, 인증과 권한, API 서버</span></dd></div>
+      <div><dt>데이터베이스</dt><dd><b>MySQL · Oracle · MSSQL · MariaDB · PostgreSQL</b><span>설계, 복잡한 조회, 장애 원인 분석</span></dd></div>
+      <div><dt>운영</dt><dd><b>Linux · Tomcat · Wildfly · Docker</b><span>서버 배포와 운영, 로그 분석</span></dd></div>
+      <div><dt>업무 분야</dt><dd><b>eGovFrame · 인증/권한(RBAC) · SSO · 2차 인증 · 보안 취약점 조치</b><span>공공 · 기업 업무 시스템에서 쓰는 틀과 방식</span></dd></div>
+      <div><dt>AI</dt><dd><b>Python · LLM · RAG · LangChain · Claude Code · Codex</b><span>AI 기능 개발과 AI 에이전트를 활용한 개발</span></dd></div>
+    </dl>
+    <p class="note">Jenkins는 운영 환경에서 빌드와 배포에 쓴 경험이 있습니다. 설치와 파이프라인 구축은 하지 않았습니다.</p>
   </div>
 </section>
 
-<section class="alt">
+<section class="sec sec-ice" id="edu">
   <div class="wrap">
-    <div class="head"><h2>일하는 방식</h2></div>
-    <div class="grid g4">
-      <div class="card"><div class="num">01</div><h3>시작 전에 정리합니다</h3><p>목표, 범위, 위험, 완료 기준을 먼저 적고 시작합니다. 중간에 고치느라 늦어지는 일을 줄입니다.</p></div>
-      <div class="card"><div class="num">02</div><h3>장애는 세 단계로</h3><p>빠른 임시 조치로 먼저 멈추고, 로그와 DB로 원인을 찾고, 다시 생기지 않게 근본을 고칩니다.</p></div>
-      <div class="card"><div class="num">03</div><h3>현업과 직접 이야기합니다</h3><p>요구사항 정의부터 오픈까지 담당자와 직접 맞춥니다. 바뀌는 요구에도 빨리 따라갑니다.</p></div>
-    </div>
-    <p class="values"><b>단조의 가치</b> — 정직 · 배움 · 공유 · 실천 · 사람 중심</p>
-  </div>
-</section>
-
-<section id="history">
-  <div class="wrap">
-    <div class="head"><h2>학력 · 자격 · 교육</h2></div>
-    <div class="hist">
-      <div class="card"><h3>학력</h3><ul>
-        <li><b>한양사이버대학교 응용소프트웨어 졸업</b><span>2021.03 ~ 2024.02 · 졸업작품: 키오스크 식권 구매와 관리자 페이지(Java · Spring)</span></li>
-        <li><b>호서대학교 토목공학 졸업</b><span>2009.03 ~ 2013.02</span></li>
+    <div class="sec-head"><h2>학력 · 자격 · 교육</h2></div>
+    <div class="edu">
+      <div><h3>학력</h3><ul>
+        <li><b>한양사이버대학교 응용소프트웨어 졸업</b><span>2021.03 – 2024.02 · 졸업작품: 키오스크 식권 구매와 관리자 페이지(Java · Spring)</span></li>
+        <li><b>호서대학교 토목공학 졸업</b><span>2009.03 – 2013.02</span></li>
       </ul></div>
-      <div class="card"><h3>자격 · 교육</h3><ul>
+      <div><h3>자격 · 교육</h3><ul>
         <li><b>정보처리기사</b><span>2025.09 · 한국산업인력공단</span></li>
-        <li><b>AI 서비스 엔지니어링 트랙</b><span>2025.11 ~ 2026.02 · 팀스파르타 · Python · LLM · RAG · LangChain</span></li>
-        <li><b>Spring Framework 과정</b><span>2024.01 ~ 2024.04 · MBC 아카데미</span></li>
-        <li><b>Java 웹 개발 과정</b><span>2020.06 ~ 2020.11 · 연세직업전문학교</span></li>
+        <li><b>AI 서비스 엔지니어링 트랙</b><span>2025.11 – 2026.02 · 팀스파르타 · Python · LLM · RAG · LangChain</span></li>
+        <li><b>Spring Framework 과정</b><span>2024.01 – 2024.04 · MBC 아카데미</span></li>
+        <li><b>Java 웹 개발 과정</b><span>2020.06 – 2020.11 · 연세직업전문학교</span></li>
       </ul></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="wrap">
-    <div class="head"><h2>문의</h2><p>만들고 싶은 시스템이 있으면 편하게 연락 주세요.</p></div>
-    <div class="rows">
-      <div class="row"><i>EMAIL</i><a href="mailto:hyojunkim9096@gmail.com">hyojunkim9096@gmail.com</a></div>
-      <div class="row"><i>GITHUB</i><a href="https://github.com/hyojunkim9096">github.com/hyojunkim9096</a></div>
     </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap">© 단조 DANJO · 김효준 · 마지막 수정 2026.11.17</div></footer>
+<section class="end" id="contact">
+  <div class="wrap">
+    <h2>만들고 싶은 시스템이 있으면<br>편하게 연락 주세요.</h2>
+    <p class="mail"><a href="mailto:hyojunkim9096@gmail.com">hyojunkim9096@gmail.com</a><button class="copy" id="copy" type="button">주소 복사</button></p>
+    <a class="git" href="https://github.com/hyojunkim9096">github.com/hyojunkim9096</a>
+    <svg class="end-mark" viewBox="0 0 925 280" aria-hidden="true"><use href="#wm"/></svg>
+  </div>
+</section>
+<footer class="foot"><div class="wrap"><span>© WInO · 김효준</span><span>정직 · 배움 · 공유 · 실천 · 사람 중심</span><span>마지막 수정 2026.11.26</span></div></footer>
+
+<script>
+(function(){
+  var m=document.querySelector('.menu');
+  m.addEventListener('click',function(e){if(e.target.closest('a'))m.open=false});
+  document.addEventListener('click',function(e){if(m.open&&!m.contains(e.target))m.open=false});
+  var c=document.getElementById('copy');
+  c.addEventListener('click',function(){
+    var done=function(t){c.textContent=t;setTimeout(function(){c.textContent='주소 복사'},1800)};
+    if(navigator.clipboard)navigator.clipboard.writeText('hyojunkim9096@gmail.com').then(function(){done('복사했어요')},function(){done('길게 눌러 복사해 주세요')});
+    else done('길게 눌러 복사해 주세요');
+  });
+  if('IntersectionObserver' in window){
+    var map={};document.querySelectorAll('.links a').forEach(function(a){map[a.hash.slice(1)]=a});
+    var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){Object.keys(map).forEach(function(k){map[k].removeAttribute('aria-current')});map[e.target.id].setAttribute('aria-current','true')}})},{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(map).forEach(function(k){var el=document.getElementById(k);if(el)o.observe(el)});
+  }
+})();
+</script>
 </body>
 </html>
