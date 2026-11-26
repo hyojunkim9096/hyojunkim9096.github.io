@@ -30,7 +30,7 @@
   --text:'Pretendard Variable',Pretendard,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',system-ui,sans-serif;
   --disp:'Outfit','Pretendard Variable',Pretendard,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',system-ui,sans-serif;
   --t-s:14px; --t-m:17px; --t-l:21px; --t-xl:clamp(26px,3.4vw,40px); --t-hero:clamp(33px,5vw,62px);
-  --gap-sec:clamp(72px,9vw,128px);
+  --gap-sec:clamp(56px,6.5vw,92px);
   color-scheme:light;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -43,7 +43,7 @@ a{color:inherit}
 .wrap{max-width:1180px;margin-inline:auto;padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
 .sec{padding-block:var(--gap-sec)}
 .sec-ice{background:var(--ice)}
-.sec-head{display:grid;gap:14px;margin-bottom:clamp(32px,4.5vw,60px);max-width:46rem}
+.sec-head{display:grid;gap:14px;margin-bottom:clamp(24px,3.2vw,42px);max-width:46rem}
 h2{font:800 var(--t-xl)/1.28 var(--disp);letter-spacing:-.025em;word-spacing:.09em;text-wrap:balance}
 h3{font:700 var(--t-l)/1.4 var(--disp);letter-spacing:-.015em;word-spacing:.09em;text-wrap:balance}
 .sub{color:var(--slate)}
@@ -186,29 +186,10 @@ h1 span{color:var(--sky)}
 .work-row{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(36px,4.6vw,64px)}
 
 /* ── 숫자 ───────────────────────────────────────── */
-.figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(40px,5vw,68px) clamp(28px,4vw,64px)}
-.fig{display:grid;grid-template-rows:auto auto 1fr;gap:6px;align-content:start}
-.fig .v{font:800 clamp(50px,5.4vw,74px)/1 var(--disp);letter-spacing:-.045em;color:var(--navy)}
-.fig .v small{font:700 22px/1 var(--text);letter-spacing:0;margin-left:5px}
-.fig b{font-size:18px;font-weight:700}
-.fig .sub{font-size:15px}
-.fig .unit{display:block;width:100%;max-width:270px;height:auto;margin-top:14px;overflow:visible}
 .legend{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:34px;font-size:14px;color:var(--slate)}
 
 /* ── 경력 ───────────────────────────────────────── */
 .cv-group{font:700 16px/1.4 var(--text);color:var(--navy);padding:34px 0 10px}
-.cv-row,.cv-axis{display:grid;grid-template-columns:158px 250px minmax(0,1fr);gap:clamp(16px,2.6vw,38px)}
-.cv-axis{position:relative;font:600 13px/1 var(--disp);color:var(--slate);align-items:end}
-.cv-axis div{grid-column:2;position:relative;height:16px}
-.cv-axis span{position:absolute;transform:translateX(-50%)}
-.cv-row{padding-block:24px;border-top:1px solid var(--rule);align-items:start}
-.when{font:600 16px/1.55 var(--disp);font-variant-numeric:tabular-nums;white-space:nowrap}
-.track{position:relative;height:26px;background:
-  linear-gradient(var(--rule),var(--rule)) 2.74% 0/1px 100% no-repeat,linear-gradient(var(--rule),var(--rule)) 19.18% 0/1px 100% no-repeat,
-  linear-gradient(var(--rule),var(--rule)) 35.62% 0/1px 100% no-repeat,linear-gradient(var(--rule),var(--rule)) 52.05% 0/1px 100% no-repeat,
-  linear-gradient(var(--rule),var(--rule)) 68.49% 0/1px 100% no-repeat,linear-gradient(var(--rule),var(--rule)) 84.93% 0/1px 100% no-repeat}
-.track i{position:absolute;top:6px;height:14px;border-radius:7px;min-width:6px;left:calc(var(--s)/73*100%);width:calc(var(--d)/73*100%);background:#8FA6C9}
-.mine .track i,.now .track i{background:var(--navy)}
 .jobs{margin-top:8px;display:grid;gap:5px;color:#34415A}
 .jobs li{position:relative;padding-left:16px}
 .jobs li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--navy)}
@@ -265,15 +246,11 @@ h1 span{color:var(--sky)}
   .hero-grid,.why,.feature,.punda-top,.punda-low{grid-template-columns:minmax(0,1fr)}
   .desk{max-width:640px}
   .does{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .figs,.ways,.solve{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ways,.solve{grid-template-columns:repeat(2,minmax(0,1fr))}
   .totals{grid-template-columns:repeat(3,minmax(0,1fr))}
   .areas{grid-template-columns:minmax(0,1fr)}
   .flow{grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 0}
   .flow li:nth-child(3)::after{display:none}
-  .cv-row,.cv-axis{grid-template-columns:150px minmax(0,1fr)}
-  .cv-axis div{grid-column:1/-1}
-  .cv-row .track{grid-column:1/-1;grid-row:2}
-  .cv-row .what{grid-column:1/-1;grid-row:3}
 }
 @media (max-width:640px){
   :root{--t-m:16px}
@@ -284,7 +261,6 @@ h1 span{color:var(--sky)}
   .work-row{grid-template-columns:minmax(0,1fr)}
   .does,.ways,.duo,.edu,.who,.solve,.more{grid-template-columns:minmax(0,1fr)}
   .areas li{grid-template-columns:112px minmax(0,1fr) 26px;gap:12px}.areas b{font-size:15px}.cells{gap:3px}.cells i{width:9px;height:9px}
-  .figs{gap:44px 24px}.fig b{font-size:16px;line-height:1.5}.fig .sub{font-size:14px;line-height:1.6}
   .does{gap:20px}
   .does li{display:grid;grid-template-columns:38px minmax(0,1fr);gap:0 18px;align-items:start}
   .does li:nth-child(n):not(.x) svg{grid-row:1/3;margin-left:0}.does b{margin-top:0}
@@ -301,7 +277,7 @@ h1 span{color:var(--sky)}
   .cta .btn{flex:1 1 auto;justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.boot,.grow,.rise{animation:none}.btn{transition:none}}
-@media print{.bar{position:static}.links,.menu,.cta,.copy,.giant,.end-mark{display:none}.hero,.dark,.end,.foot,.core,.shot,.punda,.cells i{-webkit-print-color-adjust:exact;print-color-adjust:exact}.sec,.end{padding-block:26px}.cv-row,.fig,.work,.node{break-inside:avoid}}
+@media print{.bar{position:static}.links,.menu,.cta,.copy,.giant,.end-mark{display:none}.hero,.dark,.end,.foot,.core,.shot,.punda,.cells i{-webkit-print-color-adjust:exact;print-color-adjust:exact}.sec,.end{padding-block:26px}.work,.node{break-inside:avoid}}
 
 /* ── 눌러 보기 ─────────────────────────────────── */
 .try{background:var(--navy);color:#fff}
@@ -547,9 +523,115 @@ h1 span{color:var(--sky)}
   .x2-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}
 }
 @media print{.x2-case,.x2-flow li,.x2-fig{break-inside:avoid}.x2-desk,.x2-case .x2-res{-webkit-print-color-adjust:exact;print-color-adjust:exact}.x2-resume{display:none}}
-.cv-row.x2-next .track i{left:auto;right:0;width:14px;min-width:14px;background:var(--paper);border:3px solid var(--navy)}
 .x2-free{display:inline-block;margin-top:6px;font:700 13px/1 var(--disp);color:var(--navy);background:var(--ice);border-radius:999px;padding:5px 10px}
+/* ── 11-26 3판: 경력 세로 시간선 · 소개 합침 · 사례 합침 · 기술+학력 한 구역 ── */
+.cv-intro{margin-bottom:clamp(28px,4vw,48px)}
+.cv-eyebrow{font:700 16px/1.4 var(--text);color:var(--navy);margin-bottom:12px}
+.tl{position:relative}
+.tl-row{display:grid;grid-template-columns:196px 28px minmax(0,1fr);column-gap:clamp(10px,1.8vw,24px)}
+.tl-when{padding-bottom:26px;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.tl-row .when{font:800 18px/1.4 var(--disp);font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink)}
+.tl-row .what{padding-bottom:26px}
+.tl-row:last-child .tl-when,.tl-row:last-child .what{padding-bottom:0}
+.tl-dot{position:relative}
+.tl-dot::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--rule)}
+.tl-row:first-child .tl-dot::before{top:14px}
+.tl-row:last-child .tl-dot::before{bottom:auto;height:14px}
+.tl-dot::after{content:"";position:absolute;left:50%;top:5px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#5C6F8F;box-shadow:0 0 0 4px var(--paper)}
+.tl-row.now .tl-dot::after{background:var(--navy)}
+.tl-row.x2-next .tl-dot::after{background:var(--paper);border:3px solid var(--navy)}
+.tl-now{display:inline-block;font:700 13px/1 var(--disp);color:#fff;background:var(--navy);border-radius:999px;padding:5px 10px}
+.tl-mine{margin-top:clamp(28px,3.4vw,40px);padding-top:22px;border-top:1px solid var(--rule)}
+.tl-mine-h{font:700 16px/1.4 var(--text);color:var(--navy);margin-bottom:12px}
+.tl-mine ul{display:flex;flex-wrap:wrap;gap:10px}
+.tl-mine a{display:inline-block;padding:9px 16px;border-radius:999px;background:var(--ice);border:1px solid #C6D4E8;color:var(--navy);font:600 15px/1.4 var(--text);text-decoration:none}
+.tl-mine a:hover{background:#fff;border-color:var(--navy)}
+.x2-sub{margin-top:clamp(40px,5vw,64px)}
+.x2-sub h3{font:800 clamp(22px,2.5vw,30px)/1.35 var(--disp);letter-spacing:-.02em}
+.x2-sub>.sub{margin-top:8px;margin-bottom:22px}
+.se-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(32px,4.5vw,72px);align-items:start}
+.se-grid .sec-head{margin-bottom:clamp(18px,2.4vw,28px)}
+.se-grid .stack>div{grid-template-columns:96px minmax(0,1fr);padding-block:14px;gap:4px clamp(12px,2vw,28px)}
+.se-grid .stack dd b{font-size:clamp(16px,1.5vw,19px);line-height:1.5}
+.se-grid .stack dd span{font-size:14px}
+.se-grid .note{margin-top:16px}
+.se-edu{background:var(--ice);border-radius:20px;padding:clamp(22px,2.6vw,34px)}
+.se-edu .edu{grid-template-columns:minmax(0,1fr);gap:20px}
+.se-edu .edu li{padding-block:11px}
+@media (max-width:1000px){.se-grid{grid-template-columns:minmax(0,1fr)}.tl-row{grid-template-columns:184px 28px minmax(0,1fr)}}
+@media (max-width:640px){
+  .tl-row{grid-template-columns:24px minmax(0,1fr);column-gap:12px}
+  .tl-dot{grid-column:1;grid-row:1/3}
+  .tl-when{grid-column:2;grid-row:1;padding-bottom:6px;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 10px}
+  .tl-row .what{grid-column:2;grid-row:2;padding-bottom:22px}
+  .tl-row:last-child .what{padding-bottom:0}
+  .tl-dot::after{top:3px}
+  .tl-row:first-child .tl-dot::before{top:10px}
+  .tl-row:last-child .tl-dot::before{height:10px}
+  .tl-row .when{font-size:17px}
+  .se-grid .stack>div{grid-template-columns:minmax(0,1fr)}
+}
+@media print{.tl-row{break-inside:avoid}.tl-dot::after,.tl-now,.x2-free{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.x4-real{margin-top:clamp(36px,4.5vw,56px);padding-top:clamp(24px,3vw,34px);border-top:1px solid var(--rule)}
+.x4-head{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-bottom:18px}
+.x4-head b{font:700 var(--t-l)/1.4 var(--disp);color:var(--ink)}
+.x4-head span{font-size:var(--t-s);color:var(--slate)}
+.x4-shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,24px);list-style:none;padding:0;margin:0}
+.x4-shots li{min-width:0}
+.x4-shots a{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--rule);background:#F3F5F9;box-shadow:0 12px 30px -20px rgba(12,55,120,.5);transition:transform .2s ease,box-shadow .2s ease}
+.x4-shots a:hover{transform:translateY(-3px);box-shadow:0 18px 36px -20px rgba(12,55,120,.55)}
+.x4-shots img{display:block;width:100%;height:auto;aspect-ratio:1366/768}
+.x4-shots p{margin-top:10px;font-size:15px;line-height:1.6;color:var(--slate)}
+.x4-shots p b{display:block;font:700 16px/1.5 var(--disp);color:var(--navy)}
+@media (max-width:760px){.x4-shots{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:86%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.x4-shots li{scroll-snap-align:start}}
+@media (prefers-reduced-motion:reduce){.x4-shots a{transition:none}}
+.phones figure:nth-child(2),.phones figure:nth-child(3){margin-top:0}
+@media (min-width:641px) and (max-width:1000px){.t-bld{grid-template-columns:minmax(272px,36%) minmax(0,1fr)}.t-list button{width:32px}.t-list span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.t-bl{border-right:1px solid #DCE4F0;border-bottom:0;padding:22px 16px}}
+/* x5- 한눈에 보기 띠 */
+.x5-glance{background:var(--ice);padding-block:clamp(28px,3.4vw,44px)}
+.x5-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.x5-cards li{background:#fff;border:1px solid var(--rule);border-top:3px solid var(--navy);border-radius:10px;padding:14px 16px}
+.x5-cards b{display:block;font:800 18px/1.35 var(--disp);letter-spacing:-.015em;color:var(--navy)}
+.x5-cards span{display:block;margin-top:3px;font:500 14px/1.5 var(--text);color:var(--slate)}
+.x5-mid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);margin-top:22px;align-items:start}
+.x5-h{font:700 15px/1.4 var(--disp);color:var(--navy);margin:0 0 8px;letter-spacing:0}
+.x5-grid{display:grid;grid-template-columns:128px repeat(25,minmax(0,1fr));gap:3px;align-items:center}
+.x5-grid>em{font:500 13px/1.2 var(--text);font-style:normal;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:6px}
+.x5-grid>i{display:block;aspect-ratio:1;border-radius:2px;background:#fff;border:1px solid var(--rule)}
+.x5-grid>i.on{background:var(--navy);border-color:var(--navy)}
+.x5-grid>i.next{background:#fff;border:1.5px dashed var(--navy)}
+.x5-grid>u{text-decoration:none;font:500 12px/1 var(--disp);color:var(--slate);grid-row:9;margin-top:4px;white-space:nowrap}
+.x5-ways{display:grid;gap:8px;list-style:none;margin:0;padding:0}
+.x5-ways li{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:10px 14px}
+.x5-ways b{display:block;font:700 16px/1.4 var(--disp);color:var(--navy)}
+.x5-ways span{display:block;font:400 14px/1.5 var(--text);color:var(--slate)}
+.x5-more{display:inline-block;margin-top:10px;font:700 14px/1.4 var(--text);color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy)}
+@media (max-width:1000px){.x5-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.x5-mid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){
+  .x5-cards{gap:8px}.x5-cards li{padding:10px 11px}.x5-cards b{font-size:15px}.x5-cards span{font-size:12.5px;line-height:1.4}
+  .x5-grid{grid-template-columns:92px repeat(25,minmax(0,1fr));gap:2px}.x5-grid>em{font-size:12px}.x5-grid>u{font-size:11px}
+  .x5-ways span{font-size:13.5px}
+}
+/* x6- 짧게 / 자세히 */
+html[data-len="short"] .x6-long{display:none}
+html[data-len="short"] .x6-tl .what>:not(h3){display:none}
+html[data-len="short"] .x6-ways p{display:none}
+html[data-len="short"] .deep{margin-top:clamp(28px,4vw,48px)}
+html[data-len="short"] .x2-case h3{margin-bottom:0}
+.x6-len{display:flex;align-items:center;gap:8px}
+.x6-hint{font:500 13px/1 var(--text);color:#D5E4FC;white-space:nowrap}
+.x6-seg{display:inline-flex;border:1px solid #ffffff73;border-radius:999px;padding:2px}
+.x6-seg button{appearance:none;border:0;background:transparent;color:#fff;font:600 14px/1 var(--text);padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.x6-seg button[aria-pressed="true"]{background:#fff;color:var(--navy)}
+.x6-seg button:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+html:not([data-len]) .x6-len{display:none}
+@media (max-width:640px){.x6-hint{display:none}.x6-seg button{padding:7px 11px;font-size:13px}.bar-in{gap:10px}}
+html[data-len="short"] .x2-case dl.x6-long{display:block}
+html[data-len="short"] .x2-case dl.x6-long>div:not(.x2-res){display:none}
+html[data-len="short"] .x2-case h3{margin-bottom:12px}
+html[data-len="short"] .deep:has(> .areas){display:none}
 </style>
+<script>try{var v=null;try{v=localStorage.getItem('x6len')}catch(e){}document.documentElement.dataset.len=v==='long'?'long':'short'}catch(e){}</script>
 </head>
 <body>
 
@@ -557,9 +639,6 @@ h1 span{color:var(--sky)}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <symbol id="wm" viewBox="0 0 925 280"><path fill-rule="evenodd" d="M0 1H83.7V194H99.7V1H183.3V194H199.3V1H283V203A76 76 0 0 1 141.5 241.5A76 76 0 0 1 0 203ZM319 1H403V271H319ZM445 271V159.5A87.5 87.5 0 0 1 620 159.5V271H546V157A13 13 0 0 0 520 157V271ZM785 0A139.5 139.5 0 1 1 784.9 0ZM785 81A58.5 58.5 0 1 0 785.1 81Z"/></symbol>
-    <pattern id="uS" width="20" height="19" patternUnits="userSpaceOnUse"><rect x=".6" y=".6" width="15.4" height="13.4" rx="2.5" fill="#0C3778"/></pattern>
-    <pattern id="uL" width="20" height="19" patternUnits="userSpaceOnUse"><rect x="1.6" y="1.6" width="13.4" height="11.4" rx="2" fill="none" stroke="#0C3778" stroke-width="2"/></pattern>
-    <pattern id="uR" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="5" fill="none" stroke="#0C3778" stroke-width="5"/></pattern>
   </defs>
 </svg>
 
@@ -567,11 +646,12 @@ h1 span{color:var(--sky)}
   <div class="wrap bar-in">
     <a class="logo" href="#top" aria-label="WInO 처음으로"><svg aria-hidden="true"><use href="#wm"/></svg></a>
     <nav class="links" aria-label="구역">
-      <a href="#projects">프로젝트</a><a href="#try">눌러 보기</a><a href="#numbers">숫자</a><a href="#career">경력</a><a href="#ways">일하는 방식</a><a href="#stack">기술</a><a href="#contact">문의</a><a class="x2-pdf" href="resume.pdf" target="_blank" rel="noopener">이력서 PDF</a>
+      <a href="#projects">프로젝트</a><a href="#try">눌러 보기</a><a href="#career">경력</a><a href="#ways">일하는 방식</a><a href="#stack">기술</a><a href="#contact">문의</a><a class="x2-pdf" href="resume.pdf" target="_blank" rel="noopener">이력서 PDF</a>
     </nav>
+    <div class="x6-len"><span class="x6-hint" id="x6-h">글 길이</span><div class="x6-seg" role="group" aria-labelledby="x6-h"><button type="button" data-v="short" aria-pressed="true">짧게</button><button type="button" data-v="long" aria-pressed="false">자세히</button></div></div>
     <details class="menu">
       <summary>메뉴</summary>
-      <ul><li><a href="#projects">프로젝트</a></li><li><a href="#try">눌러 보기</a></li><li><a href="#numbers">숫자</a></li><li><a href="#career">경력</a></li><li><a href="#ways">일하는 방식</a></li><li><a href="#stack">기술</a></li><li><a href="#edu">학력 · 자격</a></li><li><a href="#contact">문의</a></li><li><a href="resume.pdf" target="_blank" rel="noopener">이력서 PDF</a></li></ul>
+      <ul><li><a href="#projects">프로젝트</a></li><li><a href="#try">눌러 보기</a></li><li><a href="#career">경력</a></li><li><a href="#ways">일하는 방식</a></li><li><a href="#stack">기술</a></li><li><a href="#edu">학력 · 자격</a></li><li><a href="#contact">문의</a></li><li><a href="resume.pdf" target="_blank" rel="noopener">이력서 PDF</a></li></ul>
     </details>
   </div>
 </div>
@@ -666,16 +746,241 @@ h1 span{color:var(--sky)}
 </header>
 
 <main>
-<section class="sec">
-  <div class="wrap why">
-    <h2>불편한 프로그램을 직접 고치고 싶어 개발자가 되었습니다.</h2>
-    <div>
-      <p>학원에서 행정 일을 하던 때, 컴퓨터는 새것으로 바뀌는데 업무 프로그램의 불편함은 그대로인 것이 늘 아쉬웠습니다. 직접 고쳐 보자는 마음으로 독학을 시작했고, Java · 웹 · DB 과정을 마치며 개발자가 되었습니다. 일하면서 응용소프트웨어를 전공해 졸업하고 정보처리기사를 땄습니다.</p>
-      <p>그 뒤 금융, 공공, 제조 현장에서 구축과 운영을 고루 해 왔습니다. 지금은 처음 출발점이었던 학원을 위해, 이언에듀케이션의 학원 운영 시스템을 만들고 있습니다.</p>
+<section class="x5-glance" id="glance" aria-label="한눈에 보기">
+  <div class="wrap">
+    <ul class="x5-cards">
+      <li><b>업무 시스템 7년</b><span>금융 · 공공 · 제조 · 교육</span></li>
+      <li><b>풀스택</b><span>Java · Spring Boot / React · Next.js</span></li>
+      <li><b>AI와 함께 개발</b><span>AI 에이전트 30개 이상 · 손글씨 채점기</span></li>
+      <li><b>보안 · 인증</b><span>SSO · 2차 인증 · 모의해킹 취약점 조치</span></li>
+    </ul>
+    <div class="x5-mid">
+      <div>
+        <p class="x5-h">경력 한눈에 · 분기마다 한 칸</p>
+        <div class="x5-grid" role="img" aria-label="경력 분기 그림. 대학 연구 2020년 11월부터 2021년 5월, 자산신탁사 인사 시스템 2021년 5월부터 2022년 2월, 자산신탁사 업무 시스템 2022년 2월부터 5월, IT 기업 2022년 5월부터 2023년 2월, 공공기관 2023년 3월부터 2024년 4월, 제조 대기업 2024년 5월부터 2026년 3월, 하이씨엔씨 2026년 4월부터 11월, 2026년 12월부터 현대자동차 프리랜서 예정">
+          <em>현대자동차</em>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class="next"></i>
+          <em>하이씨엔씨</em>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <em>제조 대기업</em>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <em>공공기관</em>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <em>IT 기업</em>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <em>자산신탁사 업무</em>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <em>자산신탁사 인사</em>
+          <i class=""></i>
+          <i class=""></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <em>대학 연구</em>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class="on"></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <i class=""></i>
+          <u style="grid-column:3 / span 4">2021</u><u style="grid-column:11 / span 4">2023</u><u style="grid-column:19 / span 4">2025</u>
+        </div>
+      </div>
+      <div>
+        <p class="x5-h">AI와 일하는 방식</p>
+        <ul class="x5-ways">
+          <li><b>증거로 닫습니다</b><span>시험과 화면 확인으로 증거가 나와야 끝냅니다.</span></li>
+          <li><b>시작 전에 정리합니다</b><span>목표, 범위, 위험, 완료 기준을 먼저 적습니다.</span></li>
+          <li><b>AI 기능도 만듭니다</b><span>문서 요약 챗봇, AI 에이전트, 답안 채점 도구.</span></li>
+        </ul>
+        <a class="x5-more" href="#ways">자세히 &rsaquo;</a>
+      </div>
     </div>
   </div>
 </section>
-
 <section class="sec sec-ice" id="projects">
   <div class="wrap">
     <article>
@@ -683,7 +988,7 @@ h1 span{color:var(--sky)}
         <div>
           <p class="kind">구축 진행 중 · 학원 통합 운영 시스템 · SaaS</p>
           <h2>이언에듀케이션 시스템 구축</h2>
-          <p>여러 관을 둔 학원이 상담, 반 편성, 출결, 시험과 성적표, 교재, 수납, 문자, 홈페이지까지 한곳에서 운영하도록 만드는 시스템입니다. 제품 이름은 WInO Academy입니다. 기획부터 설계, 개발, 배포까지 직접 이끌며 역할을 나눈 AI 에이전트 팀과 함께 만들고 있습니다.</p>
+          <p class="x6-long">여러 관을 둔 학원이 상담, 반 편성, 출결, 시험과 성적표, 교재, 수납, 문자, 홈페이지까지 한곳에서 운영하도록 만드는 시스템입니다. 제품 이름은 WInO Academy입니다. 기획부터 설계, 개발, 배포까지 직접 이끌며 역할을 나눈 AI 에이전트 팀과 함께 만들고 있습니다.</p>
           <ul class="ticks">
             <li>관리자 · 학부모와 학생 포털 · 공개 홈을 서버 하나로 연결</li>
             <li>메뉴와 버튼까지 계정마다 다르게 보이는 그룹 권한(RBAC)</li>
@@ -715,7 +1020,7 @@ h1 span{color:var(--sky)}
       </dl>
       <p class="note">2026년 11월 26일 저장소에서 잰 값입니다. 2025년 8월에 시작해 진행 중이며, 역할을 나눈 AI 에이전트 30개 이상을 함께 운영합니다.</p>
 
-      <div class="deep">
+      <div class="deep x6-long">
         <h3>누가 무엇을 하나요</h3>
         <div class="who">
           <div><b>본사 · 원장</b><p>전관 통합 조회, 과목과 반 규칙, 장학 정책, 사업자와 급여 자료, 가맹 현황을 관리합니다.</p></div>
@@ -727,7 +1032,7 @@ h1 span{color:var(--sky)}
       <div class="deep">
         <h3>업무 열여섯 묶음, 메뉴 177개</h3>
         <p class="sub">칸 하나가 메뉴 하나입니다. 같은 시스템도 로그인한 계정의 권한에 따라 보이는 메뉴와 버튼이 다릅니다.</p>
-        <ul class="areas">
+        <ul class="areas x6-long">
           <li><b>수업관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>10</span></li>
           <li><b>학생관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>12</span></li>
           <li><b>상담관리</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i></div><span>3</span></li>
@@ -745,19 +1050,49 @@ h1 span{color:var(--sky)}
           <li><b>운영 · 설정</b><div class="cells" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>20</span></li>
           <li><b>학부모 · 학생 포털</b><div class="cells p" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>36</span></li>
         </ul>
-        <p class="legend"><span><i class="key"></i>관리자 화면</span><span><i class="key p"></i>학부모 · 학생 화면</span></p>
+        <p class="legend x6-long"><span><i class="key"></i>관리자 화면</span><span><i class="key p"></i>학부모 · 학생 화면</span></p>
       </div>
 
-      <div class="deep">
+      <div class="deep x6-long">
         <h3>어떻게 풀었나요</h3>
         <div class="solve">
-          <div><b>역할을 코드에 박지 않습니다</b><p>권한은 관리자 화면의 그룹권한 관리에서 정합니다. 메뉴와 버튼을 읽기 · 쓰기로 나누고, 서버도 같은 권한으로 확인합니다.</p></div>
-          <div><b>학원끼리 자료가 섞이지 않습니다</b><p>학원을 나누는 규칙을 서버와 PostgreSQL 행 단위 보안(RLS) 두 곳에 두었습니다.</p></div>
           <div><b>누가 무엇을 바꿨는지 남습니다</b><p>중요한 저장과 조회를 감사 로그로 남기고, 관리자 화면에서 찾아볼 수 있습니다.</p></div>
           <div><b>개발자 없이 홈페이지를 고칩니다</b><p>홈 빌더에서 끌어 놓아 화면을 만듭니다. 팝업도 관리자 화면에서 바꿉니다.</p></div>
-          <div><b>시험부터 성적표까지 잇습니다</b><p>문항은행으로 시험지를 만들고, 답안지를 OCR로 읽어 검수한 뒤 성적표로 이어집니다. 코멘트 쓰기는 AI가 돕습니다.</p></div>
           <div><b>판마다 자동 시험으로 확인합니다</b><p>하루 네 번 새 판을 개발 서버에 올리고, 판마다 화면 시험 34,308개와 서버 시험을 돌립니다.</p></div>
         </div>
+      </div>
+      <div class="x2-sub" id="cases">
+        <h3>문제 → 해결, 세 가지 사례</h3>
+        <p class="sub">위노 아카데미를 만들며 부딪힌 문제 셋을, 한 일과 결과로 적었습니다.</p>
+        <ol class="x2-cases">
+      <li class="x2-case">
+        <p class="x2-no" aria-hidden="true">01</p>
+        <h3>계정마다 다른 메뉴</h3>
+        <dl class="x6-long">
+          <div><dt>문제</dt><dd>본사 · 원장 · 관 관리자 · 학부모는 쓰는 일이 다른데, 메뉴가 177개라 모두에게 같은 화면을 보여 줄 수 없었습니다.</dd></div>
+          <div><dt>한 일</dt><dd>역할 이름을 코드에 박지 않고, 메뉴와 버튼을 읽기 · 쓰기로 나눠 관리자 화면의 그룹권한 관리에서 정하게 했습니다. 서버도 같은 권한으로 다시 확인합니다.</dd></div>
+          <div class="x2-res"><dt>결과</dt><dd>업무 열여섯 묶음, 메뉴 177개가 로그인한 계정에 따라 다르게 보입니다. <a href="#try">직접 눌러 보세요</a>에서 바꿔 볼 수 있습니다.</dd></div>
+        </dl>
+      </li>
+      <li class="x2-case">
+        <p class="x2-no" aria-hidden="true">02</p>
+        <h3>손글씨 답안 채점</h3>
+        <dl class="x6-long">
+          <div><dt>문제</dt><dd>손으로 쓴 답안은 사람이 한 장씩 읽어 채점해야 했고, AI에 통째로 맡기면 글자를 짐작해 읽어 틀린 답이 맞다고 나오기도 했습니다.</dd></div>
+          <div><dt>한 일</dt><dd>칸 위치는 시험지 PDF에서 AI 없이 재고, 글씨는 두 AI가 따로 읽어 같을 때만 믿게 했습니다. 자신 없는 칸만 사람이 확인해 성적표로 잇습니다.</dd></div>
+          <div class="x2-res"><dt>결과</dt><dd>시험지 한 종류 140문항을 눈으로 단 답과 비교해 틀리게 채점된 칸 0, 사람 확인으로 넘어간 칸 32.</dd></div>
+        </dl>
+      </li>
+      <li class="x2-case">
+        <p class="x2-no" aria-hidden="true">03</p>
+        <h3>학원끼리 자료가 섞이지 않게</h3>
+        <dl class="x6-long">
+          <div><dt>문제</dt><dd>여러 관을 둔 학원이 한 시스템을 쓰는데, 한 관의 자료가 다른 관에 보이면 안 됩니다.</dd></div>
+          <div><dt>한 일</dt><dd>관을 나누는 규칙을 서버와 PostgreSQL 행 단위 보안(RLS) 두 곳에 두었습니다. 중요한 저장과 조회는 감사 로그로 남깁니다.</dd></div>
+          <div class="x2-res"><dt>결과</dt><dd>서버에서 거르는 것을 한 군데 빠뜨려도 DB가 한 번 더 막는 두 겹 구조입니다.</dd></div>
+        </dl>
+      </li>
+    </ol>
       </div>
     </article>
   </div>
@@ -837,18 +1172,18 @@ h1 span{color:var(--sky)}
         <p class="kind">직접 만든 도구 · Windows PC 프로그램 · AI</p>
         <h2>손글씨 답안을 AI가 읽고 채점하는 프로그램</h2>
         <p class="x2-lead">스캔한 답안지를 올리면 AI가 손글씨를 글자로 읽고 정답과 맞춰 봅니다. AI가 자신 없는 칸은 맞다 · 틀리다를 정하지 않고 「확인」으로 남겨, 사람이 원본 그림을 보며 고칩니다. 위노 아카데미 안에 같은 기능이 들어가기 전까지 먼저 쓰는 도구입니다.</p>
-        <ol class="x2-flow">
+        <ol class="x2-flow x6-long">
           <li><b>스캔 올리기</b><span>시험지 PDF와 정답, 학생 답안 스캔</span></li>
           <li><b>AI가 읽기</b><span>칸마다 글씨를 읽고 확신도 함께 적음</span></li>
           <li><b>헷갈리는 칸 확인</b><span>사람이 원본 그림과 나란히 보고 고침</span></li>
           <li><b>점수 확정</b><span>정답을 고치면 그 문항만 다시 채점</span></li>
         </ol>
-        <ul class="x2-pts">
+        <ul class="x2-pts x6-long">
           <li><b>칸 위치는 AI 없이</b>시험지 PDF 속 밑줄 좌표에서 직접 잽니다. 글씨는 두 AI가 따로 읽어 같을 때만 믿습니다.</li>
           <li><b>짐작으로 맞히지 않게</b>영어 칸과 뜻 칸을 한 번에 보여 주면 AI가 짐작해 적어 틀린 답이 맞다고 나와서, 따로 읽게 나눴습니다.</li>
           <li><b>시험지 한 종류 140문항 대조</b>눈으로 단 답과 비교해 틀리게 채점된 칸 0, 사람 확인으로 넘어간 칸 32.</li>
         </ul>
-        <p class="tech">Python · PDF 좌표 · AI 글씨 읽기(LLM) · Windows 설치 프로그램</p>
+        <p class="tech x6-long">Python · PDF 좌표 · AI 글씨 읽기(LLM) · Windows 설치 프로그램</p>
       </div>
       <figure class="x2-fig">
         <div class="x2-desk">
@@ -890,40 +1225,14 @@ h1 span{color:var(--sky)}
         <figcaption>답안지 그림은 지어낸 예시입니다. 실제 학생 자료는 쓰지 않았습니다.</figcaption>
       </figure>
     </div>
-  </div>
-</section>
-<section class="sec sec-ice" id="cases">
-  <div class="wrap">
-    <div class="sec-head"><h2>문제 → 해결, 세 가지 사례</h2><p class="sub">위노 아카데미를 만들며 부딪힌 문제 셋을, 한 일과 결과로 적었습니다.</p></div>
-    <ol class="x2-cases">
-      <li class="x2-case">
-        <p class="x2-no" aria-hidden="true">01</p>
-        <h3>계정마다 다른 메뉴</h3>
-        <dl>
-          <div><dt>문제</dt><dd>본사 · 원장 · 관 관리자 · 학부모는 쓰는 일이 다른데, 메뉴가 177개라 모두에게 같은 화면을 보여 줄 수 없었습니다.</dd></div>
-          <div><dt>한 일</dt><dd>역할 이름을 코드에 박지 않고, 메뉴와 버튼을 읽기 · 쓰기로 나눠 관리자 화면의 그룹권한 관리에서 정하게 했습니다. 서버도 같은 권한으로 다시 확인합니다.</dd></div>
-          <div class="x2-res"><dt>결과</dt><dd>업무 열여섯 묶음, 메뉴 177개가 로그인한 계정에 따라 다르게 보입니다. <a href="#try">직접 눌러 보세요</a>에서 바꿔 볼 수 있습니다.</dd></div>
-        </dl>
-      </li>
-      <li class="x2-case">
-        <p class="x2-no" aria-hidden="true">02</p>
-        <h3>손글씨 답안 채점</h3>
-        <dl>
-          <div><dt>문제</dt><dd>손으로 쓴 답안은 사람이 한 장씩 읽어 채점해야 했고, AI에 통째로 맡기면 글자를 짐작해 읽어 틀린 답이 맞다고 나오기도 했습니다.</dd></div>
-          <div><dt>한 일</dt><dd>칸 위치는 시험지 PDF에서 AI 없이 재고, 글씨는 두 AI가 따로 읽어 같을 때만 믿게 했습니다. 자신 없는 칸만 사람이 확인해 성적표로 잇습니다.</dd></div>
-          <div class="x2-res"><dt>결과</dt><dd>시험지 한 종류 140문항을 눈으로 단 답과 비교해 틀리게 채점된 칸 0, 사람 확인으로 넘어간 칸 32.</dd></div>
-        </dl>
-      </li>
-      <li class="x2-case">
-        <p class="x2-no" aria-hidden="true">03</p>
-        <h3>학원끼리 자료가 섞이지 않게</h3>
-        <dl>
-          <div><dt>문제</dt><dd>여러 관을 둔 학원이 한 시스템을 쓰는데, 한 관의 자료가 다른 관에 보이면 안 됩니다.</dd></div>
-          <div><dt>한 일</dt><dd>관을 나누는 규칙을 서버와 PostgreSQL 행 단위 보안(RLS) 두 곳에 두었습니다. 중요한 저장과 조회는 감사 로그로 남깁니다.</dd></div>
-          <div class="x2-res"><dt>결과</dt><dd>서버에서 거르는 것을 한 군데 빠뜨려도 DB가 한 번 더 막는 두 겹 구조입니다.</dd></div>
-        </dl>
-      </li>
-    </ol>
+    <div class="x4-real">
+      <p class="x4-head"><b>실제 프로그램 화면</b><span>실제로 쓰는 화면입니다. 학생 이름과 폴더 경로는 가렸습니다. 누르면 크게 열립니다.</span></p>
+      <ol class="x4-shots">
+        <li><a href="img/dt-1-folder.webp" target="_blank" rel="noopener"><img src="img/dt-1-folder.webp" width="1366" height="768" loading="lazy" alt="DT 채점 1단계 폴더 화면. 왼쪽은 시험 폴더 목록, 오른쪽은 고른 시험의 시험지와 학생 스캔"></a><p><b>1 · 폴더</b>시험마다 폴더에 시험지 PDF와 학생 스캔을 넣어 두면 목록에 저절로 나타납니다.</p></li>
+        <li><a href="img/dt-2-answer.webp" target="_blank" rel="noopener"><img src="img/dt-2-answer.webp" width="1366" height="768" loading="lazy" alt="DT 채점 2단계 시험지 · 정답 화면. 시험지에서 찾은 답 칸 상자와 문항별 정답 · 배점 목록"></a><p><b>2 · 시험지 · 정답</b>시험지에서 찾은 답 칸과 정답 · 배점을 나란히 보고, 틀린 정답은 그 자리에서 고칩니다.</p></li>
+        <li><a href="img/dt-5-result.webp" target="_blank" rel="noopener"><img src="img/dt-5-result.webp" width="1366" height="768" loading="lazy" alt="DT 채점 5단계 결과 화면의 인쇄 고르기 창. 채점 결과표와 답안 확인지"></a><p><b>5 · 결과</b>반 전체 점수와 문항별 O · X를 모은 결과표, 학생마다 답안 위에 O · X를 찍은 확인지를 인쇄합니다.</p></li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -992,8 +1301,8 @@ h1 span{color:var(--sky)}
           <p class="kind">영어 단어 학습 앱 · 출시 준비 중</p>
           <h3><img src="img/punda-mark.png" alt="" width="280" height="272">더푼다</h3>
           <p class="one">하루 5분, 10단어. 푼다랑 같이 풀어요!</p>
-          <p>학원 학생이 매일 10단어씩 익히는 앱입니다. 학생은 선생님이 준 코드로 시작하고, 학원은 관리자 화면에서 단어장과 반별 배정, 신고를 다룹니다. 학생 앱과 관리자 화면, 서버를 혼자 개발했습니다.</p>
-          <ul class="ticks">
+          <p class="x6-long">학원 학생이 매일 10단어씩 익히는 앱입니다. 학생은 선생님이 준 코드로 시작하고, 학원은 관리자 화면에서 단어장과 반별 배정, 신고를 다룹니다. 학생 앱과 관리자 화면, 서버를 혼자 개발했습니다.</p>
+          <ul class="ticks x6-long">
             <li>뜻 고르기 · 철자 쓰기로 출제와 채점, 틀린 단어는 다시 복습</li>
             <li>학생마다 다르게 섞어 내는 문제</li>
             <li>경험치 · 레벨 · 연속 학습 · 뱃지 · 랭킹 · 푼다 오락실</li>
@@ -1085,44 +1394,39 @@ h1 span{color:var(--sky)}
   </div>
 </section>
 
-<section class="sec" id="numbers">
+<section class="sec" id="career">
   <div class="wrap">
-    <div class="sec-head"><h2>숫자로 본 일</h2><p class="sub">이력서에 적은 숫자 그대로입니다. 칸 하나가 한 건입니다.</p></div>
-    <div class="figs">
-      <div class="fig"><p class="v">13<small>건</small></p><b>공공기관 웹사이트</b><div><p class="sub">새로 5건 · 유지보수 8건 · 1년 2개월</p><svg class="unit" viewBox="0 0 260 19" aria-hidden="true"><rect width="98" height="16" fill="url(#uS)"/><rect x="100" width="158" height="16" fill="url(#uL)"/></svg></div></div>
-      <div class="fig"><p class="v">5<small>개</small></p><b>혼자 운영한 사내 업무 시스템</b><div><p class="sub">통합결재 · 자산관리 · 소프트웨어 관리 · 보안 · 홈페이지</p><svg class="unit" viewBox="0 0 260 19" aria-hidden="true"><rect width="98" height="16" fill="url(#uS)"/></svg></div></div>
-      <div class="fig"><p class="v">40<small>건+</small></p><b>직접 만든 업무 화면</b><div><p class="sub">JSP · JavaScript · jQuery · React</p><svg class="unit" viewBox="0 0 260 76" aria-hidden="true"><rect width="198" height="73" fill="url(#uS)"/></svg></div></div>
-      <div class="fig"><p class="v">6<small>건</small></p><b>인수인계 없이 혼자 끝낸 기능</b><div><p class="sub">코드만 읽고 구조 파악 · 새 화면 3 · 고도화 3</p><svg class="unit" viewBox="0 0 260 19" aria-hidden="true"><rect width="58" height="16" fill="url(#uS)"/><rect x="60" width="58" height="16" fill="url(#uL)"/></svg></div></div>
-      <div class="fig"><p class="v">전부</p><b>모의해킹 취약점 조치</b><div><p class="sub">첨부파일 허용 목록 · URL 인코딩 오류 등</p><svg class="unit" viewBox="0 0 260 44" aria-hidden="true"><circle cx="22" cy="22" r="15" fill="none" stroke="#0C3778" stroke-width="13"/></svg></div></div>
-      <div class="fig"><p class="v">30+</p><b>역할별로 운영하는 AI 에이전트</b><div><p class="sub">설계 · 구현 · 검토 · 보안을 나눠 맡김</p><svg class="unit" viewBox="0 0 260 60" aria-hidden="true"><rect width="198" height="58" fill="url(#uR)"/></svg></div></div>
+    <div class="cv-intro">
+      <p class="cv-eyebrow">경력</p>
+      <div class="why">
+        <h2>불편한 프로그램을 직접 고치고 싶어 개발자가 되었습니다.</h2>
+        <div class="x6-long">
+          <p>학원에서 행정 일을 하던 때, 컴퓨터는 새것으로 바뀌는데 업무 프로그램의 불편함은 그대로인 것이 늘 아쉬웠습니다. 직접 고쳐 보자는 마음으로 독학을 시작했고, Java · 웹 · DB 과정을 마치며 개발자가 되었습니다. 일하면서 응용소프트웨어를 전공해 졸업하고 정보처리기사를 땄습니다.</p>
+          <p>그 뒤 금융, 공공, 제조 현장에서 구축과 운영을 고루 해 왔습니다. 지금은 처음 출발점이었던 학원을 위해, 이언에듀케이션의 학원 운영 시스템을 만들고 있습니다.</p>
+        </div>
+      </div>
     </div>
-    <p class="legend"><span>채운 칸 = 새로 만든 것 · 맡은 것</span><span>빈 칸 = 유지보수 · 고도화</span></p>
-  </div>
-</section>
 
-<section class="sec" id="career" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head"><h2>경력</h2><p class="sub">2020년 11월부터 지금까지, 막대 한 줄이 실제 기간입니다.</p></div>
-    <div class="cv-axis" aria-hidden="true"><div><span style="left:2.74%">2021</span><span style="left:19.18%">2022</span><span style="left:35.62%">2023</span><span style="left:52.05%">2024</span><span style="left:68.49%">2025</span><span style="left:84.93%">2026</span></div></div>
-
-    <!-- 한 줄 = .cv-row 하나. --s = 2020.11 부터 몇 달째 시작, --d = 몇 달 동안. 2026.04 앞의 고객사는 업종으로만 적었어요 -->
     <p class="cv-group">경력 프로젝트</p>
-    <ol>
-      <li class="cv-row now x2-next" style="--s:73;--d:0"><p class="when">2026.12 –<br><span class="x2-free">프리랜서</span></p><div class="track"><i></i></div><div class="what"><h3>현대자동차 MiPlatform → React 전환</h3><p>프리랜서로 투입해 MiPlatform으로 만든 화면을 React로 옮기는 전환 프로젝트를 맡습니다.</p><p class="tech">React · MiPlatform</p></div></li>
-      <li class="cv-row now" style="--s:65;--d:8"><p class="when">2026.04 – 2026.11</p><div class="track"><i></i></div><div class="what"><h3>하이씨엔씨</h3><ul class="jobs"><li>서정대학교 SSO · 2차 인증 구축 (한컴위드 패스포트 · 얼굴 인증 · PIN · 패턴 · ZOTP)</li><li>서울예술대학교 관리자 시스템 개편</li><li>시대인재 유지보수</li></ul></div></li>
-      <li class="cv-row" style="--s:42;--d:22"><p class="when">2024.05 – 2026.03</p><div class="track"><i></i></div><div class="what"><h3>제조 대기업 사내 업무 시스템 5개 단독 운영</h3><p class="facts"><span><b>5개</b>시스템 단독</span><span><b>연 5~10건</b>개선 요청 처리</span><span><b>전부</b>취약점 조치</span></p><p>통합결재, 자산관리, 소프트웨어 관리, 보안, 홈페이지 다섯 시스템을 혼자 맡았습니다. 기능 개선 요청을 분석부터 개발, 배포까지 처리했고, 모의해킹에서 나온 보안 취약점을 모두 조치했습니다.</p><p class="tech">Java · Spring · Nexacro · Linux · Tomcat · Wildfly · GitLab</p></div></li>
-      <li class="cv-row" style="--s:28;--d:13"><p class="when">2023.03 – 2024.04</p><div class="track"><i></i></div><div class="what"><h3>공공기관 웹사이트 13건 구축 · 유지보수</h3><p class="facts"><span><b>13건</b>신규 5 · 유지보수 8</span><span><b>3인</b>개발 · 퍼블 · 디자인</span></p><p>새로 5건을 만들고 8건을 유지보수했습니다. 기관 담당자와 직접 협의해 요구사항 정의부터 오픈까지 맡았고, 관리자 페이지와 게시판, 권한 관리, 조회 · 통계 기능을 만들었습니다.</p><p class="tech">Java · eGovFrame · MyBatis · JSP · jQuery · Linux · Tomcat</p></div></li>
-      <li class="cv-row" style="--s:18;--d:9"><p class="when">2022.05 – 2023.02</p><div class="track"><i></i></div><div class="what"><h3>IT 기업 구매 시스템 구축</h3><p class="facts"><span><b>15건</b>React 화면</span></p><p>React로 구매 · 계약 화면 약 15건을 만들고 서버 API와 연결했습니다.</p><p class="tech">React · Java · MySQL</p></div></li>
-      <li class="cv-row" style="--s:15;--d:3"><p class="when">2022.02 – 2022.05</p><div class="track"><i></i></div><div class="what"><h3>자산신탁사 업무 시스템 단독 투입</h3><p class="facts"><span><b>6건</b>혼자 완수</span><span><b>3개월</b>단독 투입</span></p><p>인수인계 문서 없이 코드를 읽어 구조를 파악한 뒤, 새 화면 3건과 기능 고도화 3건을 혼자 마쳤습니다.</p><p class="tech">Java · BXM Framework</p></div></li>
-      <li class="cv-row" style="--s:6;--d:9"><p class="when">2021.05 – 2022.02</p><div class="track"><i></i></div><div class="what"><h3>자산신탁사 인사 시스템 구축</h3><p class="facts"><span><b>15건</b>새 화면 10 · 교차 점검 5</span></p><p>인사 업무 화면 약 10건을 새로 만들고, 오픈 전에 다른 화면 5건을 교차 점검해 오류를 고쳤습니다.</p><p class="tech">Java · BXM Framework(AngularJS) · Oracle · MySQL</p></div></li>
-      <li class="cv-row" style="--s:0;--d:6"><p class="when">2020.11 – 2021.05</p><div class="track"><i></i></div><div class="what"><h3>대학 연구 프로젝트</h3><p>지도와 분포도를 그려 보여 주는 기능을 2인 개발로 만들었습니다.</p><p class="tech">Java · JavaScript</p></div></li>
+    <ol class="tl x6-tl">
+      <li class="tl-row now x2-next"><div class="tl-when"><p class="when">2026.12 –</p><span class="x2-free">프리랜서</span></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>현대자동차 MiPlatform → React 전환</h3><p>프리랜서로 투입해 MiPlatform으로 만든 화면을 React로 옮기는 전환 프로젝트를 맡습니다.</p><p class="tech">React · MiPlatform</p></div></li>
+      <li class="tl-row now"><div class="tl-when"><p class="when">2026.04 – 2026.11</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>하이씨엔씨</h3><ul class="jobs"><li>서정대학교 SSO · 2차 인증 구축 (한컴위드 패스포트 · 얼굴 인증 · PIN · 패턴 · ZOTP)</li><li>서울예술대학교 관리자 시스템 개편</li><li>시대인재 유지보수</li></ul></div></li>
+      <li class="tl-row"><div class="tl-when"><p class="when">2024.05 – 2026.03</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>제조 대기업 사내 업무 시스템 5개 단독 운영</h3><p class="facts"><span><b>5개</b>시스템 단독</span><span><b>연 5~10건</b>개선 요청 처리</span><span><b>전부</b>취약점 조치</span></p><p>통합결재, 자산관리, 소프트웨어 관리, 보안, 홈페이지 다섯 시스템을 혼자 맡았습니다. 기능 개선 요청을 분석부터 개발, 배포까지 처리했고, 모의해킹에서 나온 보안 취약점을 모두 조치했습니다.</p><p class="tech">Java · Spring · Nexacro · Linux · Tomcat · Wildfly · GitLab</p></div></li>
+      <li class="tl-row"><div class="tl-when"><p class="when">2023.03 – 2024.04</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>공공기관 웹사이트 13건 구축 · 유지보수</h3><p class="facts"><span><b>13건</b>신규 5 · 유지보수 8</span><span><b>3인</b>개발 · 퍼블 · 디자인</span></p><p>새로 5건을 만들고 8건을 유지보수했습니다. 기관 담당자와 직접 협의해 요구사항 정의부터 오픈까지 맡았고, 관리자 페이지와 게시판, 권한 관리, 조회 · 통계 기능을 만들었습니다.</p><p class="tech">Java · eGovFrame · MyBatis · JSP · jQuery · Linux · Tomcat</p></div></li>
+      <li class="tl-row"><div class="tl-when"><p class="when">2022.05 – 2023.02</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>IT 기업 구매 시스템 구축</h3><p class="facts"><span><b>15건</b>React 화면</span></p><p>React로 구매 · 계약 화면 약 15건을 만들고 서버 API와 연결했습니다.</p><p class="tech">React · Java · MySQL</p></div></li>
+      <li class="tl-row"><div class="tl-when"><p class="when">2022.02 – 2022.05</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>자산신탁사 업무 시스템 단독 투입</h3><p class="facts"><span><b>6건</b>혼자 완수</span><span><b>3개월</b>단독 투입</span></p><p>인수인계 문서 없이 코드를 읽어 구조를 파악한 뒤, 새 화면 3건과 기능 고도화 3건을 혼자 마쳤습니다.</p><p class="tech">Java · BXM Framework</p></div></li>
+      <li class="tl-row"><div class="tl-when"><p class="when">2021.05 – 2022.02</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>자산신탁사 인사 시스템 구축</h3><p class="facts"><span><b>15건</b>새 화면 10 · 교차 점검 5</span></p><p>인사 업무 화면 약 10건을 새로 만들고, 오픈 전에 다른 화면 5건을 교차 점검해 오류를 고쳤습니다.</p><p class="tech">Java · BXM Framework(AngularJS) · Oracle · MySQL</p></div></li>
+      <li class="tl-row"><div class="tl-when"><p class="when">2020.11 – 2021.05</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>대학 연구 프로젝트</h3><p>지도와 분포도를 그려 보여 주는 기능을 2인 개발로 만들었습니다.</p><p class="tech">Java · JavaScript</p></div></li>
     </ol>
-    <p class="cv-group">함께 이어 온 프로젝트</p>
-    <ol class="mine">
-      <li class="cv-row" style="--s:70;--d:2.87"><p class="when">2026.09 –</p><div class="track"><i></i></div><div class="what"><h3>더푼다</h3><p>영어 단어 학습 앱을 학생 앱, 관리자 화면, 서버까지 혼자 만들고 있습니다.</p></div></li>
-      <li class="cv-row" style="--s:62;--d:.9"><p class="when">2026.01</p><div class="track"><i></i></div><div class="what"><h3>영어캠프 홈페이지 · 관리자 CMS</h3></div></li>
-      <li class="cv-row" style="--s:57;--d:15.87"><p class="when">2025.08 –</p><div class="track"><i></i></div><div class="what"><h3>이언에듀케이션 시스템 구축</h3><p>학원 통합 운영 시스템 WInO Academy를 기획부터 배포까지 이끌고 있습니다.</p></div></li>
-    </ol>
+
+    <div class="tl-mine">
+      <p class="tl-mine-h">회사 일과 함께 이어 온 프로젝트</p>
+      <ul>
+        <li><a href="#projects">이언에듀케이션 시스템 구축 · 2025.08 –</a></li>
+        <li><a href="#service">영어캠프 홈페이지 · 관리자 CMS · 2026.01</a></li>
+        <li><a href="#service">더푼다 · 2026.09 –</a></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -1137,7 +1441,7 @@ h1 span{color:var(--sky)}
       <li><b>증거</b><span>시험과 화면 확인</span></li>
       <li><b>사람이 결정</b><span>마지막 판단은 직접</span></li>
     </ol>
-    <div class="ways">
+    <div class="ways x6-ways">
       <div><h3>증거로 닫습니다</h3><p>AI가 「됐다」고 해도 시험과 화면 확인으로 증거가 나와야 끝냅니다.</p></div>
       <div><h3>일에 맞는 모델을 씁니다</h3><p>동시에 도는 에이전트 수와 사용 한도를 보며 비용을 관리합니다.</p></div>
       <div><h3>AI 기능도 만듭니다</h3><p>LLM, RAG, LangChain으로 문서 요약 챗봇과 AI 에이전트를, 그리고 답안지를 읽어 채점하는 도구를 만들었습니다.</p></div>
@@ -1151,7 +1455,9 @@ h1 span{color:var(--sky)}
 
 <section class="sec" id="stack">
   <div class="wrap">
-    <div class="sec-head"><h2>기술</h2><p class="sub">실제로 써서 서비스를 만든 것만 적습니다.</p></div>
+    <div class="se-grid">
+      <div class="se-stack">
+        <div class="sec-head"><h2>기술</h2><p class="sub">실제로 써서 서비스를 만든 것만 적습니다.</p></div>
     <dl class="stack">
       <div><dt>화면</dt><dd><b>React · React Native · Next.js · TypeScript · JavaScript · jQuery · Nexacro</b><span>웹과 앱의 화면, 관리자 화면</span></dd></div>
       <div><dt>서버</dt><dd><b>Java · Spring Boot · Spring Security · MyBatis</b><span>업무 규칙, 인증과 권한, API 서버</span></dd></div>
@@ -1160,13 +1466,10 @@ h1 span{color:var(--sky)}
       <div><dt>업무 분야</dt><dd><b>eGovFrame · 인증/권한(RBAC) · SSO · 2차 인증 · 보안 취약점 조치</b><span>공공 · 기업 업무 시스템에서 쓰는 틀과 방식</span></dd></div>
       <div><dt>AI</dt><dd><b>Python · LLM · RAG · LangChain · Claude Code · Codex</b><span>AI 기능 개발과 AI 에이전트를 활용한 개발</span></dd></div>
     </dl>
-    <p class="note">Jenkins는 운영 환경에서 빌드와 배포에 쓴 경험이 있습니다. 설치와 파이프라인 구축은 하지 않았습니다.</p>
-  </div>
-</section>
-
-<section class="sec sec-ice" id="edu">
-  <div class="wrap">
-    <div class="sec-head"><h2>학력 · 자격 · 교육</h2></div>
+        <p class="note">Jenkins는 운영 환경에서 빌드와 배포에 쓴 경험이 있습니다. 설치와 파이프라인 구축은 하지 않았습니다.</p>
+      </div>
+      <div class="se-edu" id="edu">
+        <div class="sec-head"><h2>학력 · 자격 · 교육</h2></div>
     <div class="edu">
       <div><h3>학력</h3><ul>
         <li><b>한양사이버대학교 응용소프트웨어 졸업</b><span>2021.03 – 2024.02 · 졸업작품: 키오스크 식권 구매와 관리자 페이지(Java · Spring)</span></li>
@@ -1178,6 +1481,8 @@ h1 span{color:var(--sky)}
         <li><b>Spring Framework 과정</b><span>2024.01 – 2024.04 · MBC 아카데미</span></li>
         <li><b>Java 웹 개발 과정</b><span>2020.06 – 2020.11 · 연세직업전문학교</span></li>
       </ul></div>
+    </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1191,7 +1496,7 @@ h1 span{color:var(--sky)}
     <svg class="end-mark" viewBox="0 0 925 280" aria-hidden="true"><use href="#wm"/></svg>
   </div>
 </section>
-<footer class="foot"><div class="wrap"><span>© WInO · 김효준</span><span>정직 · 배움 · 공유 · 실천 · 사람 중심</span><span>마지막 수정 2026.11.26</span></div></footer>
+<footer class="foot"><div class="wrap"><span>© WInO · 김효준</span><span>정직 · 배움 · 공유 · 실천 · 사람 중심</span><span>마지막 고침 2026.11.26</span></div></footer>
 
 <script>
 (function(){
@@ -1453,5 +1758,9 @@ h1 span{color:var(--sky)}
   reset();
 })();
 </script>
+<script>(function(){var h=document.documentElement,bs=document.querySelectorAll('.x6-seg button');
+function set(v,save){h.dataset.len=v;[].forEach.call(bs,function(b){b.setAttribute('aria-pressed',b.dataset.v===v?'true':'false')});if(save){try{localStorage.setItem('x6len',v)}catch(e){}}}
+set(h.dataset.len==='long'?'long':'short',false);
+[].forEach.call(bs,function(b){b.addEventListener('click',function(){set(b.dataset.v,true)})});})();</script>
 </body>
 </html>
