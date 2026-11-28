@@ -652,6 +652,13 @@ html[data-len="short"] .x7-p.x7-fig-on{display:block}
 .x7-lb figcaption{color:#fff;font:500 14px/1.6 var(--text);max-width:60rem;text-align:center}
 .x7-lb button{position:absolute;top:-4px;right:0;transform:translateY(-100%);min-height:44px;padding:0 18px;border:0;border-radius:999px;background:#fff;color:var(--navy);font:700 15px/1 var(--text);cursor:pointer}
 .x7-lb button:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+/* x8- 운영 방식 칸 */
+.x8-h{font:700 16px/1.4 var(--text);color:#A9CBFF;margin:clamp(34px,4vw,52px) 0 18px}
+.x8-ops{counter-reset:x8}
+.x8-ops>div{counter-increment:x8}
+.x8-ops h3::before{content:counter(x8);display:inline-grid;place-items:center;width:26px;height:26px;margin-right:10px;border-radius:50%;background:#A9CBFF;color:var(--navy);font:800 14px/1 var(--disp);vertical-align:2px}
+.x8-ops>div:last-child{grid-column:1/-1}
+@media (max-width:1000px){.x8-ops>div:last-child{grid-column:auto}}
 </style>
 <script>try{var v=null;try{v=localStorage.getItem('x6len')}catch(e){}document.documentElement.dataset.len=v==='long'?'long':'short'}catch(e){}</script>
 </head>
@@ -779,7 +786,7 @@ html[data-len="short"] .x7-p.x7-fig-on{display:block}
     <div class="x5-mid">
       <div>
         <p class="x5-h">경력 한눈에 · 분기마다 한 칸</p>
-        <div class="x5-grid" role="img" aria-label="경력 분기 그림. 대학 연구 2020년 11월부터 2021년 5월, 자산신탁사 인사 시스템 2021년 5월부터 2022년 2월, 자산신탁사 업무 시스템 2022년 2월부터 5월, IT 기업 2022년 5월부터 2023년 2월, 공공기관 2023년 3월부터 2024년 4월, 제조 대기업 2024년 5월부터 2026년 3월, 하이씨엔씨 2026년 4월부터 11월, 2026년 12월부터 현대자동차 프리랜서 예정">
+        <div class="x5-grid" role="img" aria-label="경력 분기 그림. 대학 연구 2020년 11월부터 2021년 5월, 교보자산신탁 2021년 5월부터 2022년 2월, 코람코자산신탁 2022년 2월부터 5월, 카카오 2022년 5월부터 2023년 2월, 니트로아이 2023년 3월부터 2024년 4월, 지니시스템 2024년 5월부터 2026년 3월, 하이씨엔씨 2026년 4월부터 11월, 2026년 12월부터 현대자동차 프리랜서 예정">
           <em>현대자동차</em>
           <i class=""></i>
           <i class=""></i>
@@ -832,7 +839,7 @@ html[data-len="short"] .x7-p.x7-fig-on{display:block}
           <i class="on"></i>
           <i class="on"></i>
           <i class="on"></i>
-          <em>제조 대기업</em>
+          <em>지니시스템</em>
           <i class=""></i>
           <i class=""></i>
           <i class=""></i>
@@ -858,7 +865,7 @@ html[data-len="short"] .x7-p.x7-fig-on{display:block}
           <i class=""></i>
           <i class=""></i>
           <i class=""></i>
-          <em>공공기관</em>
+          <em>니트로아이</em>
           <i class=""></i>
           <i class=""></i>
           <i class=""></i>
@@ -884,7 +891,7 @@ html[data-len="short"] .x7-p.x7-fig-on{display:block}
           <i class=""></i>
           <i class=""></i>
           <i class=""></i>
-          <em>IT 기업</em>
+          <em>카카오</em>
           <i class=""></i>
           <i class=""></i>
           <i class=""></i>
@@ -910,7 +917,7 @@ html[data-len="short"] .x7-p.x7-fig-on{display:block}
           <i class=""></i>
           <i class=""></i>
           <i class=""></i>
-          <em>자산신탁사 업무</em>
+          <em>코람코자산신탁</em>
           <i class=""></i>
           <i class=""></i>
           <i class=""></i>
@@ -936,7 +943,7 @@ html[data-len="short"] .x7-p.x7-fig-on{display:block}
           <i class=""></i>
           <i class=""></i>
           <i class=""></i>
-          <em>자산신탁사 인사</em>
+          <em>교보자산신탁</em>
           <i class=""></i>
           <i class=""></i>
           <i class="on"></i>
@@ -1362,18 +1369,7 @@ html[data-len="short"] .x7-p.x7-fig-on{display:block}
 
 <section class="sec" id="career">
   <div class="wrap">
-    <div class="cv-intro">
-      <p class="cv-eyebrow">경력</p>
-      <div class="why">
-        <h2>불편한 프로그램을 직접 고치고 싶어 개발자가 되었습니다.</h2>
-        <div class="x6-long">
-          <p>학원에서 행정 일을 하던 때, 컴퓨터는 새것으로 바뀌는데 업무 프로그램의 불편함은 그대로인 것이 늘 아쉬웠습니다. 직접 고쳐 보자는 마음으로 독학을 시작했고, Java · 웹 · DB 과정을 마치며 개발자가 되었습니다. 일하면서 응용소프트웨어를 전공해 졸업하고 정보처리기사를 땄습니다.</p>
-          <p>그 뒤 금융, 공공, 제조 현장에서 구축과 운영을 고루 해 왔습니다. 지금은 처음 출발점이었던 학원을 위해, 이언에듀케이션의 학원 운영 시스템을 만들고 있습니다.</p>
-        </div>
-      </div>
-    </div>
-
-    <p class="cv-group">경력 프로젝트</p>
+    <div class="sec-head"><h2>경력</h2></div>
     <ol class="tl x6-tl">
       <li class="tl-row now x2-next"><div class="tl-when"><p class="when">2026.12 –</p><span class="x2-free">프리랜서</span></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>현대자동차 MiPlatform → React 전환</h3><p>프리랜서로 투입해 MiPlatform으로 만든 화면을 React로 옮기는 전환 프로젝트를 맡습니다.</p><p class="tech">React · MiPlatform</p><div class="shot x7-fig x7-fig-top x6-long"><svg viewBox="0 0 560 330" role="img" aria-label="MiPlatform 화면이 React 화면으로 바뀌는 그림">
             <rect width="560" height="330" fill="#0C3778"/>
@@ -1403,11 +1399,11 @@ html[data-len="short"] .x7-p.x7-fig-on{display:block}
         <li class="x7-p"><div><p class="kind">대학</p><h4>서울예술대학교 관리자 시스템 개편</h4></div></li>
         <li class="x7-p"><div><p class="kind">교육</p><h4>시대인재 유지보수</h4></div></li>
       </ul></div></li>
-      <li class="tl-row"><div class="tl-when"><p class="when">2024.05 – 2026.03</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>제조 대기업 사내 업무 시스템 5개 단독 운영</h3><p class="facts"><span><b>5개</b>시스템 단독</span><span><b>연 5~10건</b>개선 요청 처리</span><span><b>전부</b>취약점 조치</span></p><p>통합결재, 자산관리, 소프트웨어 관리, 보안, 홈페이지 다섯 시스템을 혼자 맡았습니다. 기능 개선 요청을 분석부터 개발, 배포까지 처리했고, 모의해킹에서 나온 보안 취약점을 모두 조치했습니다.</p><p class="tech">Java · Spring · Nexacro · Linux · Tomcat · Wildfly · GitLab</p></div></li>
-      <li class="tl-row"><div class="tl-when"><p class="when">2023.03 – 2024.04</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>공공기관 웹사이트 13건 구축 · 유지보수</h3><p class="facts"><span><b>13건</b>신규 5 · 유지보수 8</span><span><b>3인</b>개발 · 퍼블 · 디자인</span></p><p>새로 5건을 만들고 8건을 유지보수했습니다. 기관 담당자와 직접 협의해 요구사항 정의부터 오픈까지 맡았고, 관리자 페이지와 게시판, 권한 관리, 조회 · 통계 기능을 만들었습니다.</p><p class="tech">Java · eGovFrame · MyBatis · JSP · jQuery · Linux · Tomcat</p></div></li>
-      <li class="tl-row"><div class="tl-when"><p class="when">2022.05 – 2023.02</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>IT 기업 구매 시스템 구축</h3><p class="facts"><span><b>15건</b>React 화면</span></p><p>React로 구매 · 계약 화면 약 15건을 만들고 서버 API와 연결했습니다.</p><p class="tech">React · Java · MySQL</p></div></li>
-      <li class="tl-row"><div class="tl-when"><p class="when">2022.02 – 2022.05</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>자산신탁사 업무 시스템 단독 투입</h3><p class="facts"><span><b>6건</b>혼자 완수</span><span><b>3개월</b>단독 투입</span></p><p>인수인계 문서 없이 코드를 읽어 구조를 파악한 뒤, 새 화면 3건과 기능 고도화 3건을 혼자 마쳤습니다.</p><p class="tech">Java · BXM Framework</p></div></li>
-      <li class="tl-row"><div class="tl-when"><p class="when">2021.05 – 2022.02</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>자산신탁사 인사 시스템 구축</h3><p class="facts"><span><b>15건</b>새 화면 10 · 교차 점검 5</span></p><p>인사 업무 화면 약 10건을 새로 만들고, 오픈 전에 다른 화면 5건을 교차 점검해 오류를 고쳤습니다.</p><p class="tech">Java · BXM Framework(AngularJS) · Oracle · MySQL</p></div></li>
+      <li class="tl-row"><div class="tl-when"><p class="when">2024.05 – 2026.03</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>지니시스템 사내 업무 시스템 운영</h3><p class="facts"><span><b>5개</b>시스템 단독</span><span><b>연 5~10건</b>개선 요청 처리</span><span><b>전부</b>취약점 조치</span></p><p>통합결재, 자산관리, 소프트웨어 관리, 보안, 홈페이지 다섯 시스템을 혼자 맡았습니다. 기능 개선 요청을 분석부터 개발, 배포까지 처리했고, 모의해킹에서 나온 보안 취약점을 모두 조치했습니다.</p><p class="tech">Java · Spring · Nexacro · Linux · Tomcat · Wildfly · GitLab</p></div></li>
+      <li class="tl-row"><div class="tl-when"><p class="when">2023.03 – 2024.04</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>니트로아이 공공기관 웹 사이트 구축 및 유지보수</h3><p class="facts"><span><b>13건</b>신규 5 · 유지보수 8</span><span><b>3인</b>개발 · 퍼블 · 디자인</span></p><p>새로 5건을 만들고 8건을 유지보수했습니다. 기관 담당자와 직접 협의해 요구사항 정의부터 오픈까지 맡았고, 관리자 페이지와 게시판, 권한 관리, 조회 · 통계 기능을 만들었습니다.</p><p class="tech">Java · eGovFrame · MyBatis · JSP · jQuery · Linux · Tomcat</p></div></li>
+      <li class="tl-row"><div class="tl-when"><p class="when">2022.05 – 2023.02</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>카카오 구매시스템 구축</h3><p class="facts"><span><b>15건</b>React 화면</span></p><p>React로 구매 · 계약 화면 약 15건을 만들고 서버 API와 연결했습니다.</p><p class="tech">React · Java · MySQL</p></div></li>
+      <li class="tl-row"><div class="tl-when"><p class="when">2022.02 – 2022.05</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>코람코자산신탁 고도화</h3><p class="facts"><span><b>6건</b>혼자 완수</span><span><b>3개월</b>단독 투입</span></p><p>인수인계 문서 없이 코드를 읽어 구조를 파악한 뒤, 새 화면 3건과 기능 고도화 3건을 혼자 마쳤습니다.</p><p class="tech">Java · BXM Framework</p></div></li>
+      <li class="tl-row"><div class="tl-when"><p class="when">2021.05 – 2022.02</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>교보자산신탁 인사 시스템 구축 참여</h3><p class="facts"><span><b>15건</b>새 화면 10 · 교차 점검 5</span></p><p>인사 업무 화면 약 10건을 새로 만들고, 오픈 전에 다른 화면 5건을 교차 점검해 오류를 고쳤습니다.</p><p class="tech">Java · BXM Framework(AngularJS) · Oracle · MySQL</p></div></li>
       <li class="tl-row"><div class="tl-when"><p class="when">2020.11 – 2021.05</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>대학 연구 프로젝트</h3><p>지도와 분포도를 그려 보여 주는 기능을 2인 개발로 만들었습니다.</p><p class="tech">Java · JavaScript</p></div></li>
     </ol>
 
@@ -1424,7 +1420,7 @@ html[data-len="short"] .x7-p.x7-fig-on{display:block}
 
 <section class="sec dark" id="ways">
   <div class="wrap">
-    <div class="sec-head"><h2>AI 팀을 운영해 혼자서도 끝까지 만듭니다.</h2><p class="sub">AI를 도구로 쓰는 데서 그치지 않고, 여러 AI 에이전트를 한 팀처럼 운영해 개발합니다. 설계, 구현, 검토, 검증을 서로 다른 AI가 맡고 결정은 사람이 합니다.</p></div>
+    <div class="sec-head"><h2>AI 팀을 짜고, 돌려 보고, 고쳐 가며 만듭니다.</h2><p class="sub">AI를 도구로 쓰는 데서 그치지 않고, 여러 AI 에이전트를 한 팀처럼 운영해 개발합니다. 설계, 구현, 검토, 검증을 서로 다른 AI가 맡고 결정은 사람이 합니다. 팀은 한 번 짜고 끝내지 않고, 결과를 재어 가며 계속 다시 짭니다.</p></div>
     <ol class="flow">
       <li><b>정리</b><span>목표 · 범위 · 위험 · 완료 기준</span></li>
       <li><b>설계</b><span>판단은 큰 모델에</span></li>
@@ -1433,6 +1429,17 @@ html[data-len="short"] .x7-p.x7-fig-on{display:block}
       <li><b>증거</b><span>시험과 화면 확인</span></li>
       <li><b>사람이 결정</b><span>마지막 판단은 직접</span></li>
     </ol>
+    <p class="x8-h">이렇게 운영합니다</p>
+    <div class="ways x6-ways x8-ops">
+      <div><h3>역할을 나눕니다</h3><p>총괄 AI 하나가 일을 나누고 검사와 반영만 맡고, 직접 코드를 쓰지 않습니다. 그 아래에 일감을 나누는 PM 셋, 메뉴 묶음마다 화면과 서버를 함께 맡는 팀, 디자인 팀장, 공용 부품을 맡는 창, 화면을 찍어 판정하는 창을 따로 둡니다.</p></div>
+      <div><h3>서로 다른 AI가 교차 검토합니다</h3><p>Claude로 만들고, 다른 회사의 AI인 Codex가 검토하고 검증합니다. 보안 설계는 따로 둔 AI가 최종 판단만 합니다.</p></div>
+      <div><h3>검사를 통과한 것만 하루 네 번 반영합니다</h3><p>06 · 12 · 18 · 24시에 검사를 통과한 것만 모아 개발 서버에 반영합니다. 반영 전에 자동 검사와, PC · 핸드폰 두 폭의 화면 그림 확인을 거칩니다.</p></div>
+      <div><h3>30분마다 점검합니다</h3><p>쉬는 팀을 깨우고 막힌 일을 풀고, 쓰는 속도와 비용을 재서 일을 더 주거나 늦춥니다.</p></div>
+      <div><h3>팀을 계속 다시 짭니다</h3><p>처음에는 큰 팀으로 시작해 일하는 창 넷의 작은 팀으로, 지금은 메뉴 묶음마다 화면과 서버를 한 팀으로 묶고 PM이 통제하는 꼴로 바꿔 왔습니다. 비싼 모델은 총괄 하나만 쓰고 짓는 창은 가벼운 모델로 바꿨습니다. 속도 · 비용 · 실수를 재서 바꿉니다.</p></div>
+      <div><h3>실수를 규칙으로 만듭니다</h3><p>사고는 원장에 적고, 되풀이되면 번호 붙은 규칙으로 만들어 모든 AI가 지킵니다. 지금 규칙은 33개입니다. 대표가 내린 결정도 원장에 번호를 붙여 쌓고, AI는 일하기 전에 그 원장부터 찾아봅니다.</p></div>
+      <div><h3>마지막에 켜는 것은 사람입니다</h3><p>운영 배포, 실제 문자 발송, 실제 키, 외부 공개는 AI가 하지 않고 사람이 마지막에 켭니다.</p></div>
+    </div>
+    <p class="x8-h">일하는 원칙</p>
     <div class="ways x6-ways">
       <div><h3>증거로 닫습니다</h3><p>AI가 「됐다」고 해도 시험과 화면 확인으로 증거가 나와야 끝냅니다.</p></div>
       <div><h3>일에 맞는 모델을 씁니다</h3><p>동시에 도는 에이전트 수와 사용 한도를 보며 비용을 관리합니다.</p></div>
