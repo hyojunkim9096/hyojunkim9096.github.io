@@ -630,6 +630,28 @@ html[data-len="short"] .x2-case dl.x6-long{display:block}
 html[data-len="short"] .x2-case dl.x6-long>div:not(.x2-res){display:none}
 html[data-len="short"] .x2-case h3{margin-bottom:12px}
 html[data-len="short"] .deep:has(> .areas){display:none}
+/* x7- 1128 손질: 제목 한 줄 · 경력 합침 · 그림 크게 보기 */
+.feature>div:first-child{container-type:inline-size}
+@supports (font-size:1cqi){.feature h2{white-space:nowrap;font-size:min(clamp(32px,4.1vw,50px),7.9cqi)}}
+.x7-projs{display:grid;gap:22px;margin-top:14px}
+.x7-p{display:block}
+.x7-p.x7-fig-on{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;align-items:start}
+.x7-p h4{font:800 20px/1.4 var(--disp);letter-spacing:-.015em;margin:2px 0 0;text-wrap:balance}
+.x7-p h4+p{margin-top:6px}
+.x7-p .tech{margin-top:8px}
+.x7-fig{border-radius:14px}
+.x7-fig-top{margin-top:16px;max-width:300px}
+html[data-len="short"] .x6-tl .what>.x7-keep{display:grid}
+html[data-len="short"] .x7-p.x7-fig-on{display:block}
+@media (max-width:640px){.x7-p.x7-fig-on{grid-template-columns:minmax(0,1fr)}.x7-fig-top{max-width:none}}
+.x4-shots a{cursor:zoom-in}
+.x7-lb{border:0;padding:0;background:transparent;max-width:min(96vw,1366px);width:96vw;max-height:94vh;margin:auto;overflow:visible}
+.x7-lb::backdrop{background:rgba(7,18,40,.82)}
+.x7-lb figure{margin:0;display:grid;gap:10px;justify-items:center}
+.x7-lb img{display:block;max-width:100%;max-height:calc(94vh - 90px);width:auto;height:auto;border-radius:10px;background:#fff}
+.x7-lb figcaption{color:#fff;font:500 14px/1.6 var(--text);max-width:60rem;text-align:center}
+.x7-lb button{position:absolute;top:-4px;right:0;transform:translateY(-100%);min-height:44px;padding:0 18px;border:0;border-radius:999px;background:#fff;color:var(--navy);font:700 15px/1 var(--text);cursor:pointer}
+.x7-lb button:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
 </style>
 <script>try{var v=null;try{v=localStorage.getItem('x6len')}catch(e){}document.documentElement.dataset.len=v==='long'?'long':'short'}catch(e){}</script>
 </head>
@@ -646,12 +668,12 @@ html[data-len="short"] .deep:has(> .areas){display:none}
   <div class="wrap bar-in">
     <a class="logo" href="#top" aria-label="WInO 처음으로"><svg aria-hidden="true"><use href="#wm"/></svg></a>
     <nav class="links" aria-label="구역">
-      <a href="#projects">프로젝트</a><a href="#try">눌러 보기</a><a href="#career">경력</a><a href="#ways">일하는 방식</a><a href="#stack">기술</a><a href="#contact">문의</a><a class="x2-pdf" href="resume.pdf" target="_blank" rel="noopener">이력서 PDF</a>
+      <a href="#projects">프로젝트</a><a href="#try">눌러 보기</a><a href="#career">경력</a><a href="#ways">일하는 방식</a><a href="#stack">기술</a><a href="#contact">문의</a><a class="x2-pdf" href="resume.pdf" download="resume.pdf">이력서 PDF</a>
     </nav>
     <div class="x6-len"><span class="x6-hint" id="x6-h">글 길이</span><div class="x6-seg" role="group" aria-labelledby="x6-h"><button type="button" data-v="short" aria-pressed="true">짧게</button><button type="button" data-v="long" aria-pressed="false">자세히</button></div></div>
     <details class="menu">
       <summary>메뉴</summary>
-      <ul><li><a href="#projects">프로젝트</a></li><li><a href="#try">눌러 보기</a></li><li><a href="#career">경력</a></li><li><a href="#ways">일하는 방식</a></li><li><a href="#stack">기술</a></li><li><a href="#edu">학력 · 자격</a></li><li><a href="#contact">문의</a></li><li><a href="resume.pdf" target="_blank" rel="noopener">이력서 PDF</a></li></ul>
+      <ul><li><a href="#projects">프로젝트</a></li><li><a href="#try">눌러 보기</a></li><li><a href="#career">경력</a></li><li><a href="#ways">일하는 방식</a></li><li><a href="#stack">기술</a></li><li><a href="#edu">학력 · 자격</a></li><li><a href="#contact">문의</a></li><li><a href="resume.pdf" download="resume.pdf">이력서 PDF</a></li></ul>
     </details>
   </div>
 </div>
@@ -1156,7 +1178,7 @@ html[data-len="short"] .deep:has(> .areas){display:none}
       </div>
       <div class="t-panel" role="tabpanel" id="tp4" aria-labelledby="tt4" hidden>
         <div class="t-pnd">
-          <div class="t-say"><img src="img/punda-mark.png" alt="" width="280" height="272" loading="lazy"><b>다섯 문제만 풀어 보세요</b><p>뜻 고르기와 철자 쓰기가 섞여 나옵니다. 틀린 단어는 마지막에 한 번 더 나옵니다.</p></div>
+          <div class="t-say"><img src="img/punda-face-1128.webp" alt="" width="160" height="174" loading="lazy"><b>다섯 문제만 풀어 보세요</b><p>뜻 고르기와 철자 쓰기가 섞여 나옵니다. 틀린 단어는 마지막에 한 번 더 나옵니다.</p></div>
           <div class="t-phone" id="q"></div>
         </div>
       </div>
@@ -1228,66 +1250,10 @@ html[data-len="short"] .deep:has(> .areas){display:none}
     <div class="x4-real">
       <p class="x4-head"><b>실제 프로그램 화면</b><span>실제로 쓰는 화면입니다. 학생 이름과 폴더 경로는 가렸습니다. 누르면 크게 열립니다.</span></p>
       <ol class="x4-shots">
-        <li><a href="img/dt-1-folder.webp" target="_blank" rel="noopener"><img src="img/dt-1-folder.webp" width="1366" height="768" loading="lazy" alt="DT 채점 1단계 폴더 화면. 왼쪽은 시험 폴더 목록, 오른쪽은 고른 시험의 시험지와 학생 스캔"></a><p><b>1 · 폴더</b>시험마다 폴더에 시험지 PDF와 학생 스캔을 넣어 두면 목록에 저절로 나타납니다.</p></li>
-        <li><a href="img/dt-2-answer.webp" target="_blank" rel="noopener"><img src="img/dt-2-answer.webp" width="1366" height="768" loading="lazy" alt="DT 채점 2단계 시험지 · 정답 화면. 시험지에서 찾은 답 칸 상자와 문항별 정답 · 배점 목록"></a><p><b>2 · 시험지 · 정답</b>시험지에서 찾은 답 칸과 정답 · 배점을 나란히 보고, 틀린 정답은 그 자리에서 고칩니다.</p></li>
-        <li><a href="img/dt-5-result.webp" target="_blank" rel="noopener"><img src="img/dt-5-result.webp" width="1366" height="768" loading="lazy" alt="DT 채점 5단계 결과 화면의 인쇄 고르기 창. 채점 결과표와 답안 확인지"></a><p><b>5 · 결과</b>반 전체 점수와 문항별 O · X를 모은 결과표, 학생마다 답안 위에 O · X를 찍은 확인지를 인쇄합니다.</p></li>
+        <li><a href="img/dt-1-folder.webp"><img src="img/dt-1-folder.webp" width="1366" height="768" loading="lazy" alt="DT 채점 1단계 폴더 화면. 왼쪽은 시험 폴더 목록, 오른쪽은 고른 시험의 시험지와 학생 스캔"></a><p><b>1 · 폴더</b>시험마다 폴더에 시험지 PDF와 학생 스캔을 넣어 두면 목록에 저절로 나타납니다.</p></li>
+        <li><a href="img/dt-2-answer.webp"><img src="img/dt-2-answer.webp" width="1366" height="768" loading="lazy" alt="DT 채점 2단계 시험지 · 정답 화면. 시험지에서 찾은 답 칸 상자와 문항별 정답 · 배점 목록"></a><p><b>2 · 시험지 · 정답</b>시험지에서 찾은 답 칸과 정답 · 배점을 나란히 보고, 틀린 정답은 그 자리에서 고칩니다.</p></li>
+        <li><a href="img/dt-5-result.webp"><img src="img/dt-5-result.webp" width="1366" height="768" loading="lazy" alt="DT 채점 5단계 결과 화면의 인쇄 고르기 창. 채점 결과표와 답안 확인지"></a><p><b>5 · 결과</b>반 전체 점수와 문항별 O · X를 모은 결과표, 학생마다 답안 위에 O · X를 찍은 확인지를 인쇄합니다.</p></li>
       </ol>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="client">
-  <div class="wrap">
-    <div class="sec-head"><h2>고객사에서 맡은 프로젝트</h2><p class="sub">2026년 4월부터 11월까지 하이씨엔씨에서 대학 · 교육 고객의 시스템을 맡았고, 12월부터는 프리랜서로 현대자동차 프로젝트에 들어갑니다.</p></div>
-    <div class="duo duo-top">
-      <article class="work">
-        <div class="shot">
-          <svg viewBox="0 0 560 330" role="img" aria-label="MiPlatform 화면이 React 화면으로 바뀌는 그림">
-            <rect width="560" height="330" fill="#0C3778"/>
-            <rect x="34" y="64" width="212" height="202" rx="8" fill="#DCE7F8"/><path d="M34 72a8 8 0 0 1 8-8H238a8 8 0 0 1 8 8V96H34Z" fill="#8FA6C9"/><text x="48" y="87" font-size="18" font-weight="700" fill="#fff">MiPlatform</text><g fill="#fff"><rect x="212" y="75" width="10" height="10"/><rect x="227" y="75" width="10" height="10"/></g>
-            <g fill="#fff"><rect x="48" y="110" width="184" height="22"/><rect x="48" y="136" width="184" height="22"/><rect x="48" y="162" width="184" height="22"/><rect x="48" y="188" width="184" height="22"/><rect x="48" y="214" width="184" height="22"/></g><rect x="48" y="110" width="184" height="22" fill="#B8C9E3"/><path d="M94 110V236M140 110V236M186 110V236" stroke="#DCE7F8" stroke-width="3"/><g fill="#8FA6C9"><rect x="55" y="144" width="30" height="6"/><rect x="101" y="144" width="26" height="6"/><rect x="147" y="144" width="30" height="6"/><rect x="55" y="170" width="24" height="6"/><rect x="101" y="170" width="30" height="6"/><rect x="193" y="170" width="28" height="6"/><rect x="55" y="196" width="30" height="6"/><rect x="147" y="196" width="22" height="6"/><rect x="193" y="196" width="30" height="6"/></g>
-            <path d="M262 165H306" stroke="#A9CBFF" stroke-width="5" stroke-linecap="round"/><path d="M294 151 309 165 294 179" fill="none" stroke="#A9CBFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="324" y="46" width="206" height="238" rx="14" fill="#fff"/><path d="M324 60a14 14 0 0 1 14-14H516a14 14 0 0 1 14 14V80H324Z" fill="#A9CBFF"/><text x="340" y="70" font-size="18" font-weight="800" fill="#0C3778" style="font-family:var(--disp)">React</text>
-            <rect x="340" y="96" width="82" height="56" rx="10" fill="#E3EDFC"/><rect x="432" y="96" width="82" height="56" rx="10" fill="#E3EDFC"/><rect x="352" y="108" width="36" height="7" rx="3.5" fill="#A9BFE0"/><rect x="352" y="124" width="52" height="13" rx="5" fill="#0C3778"/><rect x="444" y="108" width="36" height="7" rx="3.5" fill="#A9BFE0"/><rect x="444" y="124" width="42" height="13" rx="5" fill="#0C3778"/>
-            <rect x="340" y="164" width="174" height="62" rx="10" fill="#E3EDFC"/><path d="M358 214V200M378 214V188M398 214V194M418 214V180M438 214V186M458 214V176M478 214V190M496 214V182" stroke="#0C3778" stroke-width="9" stroke-linecap="round"/>
-            <rect x="434" y="240" width="80" height="28" rx="14" fill="#0C3778"/><text x="474" y="259" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">저장</text><rect x="340" y="250" width="66" height="8" rx="4" fill="#CBD8EC"/>
-          </svg>
-        </div>
-        <div>
-          <p class="kind">프리랜서 · 2026.12 –</p>
-          <h3>현대자동차 MiPlatform → React 전환</h3>
-          <p class="sub">프리랜서로 투입해 MiPlatform(마이플랫폼)으로 만든 화면을 React로 옮기는 전환 프로젝트를 맡습니다.</p>
-          <p class="tech">React · MiPlatform</p>
-        </div>
-      </article>
-      <article class="work">
-        <div class="shot shot-ice">
-          <svg viewBox="0 0 560 330" role="img" aria-label="통합 로그인 하나에 패스포트, 얼굴 인증, PIN, 패턴, ZOTP 다섯 가지 2차 인증이 이어진 그림">
-            <rect width="560" height="330" fill="#DCE8FA"/>
-            <rect x="172" y="30" width="216" height="108" rx="16" fill="#0C3778"/><text x="280" y="76" text-anchor="middle" font-size="25" font-weight="800" fill="#fff">통합 로그인</text><text x="280" y="108" text-anchor="middle" font-size="20" font-weight="600" fill="#A9CBFF" style="font-family:var(--disp)">SSO</text>
-            <path d="M280 138V168M66 190V180a12 12 0 0 1 12-12H482a12 12 0 0 1 12 12V190M173 168V190M280 168V190M387 168V190" fill="none" stroke="#0C3778" stroke-width="3"/>
-            <g fill="#fff"><rect x="16" y="190" width="100" height="112" rx="14"/><rect x="123" y="190" width="100" height="112" rx="14"/><rect x="230" y="190" width="100" height="112" rx="14"/><rect x="337" y="190" width="100" height="112" rx="14"/><rect x="444" y="190" width="100" height="112" rx="14"/></g>
-            <g font-size="19" font-weight="700" fill="#0B1220" text-anchor="middle"><text x="66" y="286">패스포트</text><text x="173" y="286">얼굴</text><text x="280" y="286">PIN</text><text x="387" y="286">패턴</text><text x="494" y="286">ZOTP</text></g>
-            <g fill="none" stroke="#0C3778" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="46" y="206" width="40" height="52" rx="7"/><circle cx="66" cy="226" r="8"/><path d="M57 246H75"/>
-              <path d="M153 218V212a6 6 0 0 1 6-6H165M181 206H187a6 6 0 0 1 6 6V218M193 246V252a6 6 0 0 1-6 6H181M165 258H159a6 6 0 0 1-6-6V246M167 224V228M179 224V228M165 241a12 12 0 0 0 16 0"/>
-              <path d="M367 212 387 212 387 232 407 252 367 252"/>
-              <circle cx="494" cy="232" r="25"/><path d="M494 217V232L504 240"/>
-            </g>
-            <g fill="#0C3778"><circle cx="256" cy="232" r="6"/><circle cx="272" cy="232" r="6"/><circle cx="288" cy="232" r="6"/><circle cx="304" cy="232" r="6"/><circle cx="367" cy="212" r="6"/><circle cx="387" cy="212" r="6"/><circle cx="407" cy="212" r="6"/><circle cx="367" cy="232" r="6"/><circle cx="387" cy="232" r="6"/><circle cx="407" cy="232" r="6"/><circle cx="367" cy="252" r="6"/><circle cx="387" cy="252" r="6"/><circle cx="407" cy="252" r="6"/></g>
-          </svg>
-        </div>
-        <div>
-          <p class="kind">대학 · 보안 인증</p>
-          <h3>서정대학교 SSO · 2차 인증 구축</h3>
-          <p class="sub">통합 로그인(SSO)과 2차 인증 구축을 맡았습니다. 인증 수단은 한컴위드 패스포트, 얼굴 인증, PIN, 패턴, ZOTP입니다.</p>
-          <p class="tech">SSO · 2차 인증 · 한컴위드 패스포트 · ZOTP</p>
-        </div>
-      </article>
-    </div>
-    <div class="more">
-      <div><p class="kind">대학</p><h3>서울예술대학교 관리자 시스템 개편</h3></div>
-      <div><p class="kind">교육</p><h3>시대인재 유지보수</h3></div>
     </div>
   </div>
 </section>
@@ -1299,7 +1265,7 @@ html[data-len="short"] .deep:has(> .areas){display:none}
       <div class="punda-top">
         <div>
           <p class="kind">영어 단어 학습 앱 · 출시 준비 중</p>
-          <h3><img src="img/punda-mark.png" alt="" width="280" height="272">더푼다</h3>
+          <h3><img src="img/punda-face-1128.webp" alt="" width="160" height="174">더푼다</h3>
           <p class="one">하루 5분, 10단어. 푼다랑 같이 풀어요!</p>
           <p class="x6-long">학원 학생이 매일 10단어씩 익히는 앱입니다. 학생은 선생님이 준 코드로 시작하고, 학원은 관리자 화면에서 단어장과 반별 배정, 신고를 다룹니다. 학생 앱과 관리자 화면, 서버를 혼자 개발했습니다.</p>
           <ul class="ticks x6-long">
@@ -1409,8 +1375,34 @@ html[data-len="short"] .deep:has(> .areas){display:none}
 
     <p class="cv-group">경력 프로젝트</p>
     <ol class="tl x6-tl">
-      <li class="tl-row now x2-next"><div class="tl-when"><p class="when">2026.12 –</p><span class="x2-free">프리랜서</span></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>현대자동차 MiPlatform → React 전환</h3><p>프리랜서로 투입해 MiPlatform으로 만든 화면을 React로 옮기는 전환 프로젝트를 맡습니다.</p><p class="tech">React · MiPlatform</p></div></li>
-      <li class="tl-row now"><div class="tl-when"><p class="when">2026.04 – 2026.11</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>하이씨엔씨</h3><ul class="jobs"><li>서정대학교 SSO · 2차 인증 구축 (한컴위드 패스포트 · 얼굴 인증 · PIN · 패턴 · ZOTP)</li><li>서울예술대학교 관리자 시스템 개편</li><li>시대인재 유지보수</li></ul></div></li>
+      <li class="tl-row now x2-next"><div class="tl-when"><p class="when">2026.12 –</p><span class="x2-free">프리랜서</span></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>현대자동차 MiPlatform → React 전환</h3><p>프리랜서로 투입해 MiPlatform으로 만든 화면을 React로 옮기는 전환 프로젝트를 맡습니다.</p><p class="tech">React · MiPlatform</p><div class="shot x7-fig x7-fig-top x6-long"><svg viewBox="0 0 560 330" role="img" aria-label="MiPlatform 화면이 React 화면으로 바뀌는 그림">
+            <rect width="560" height="330" fill="#0C3778"/>
+            <rect x="34" y="64" width="212" height="202" rx="8" fill="#DCE7F8"/><path d="M34 72a8 8 0 0 1 8-8H238a8 8 0 0 1 8 8V96H34Z" fill="#8FA6C9"/><text x="48" y="87" font-size="18" font-weight="700" fill="#fff">MiPlatform</text><g fill="#fff"><rect x="212" y="75" width="10" height="10"/><rect x="227" y="75" width="10" height="10"/></g>
+            <g fill="#fff"><rect x="48" y="110" width="184" height="22"/><rect x="48" y="136" width="184" height="22"/><rect x="48" y="162" width="184" height="22"/><rect x="48" y="188" width="184" height="22"/><rect x="48" y="214" width="184" height="22"/></g><rect x="48" y="110" width="184" height="22" fill="#B8C9E3"/><path d="M94 110V236M140 110V236M186 110V236" stroke="#DCE7F8" stroke-width="3"/><g fill="#8FA6C9"><rect x="55" y="144" width="30" height="6"/><rect x="101" y="144" width="26" height="6"/><rect x="147" y="144" width="30" height="6"/><rect x="55" y="170" width="24" height="6"/><rect x="101" y="170" width="30" height="6"/><rect x="193" y="170" width="28" height="6"/><rect x="55" y="196" width="30" height="6"/><rect x="147" y="196" width="22" height="6"/><rect x="193" y="196" width="30" height="6"/></g>
+            <path d="M262 165H306" stroke="#A9CBFF" stroke-width="5" stroke-linecap="round"/><path d="M294 151 309 165 294 179" fill="none" stroke="#A9CBFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="324" y="46" width="206" height="238" rx="14" fill="#fff"/><path d="M324 60a14 14 0 0 1 14-14H516a14 14 0 0 1 14 14V80H324Z" fill="#A9CBFF"/><text x="340" y="70" font-size="18" font-weight="800" fill="#0C3778" style="font-family:var(--disp)">React</text>
+            <rect x="340" y="96" width="82" height="56" rx="10" fill="#E3EDFC"/><rect x="432" y="96" width="82" height="56" rx="10" fill="#E3EDFC"/><rect x="352" y="108" width="36" height="7" rx="3.5" fill="#A9BFE0"/><rect x="352" y="124" width="52" height="13" rx="5" fill="#0C3778"/><rect x="444" y="108" width="36" height="7" rx="3.5" fill="#A9BFE0"/><rect x="444" y="124" width="42" height="13" rx="5" fill="#0C3778"/>
+            <rect x="340" y="164" width="174" height="62" rx="10" fill="#E3EDFC"/><path d="M358 214V200M378 214V188M398 214V194M418 214V180M438 214V186M458 214V176M478 214V190M496 214V182" stroke="#0C3778" stroke-width="9" stroke-linecap="round"/>
+            <rect x="434" y="240" width="80" height="28" rx="14" fill="#0C3778"/><text x="474" y="259" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">저장</text><rect x="340" y="250" width="66" height="8" rx="4" fill="#CBD8EC"/>
+          </svg></div></div></li>
+      <li class="tl-row now"><div class="tl-when"><p class="when">2026.04 – 2026.11</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>하이씨엔씨</h3><ul class="x7-projs x7-keep">
+        <li class="x7-p x7-fig-on"><div class="shot shot-ice x7-fig x6-long"><svg viewBox="0 0 560 330" role="img" aria-label="통합 로그인 하나에 패스포트, 얼굴 인증, PIN, 패턴, OTP 다섯 가지 2차 인증이 이어진 그림">
+            <rect width="560" height="330" fill="#DCE8FA"/>
+            <rect x="172" y="30" width="216" height="108" rx="16" fill="#0C3778"/><text x="280" y="76" text-anchor="middle" font-size="25" font-weight="800" fill="#fff">통합 로그인</text><text x="280" y="108" text-anchor="middle" font-size="20" font-weight="600" fill="#A9CBFF" style="font-family:var(--disp)">SSO</text>
+            <path d="M280 138V168M66 190V180a12 12 0 0 1 12-12H482a12 12 0 0 1 12 12V190M173 168V190M280 168V190M387 168V190" fill="none" stroke="#0C3778" stroke-width="3"/>
+            <g fill="#fff"><rect x="16" y="190" width="100" height="112" rx="14"/><rect x="123" y="190" width="100" height="112" rx="14"/><rect x="230" y="190" width="100" height="112" rx="14"/><rect x="337" y="190" width="100" height="112" rx="14"/><rect x="444" y="190" width="100" height="112" rx="14"/></g>
+            <g font-size="19" font-weight="700" fill="#0B1220" text-anchor="middle"><text x="66" y="286">패스포트</text><text x="173" y="286">얼굴</text><text x="280" y="286">PIN</text><text x="387" y="286">패턴</text><text x="494" y="286">OTP</text></g>
+            <g fill="none" stroke="#0C3778" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="46" y="206" width="40" height="52" rx="7"/><circle cx="66" cy="226" r="8"/><path d="M57 246H75"/>
+              <path d="M153 218V212a6 6 0 0 1 6-6H165M181 206H187a6 6 0 0 1 6 6V218M193 246V252a6 6 0 0 1-6 6H181M165 258H159a6 6 0 0 1-6-6V246M167 224V228M179 224V228M165 241a12 12 0 0 0 16 0"/>
+              <path d="M367 212 387 212 387 232 407 252 367 252"/>
+              <circle cx="494" cy="232" r="25"/><path d="M494 217V232L504 240"/>
+            </g>
+            <g fill="#0C3778"><circle cx="256" cy="232" r="6"/><circle cx="272" cy="232" r="6"/><circle cx="288" cy="232" r="6"/><circle cx="304" cy="232" r="6"/><circle cx="367" cy="212" r="6"/><circle cx="387" cy="212" r="6"/><circle cx="407" cy="212" r="6"/><circle cx="367" cy="232" r="6"/><circle cx="387" cy="232" r="6"/><circle cx="407" cy="232" r="6"/><circle cx="367" cy="252" r="6"/><circle cx="387" cy="252" r="6"/><circle cx="407" cy="252" r="6"/></g>
+          </svg></div><div><p class="kind">대학 · 보안 인증</p><h4>서정대학교 SSO · 2차 인증 구축</h4><p class="x6-long">통합 로그인(SSO)과 2차 인증 구축을 맡았습니다. 인증 수단은 한컴위드 패스포트, 얼굴 인증, PIN, 패턴, OTP입니다.</p><p class="tech x6-long">SSO · 2차 인증 · 한컴위드 패스포트 · OTP</p></div></li>
+        <li class="x7-p"><div><p class="kind">대학</p><h4>서울예술대학교 관리자 시스템 개편</h4></div></li>
+        <li class="x7-p"><div><p class="kind">교육</p><h4>시대인재 유지보수</h4></div></li>
+      </ul></div></li>
       <li class="tl-row"><div class="tl-when"><p class="when">2024.05 – 2026.03</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>제조 대기업 사내 업무 시스템 5개 단독 운영</h3><p class="facts"><span><b>5개</b>시스템 단독</span><span><b>연 5~10건</b>개선 요청 처리</span><span><b>전부</b>취약점 조치</span></p><p>통합결재, 자산관리, 소프트웨어 관리, 보안, 홈페이지 다섯 시스템을 혼자 맡았습니다. 기능 개선 요청을 분석부터 개발, 배포까지 처리했고, 모의해킹에서 나온 보안 취약점을 모두 조치했습니다.</p><p class="tech">Java · Spring · Nexacro · Linux · Tomcat · Wildfly · GitLab</p></div></li>
       <li class="tl-row"><div class="tl-when"><p class="when">2023.03 – 2024.04</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>공공기관 웹사이트 13건 구축 · 유지보수</h3><p class="facts"><span><b>13건</b>신규 5 · 유지보수 8</span><span><b>3인</b>개발 · 퍼블 · 디자인</span></p><p>새로 5건을 만들고 8건을 유지보수했습니다. 기관 담당자와 직접 협의해 요구사항 정의부터 오픈까지 맡았고, 관리자 페이지와 게시판, 권한 관리, 조회 · 통계 기능을 만들었습니다.</p><p class="tech">Java · eGovFrame · MyBatis · JSP · jQuery · Linux · Tomcat</p></div></li>
       <li class="tl-row"><div class="tl-when"><p class="when">2022.05 – 2023.02</p></div><div class="tl-dot" aria-hidden="true"></div><div class="what"><h3>IT 기업 구매 시스템 구축</h3><p class="facts"><span><b>15건</b>React 화면</span></p><p>React로 구매 · 계약 화면 약 15건을 만들고 서버 API와 연결했습니다.</p><p class="tech">React · Java · MySQL</p></div></li>
@@ -1492,7 +1484,7 @@ html[data-len="short"] .deep:has(> .areas){display:none}
   <div class="wrap">
     <h2>만들고 싶은 시스템이 있으면<br>편하게 연락 주세요.</h2>
     <p class="mail"><a href="mailto:hyojunkim9096@gmail.com">hyojunkim9096@gmail.com</a><button class="copy" id="copy" type="button">주소 복사</button></p>
-    <a class="git" href="https://github.com/hyojunkim9096">github.com/hyojunkim9096</a><br><a class="x2-resume" href="resume.pdf" target="_blank" rel="noopener">이력서 PDF 받기 (A4 한 장)</a>
+    <a class="git" href="https://github.com/hyojunkim9096">github.com/hyojunkim9096</a><br><a class="x2-resume" href="resume.pdf" download="resume.pdf">이력서 PDF 받기 (A4 한 장)</a>
     <svg class="end-mark" viewBox="0 0 925 280" aria-hidden="true"><use href="#wm"/></svg>
   </div>
 </section>
@@ -1762,5 +1754,26 @@ html[data-len="short"] .deep:has(> .areas){display:none}
 function set(v,save){h.dataset.len=v;[].forEach.call(bs,function(b){b.setAttribute('aria-pressed',b.dataset.v===v?'true':'false')});if(save){try{localStorage.setItem('x6len',v)}catch(e){}}}
 set(h.dataset.len==='long'?'long':'short',false);
 [].forEach.call(bs,function(b){b.addEventListener('click',function(){set(b.dataset.v,true)})});})();</script>
+<script>
+(function(){
+  var links=document.querySelectorAll('.x4-shots a[href$=".webp"]');
+  if(!links.length||typeof HTMLDialogElement==='undefined')return;
+  var d=document.createElement('dialog');d.className='x7-lb';d.setAttribute('aria-label','실제 화면 크게 보기');
+  d.innerHTML='<form method="dialog"><button type="submit" aria-label="닫기">닫기 ✕</button></form><figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(d);
+  var im=d.querySelector('img'),cap=d.querySelector('figcaption');
+  d.addEventListener('click',function(e){if(e.target===d||e.target===d.querySelector('figure'))d.close()});
+  Array.prototype.forEach.call(links,function(a){
+    var th=a.querySelector('img');
+    a.setAttribute('role','button');a.setAttribute('aria-haspopup','dialog');
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      im.src=a.getAttribute('href');im.alt=th?th.alt:'';cap.textContent=th?th.alt:'';
+      d.showModal();
+    });
+    a.addEventListener('keydown',function(e){if(e.key===' '){e.preventDefault();a.click()}});
+  });
+})();
+</script>
 </body>
 </html>
