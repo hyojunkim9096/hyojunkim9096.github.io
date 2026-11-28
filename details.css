@@ -1,0 +1,86 @@
+/* 제품 체험의 고유 화면을 둘러싼 본문은 메인과 같은 서체와 색을 쓴다. */
+:root {
+  --navy: #344193;
+  --navy-lift: #424ea1;
+  --ice: #eff2f8;
+  --sky: #cbd4ff;
+  --slate: var(--muted);
+  --text: Portfolio, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --disp: var(--text);
+  --card-radius: .85rem;
+}
+html { scroll-behavior: auto; }
+.detail-page { font: 400 1rem/1.65 var(--text); }
+.detail-page .wrap { max-width: none; padding-inline: 0; }
+.detail-page .mast a { text-decoration: none; }
+.detail-page h2, .detail-page h3 { word-spacing: normal; }
+.detail-page .mast .materials { color: white; }
+.detail-intro { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2rem,6vw,6rem); align-items: center; padding-block: clamp(3rem,6vw,5.5rem); }
+.detail-intro .lead { max-width: 23em; }
+.detail-intro .text-link { margin-top: .8rem; }
+.table-of-contents { padding: clamp(1.3rem,2.6vw,2.25rem); border: 1px solid var(--rule); border-radius: var(--card-radius); background: white; }
+.table-of-contents h2, .glance-header h2 { font-size: 1.55rem; font-weight: 720; letter-spacing: -.045em; }
+.table-of-contents h2 { margin-bottom: .75rem; }
+.table-of-contents > div { display: grid; grid-template-columns: 5.1rem 1fr; align-items: baseline; gap: 1rem; padding: .65rem 0; border-top: 1px solid var(--rule); }
+.table-of-contents h3 { color: var(--blue); font-size: .94rem; font-weight: 700; }
+.table-of-contents ul { list-style: none; display: flex; gap: 0 1rem; flex-wrap: wrap; }
+.table-of-contents a { display: inline-flex; align-items: center; min-height: 40px; color: var(--ink); font-weight: 580; font-size: .98rem; text-decoration: underline; text-underline-offset: .27em; text-decoration-color: #a7b2cc; }
+.table-of-contents a:hover { color: var(--blue); }
+.glance-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.glance-header .x6-hint { color: var(--muted); }
+.glance-header .x6-seg { border: 1px solid #bcc4d7; background: white; border-radius: .4rem; }
+.glance-header .x6-seg button { color: var(--muted); border-radius: .26rem; min-height: 35px; }
+.glance-header .x6-seg button[aria-pressed="true"] { background: var(--blue); color: white; }
+.detail-page .sec { border-top: 1px solid var(--rule); padding-block: clamp(3.4rem,5.6vw,5.6rem); }
+.detail-page .sec-head h2, .detail-page .feature h2, .detail-page .x2-gtext h2 { white-space: normal; font-size: clamp(2rem,3.15vw,3.1rem); line-height: 1.2; letter-spacing: -.065em; font-weight: 740; }
+.detail-page .sec-head .sub, .detail-page .x2-lead, .detail-page .feature p:not(.kind) { color: var(--muted); }
+.detail-page .deep h3, .detail-page .x2-sub > h3 { font-size: clamp(1.4rem,2.1vw,2rem); letter-spacing: -.045em; }
+.detail-page .deep { margin-top: clamp(2.5rem,4.2vw,4rem); }
+.detail-page .x5-glance { border-block-start: 1px solid var(--rule); }
+.detail-page .x5-cards li, .detail-page .x5-ways li, .detail-page .node, .detail-page .x2-case {
+  border: 1px solid var(--rule); border-radius: var(--card-radius); background: white; box-shadow: none;
+}
+.detail-page .x5-cards b { color: var(--ink); }
+.detail-page .x5-cards span { font-size: .9rem; }
+.detail-page #projects { background: var(--paper); }
+.detail-page .arch { padding: clamp(1rem,2.3vw,2rem); border-radius: var(--card-radius); background-color: #dfe5ff; background-image: radial-gradient(#a7b3d6 1px,transparent 1px); background-size: 12px 12px; }
+.detail-page .core, .detail-page .data { border-radius: .5rem; }
+.detail-page .data { border: 1px solid #a4afd7; }
+.detail-page .totals { border-top: 1px solid #bac4d8; }
+.detail-page .totals dd { font-weight: 710; letter-spacing: -.045em; }
+.detail-page .ticks li::before, .detail-page .x2-pts li::before { width: .42rem; height: .42rem; border: 0; border-radius: 2px; background: var(--blue); top: .66em; }
+.detail-page .ticks li, .detail-page .x2-pts li { padding-left: 1.1rem; }
+.detail-page .x2-desk { background: #f2e1cf; border-radius: var(--card-radius); }
+.detail-page .try, .detail-page .dark { background: var(--ice); color: var(--ink); }
+.detail-page .try .sub, .detail-page .t-foot, .detail-page .dark .sub { color: var(--muted); }
+.detail-page .t-tabs button { background: white; color: var(--muted); border: 1px solid var(--rule); border-radius: .55rem; }
+.detail-page .t-tabs b { color: var(--ink); }
+.detail-page .t-tabs [aria-selected="true"] { background: #222956; color: #e0e7ff; border-color: #222956; }
+.detail-page .t-tabs [aria-selected="true"] b { color: var(--lime); }
+.detail-page .t-stage { border: 1px solid var(--rule); border-radius: var(--card-radius); }
+.detail-page .punda { background: #e5f4ef; color: var(--ink); border: 1px solid #c4dbd3; border-radius: var(--card-radius); }
+.detail-page .punda .kind { color: #235e4c; }
+.detail-page .punda .one, .detail-page .punda .ticks li, .detail-page .punda-low dd { color: var(--ink); }
+.detail-page .punda p, .detail-page .punda .tech, .detail-page .punda figcaption, .detail-page .punda-low dt { color: #405b54; }
+.detail-page .punda-low dl div { border-color: #afcdc2; }
+.detail-page .punda h3 { font-size: clamp(2rem,3.15vw,3.1rem); letter-spacing: -.05em; }
+.detail-page .what h3 { letter-spacing: -.04em; }
+.detail-page .tl-row .when { font-size: .98rem; color: var(--blue); }
+.detail-page .x8-h, .detail-page .tools b { color: var(--ink); }
+.detail-page .ways p, .detail-page .flow span, .detail-page .tools { color: var(--muted); }
+.detail-page .flow li::after { background: #b5bfd9; }
+.detail-page .flow li::before { background: var(--blue); border-color: #c8d1fb; }
+.detail-page .flow li:last-child::before { background: var(--lime); border-color: #5d7740; }
+.detail-page .ways > div, .detail-page .tools { border-color: #c4cbdd; }
+.detail-page .x8-ops h3::before { background: #dce3fa; color: #344193; }
+.detail-page .footer-bottom { line-height: 1.6; }
+.detail-page .footer-bottom a { text-decoration: none; }
+@media (max-width: 720px) {
+  .detail-intro { grid-template-columns: 1fr; gap: 1.25rem; padding-block: 2.4rem; }
+  .detail-intro h1 br { display: none; }
+  .detail-intro h1 em::before { content: " "; }
+  .detail-intro .lead { margin-top: .85rem; }
+  .table-of-contents a { min-height: 44px; }
+  .table-of-contents > div { grid-template-columns: 4.25rem 1fr; gap: .65rem; }
+  .detail-page .t-stage { margin-inline: 0; }
+}

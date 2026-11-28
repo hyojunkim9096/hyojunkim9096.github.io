@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#fbfcff"><title>직접 체험 · 김효준 | WInO</title><meta name="description" content="원생 현황, 홈페이지 만들기, 답안 채점, 단어 학습을 예시 데이터로 조작해 보세요.">
+<meta property="og:type" content="website"><meta property="og:title" content="직접 체험 · 김효준 | WInO"><meta property="og:description" content="원생 현황, 홈페이지 만들기, 답안 채점, 단어 학습을 예시 데이터로 조작해 보세요."><meta property="og:url" content="https://hyojunkim9096.github.io/demos.html"><meta property="og:image" content="https://hyojunkim9096.github.io/og.png">
+<link rel="icon" href="img/wino.svg" type="image/svg+xml">
+<link rel="stylesheet" href="products.css"><link rel="stylesheet" href="portfolio.css"><link rel="stylesheet" href="details.css"><link rel="stylesheet" href="navigation.css"><link rel="stylesheet" href="v8.css">
+<script defer src="demos.js"></script>
+</head><body class="detail-page" id="top">
+<a class="skip" href="#content">본문 바로 가기</a>
+<header class="mast"><div class="wrap site-bar">
+      <a class="wordmark" href="index.html" aria-label="WInO 소개"><img src="img/wordmark.svg" width="82" height="25" alt="WInO"></a>
+      <nav aria-label="주요 메뉴"><a href="index.html">소개</a><a href="details.html" class="project-nav">프로젝트 상세</a><a href="demos.html" aria-current="page">체험</a><a href="career.html">경력</a><a href="practice.html">기술·작업 방식</a><a href="index.html#contact">연락</a></nav>
+      <a class="resume" href="resume.pdf" download>이력서 <span>PDF</span></a>
+    </div></header>
+<main id="content"><section class="sec try" id="try">
+  <div class="wrap">
+    <div class="sec-head"><h1>직접 <em>체험</em></h1><p class="sub">만들고 있는 화면 네 가지를 작게 옮겼습니다. 학원 이름과 학생 수, 점수는 모두 지어낸 예시이고 서버에 연결되어 있지 않으니 마음껏 눌러 보세요.</p></div>
+    <div class="t-tabs" role="tablist" aria-label="눌러 볼 화면">
+      <button type="button" role="tab" id="tt1" aria-controls="tp1" aria-selected="true"><b>원생 현황</b><span>권한에 따라 바뀌는 화면</span></button>
+      <button type="button" role="tab" id="tt2" aria-controls="tp2" aria-selected="false" tabindex="-1"><b>홈페이지 만들기</b><span>끌어 놓아 바꾸는 화면</span></button>
+      <button type="button" role="tab" id="tt3" aria-controls="tp3" aria-selected="false" tabindex="-1"><b>답안 채점</b><span>AI가 읽고 사람이 확인</span></button>
+      <button type="button" role="tab" id="tt4" aria-controls="tp4" aria-selected="false" tabindex="-1"><b>더푼다</b><span>영어 단어 문제 풀기</span></button>
+    </div>
+    <div class="t-stage">
+      <div class="t-panel" role="tabpanel" id="tp1" aria-labelledby="tt1">
+        <div class="t-app">
+          <div class="t-side">
+            <div class="t-brand"><svg viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="8" fill="#2563EB"/><path d="M7 10l4 10 4-9 4 9 4-10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>예시 학원</b><small>관리자</small></div></div>
+            <ul class="t-menu" id="s-menu" aria-label="이 사람에게 보이는 메뉴"></ul>
+          </div>
+          <div class="t-main">
+            <div class="t-who"><span id="s-rl">누구로 로그인할까요?</span><div class="t-seg" id="s-role" role="group" aria-labelledby="s-rl"></div></div>
+            <div class="t-head"><p class="t-title" id="s-title">원생 현황</p><div class="t-seg" id="s-range" role="group" aria-label="기간"></div></div>
+            <div class="t-seg" id="s-br" role="group" aria-label="관" style="justify-self:start"></div>
+            <dl class="t-kpi" id="s-kpi"></dl>
+            <div class="t-two" id="s-two">
+              <div class="t-card t-chart"><div class="t-leg" id="s-leg"></div><svg id="s-svg" role="group" aria-label="달마다 재원 · 신규 · 퇴원"></svg></div>
+              <div class="t-card t-tbl" id="s-tbl"></div>
+            </div>
+            <p class="t-note" id="s-note" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+      <div class="t-panel" role="tabpanel" id="tp2" aria-labelledby="tt2" hidden>
+        <div class="t-bld">
+          <div class="t-bl">
+            <label class="t-f"><span>학원 이름</span><input id="b-name" maxlength="12" value="예시 학원" autocomplete="off"></label>
+            <label class="t-f"><span>첫 화면 문구</span><input id="b-copy" maxlength="26" value="오늘 배운 것을 내일 씁니다" autocomplete="off"></label>
+            <div class="t-f"><span id="b-cl">색</span><div class="t-sw" id="b-sw" role="group" aria-labelledby="b-cl"></div></div>
+            <div class="t-f"><span id="b-ll">구역 차례</span><ol class="t-list" id="b-list" aria-labelledby="b-ll"></ol></div>
+          </div>
+          <div class="t-br">
+            <div class="t-bar"><div class="t-seg" id="b-dev" role="group" aria-label="미리 볼 기기"></div><div class="t-state"><span class="t-note" id="b-note" aria-live="polite"></span><button type="button" class="t-go" id="b-pub">발행</button></div></div>
+            <div class="t-page" id="b-page"></div>
+          </div>
+        </div>
+      </div>
+      <div class="t-panel" role="tabpanel" id="tp3" aria-labelledby="tt3" hidden>
+        <div class="t-grd">
+          <div class="t-desk"><div class="t-sheet" id="g-sheet"><header>단어 시험 <span>학생 가</span></header><ol id="g-in"></ol><div class="t-scan"></div></div></div>
+          <div class="t-res">
+            <ol class="t-steps" id="g-st"><li>AI가 읽기</li><li>사람이 확인</li><li>점수</li></ol>
+            <p class="t-title" id="g-t"></p>
+            <p class="t-note" id="g-n" aria-live="polite"></p>
+            <ul class="t-rd" id="g-rd"></ul>
+            <div id="g-sc"></div>
+            <div><button type="button" class="t-go" id="g-go">AI로 읽기</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="t-panel" role="tabpanel" id="tp4" aria-labelledby="tt4" hidden>
+        <div class="t-pnd">
+          <div class="t-say"><img src="img/punda-face-1128.webp" alt="" width="160" height="174" loading="lazy"><b>다섯 문제만 풀어 보세요</b><p>뜻 고르기와 철자 쓰기가 섞여 나옵니다. 틀린 단어는 마지막에 한 번 더 나옵니다.</p></div>
+          <div class="t-phone" id="q"></div>
+        </div>
+      </div>
+    </div>
+    <p class="t-foot" id="t-foot"></p>
+  </div>
+</section></main>
+<footer class="compact-footer"><div class="wrap footer-bottom"><span>© WInO · 김효준</span><div><a href="index.html#contact">연락하기</a><a href="https://github.com/hyojunkim9096">GitHub</a></div></div></footer>
+</body></html>

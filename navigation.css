@@ -1,0 +1,55 @@
+.site-bar { display: flex; align-items: center; gap: clamp(1rem,3vw,3rem); min-height: 4.6rem; }
+.mast .site-bar nav { align-items: center; gap: clamp(.8rem,1.9vw,1.75rem); }
+.mast .site-bar nav a { white-space: nowrap; color: #434e65; }
+.mast .site-bar nav a:hover, .mast .site-bar nav a[aria-current="page"] { color: var(--blue); }
+.mast .site-bar nav a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .4em; }
+.mast .site-bar .project-nav { border: 1px solid #a4aed8; border-radius: .4rem; color: var(--blue); padding-inline: .9rem; }
+.mast .site-bar .project-nav[aria-current="page"] { background: var(--blue); color: white; border-color: var(--blue); text-decoration: none; }
+.product-cover { display: block; background: #ccebe1; color: #16382d; border: 1px solid #b1d9ca; border-radius: .85rem; overflow: hidden; box-shadow: 0 1.25rem 2.5rem -2rem #183c39aa; }
+.product-caption { display: flex; justify-content: space-between; align-items: baseline; gap: .65rem; padding: 1.2rem 1.4rem .2rem; }
+.product-caption strong { font-size: 1.6rem; letter-spacing: -.05em; }
+.product-caption span { font-size: .88rem; }
+.product-cover .cover { aspect-ratio: 1.93; }
+.product-cover .punda-phone { top: 5%; width: 24%; }
+.cover-link { display: block; text-align: right; padding: .85rem 1.4rem; background: #ddf1e9; border-top: 1px solid #afd5c6; font-size: .94rem; font-weight: 650; text-decoration: underline; text-underline-offset: .3em; }
+.product-cover:hover .cover-link { background: #c1e2d5; }
+.specialty-band { background: var(--ice); border-block: 1px solid var(--rule); padding: clamp(2.6rem,5vw,5rem) 0; }
+.specialty-band h2, .detail-page .page-intro h1 { letter-spacing: -.06em; }
+.specialty-band h2 { font-size: clamp(1.9rem,3vw,2.9rem); }
+.specialties { list-style: none; display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 1.3rem; padding: 0; margin: 1.8rem 0 0; }
+.specialties li { border-top: 1px solid #c0c9de; padding: 1.15rem .2rem 0 0; }
+.specialties svg { display: block; width: 2rem; height: 2rem; fill: none; stroke: var(--blue); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.specialties b, .specialties span { display: block; }
+.specialties b { margin: .65rem 0 .24rem; font-size: 1.08rem; }
+.specialties span { font-size: .97rem; color: var(--muted); }
+.page-intro { padding-block: clamp(2.6rem,5vw,4.5rem) 2rem; }
+.page-intro > p { margin: 1rem 0 1.4rem; font-size: 1.1rem; color: var(--muted); }
+.directory-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 2rem; }
+.directory-row .glance-header { margin: 0; }
+.jump-list { display: flex; flex-wrap: wrap; gap: .35rem 1.2rem; }
+.jump-list a { min-height: 44px; display: inline-flex; align-items: center; color: var(--blue); font-weight: 650; text-decoration: underline; text-underline-offset: .3em; text-decoration-color: #a5aece; }
+.project-security { margin-top: .7rem; }
+.x2-cases .text-link { margin-top: auto; align-self: flex-start; }
+.compact-footer { padding: 1rem 0; }
+.compact-footer .footer-bottom { margin: 0; padding: 0; border: none; }
+.single-stack { max-width: 64rem; }
+.detail-page .try h1, .detail-page #career h1, .single-stack h1 { word-spacing: normal; }
+@media(max-width: 760px) {
+  .site-bar { display: grid; grid-template-columns: 1fr 1fr 1fr auto auto; gap: 0 .5rem; padding-top: .3rem; }
+  .mast .site-bar nav { display: contents; }
+  .site-bar .wordmark { grid-column: 1 / 3; grid-row: 1; }
+  .mast .site-bar nav .project-nav { grid-column: 3 / 5; grid-row: 1; justify-self: end; min-height: 40px; }
+  .site-bar .resume { grid-column: 5; grid-row: 1; min-height: 40px; justify-self: end; padding-inline: .55rem; }
+  .mast .site-bar nav a:not(.project-nav) { grid-row: 2; justify-content: center; font-size: .9rem; }
+  .mast .site-bar nav a:first-child { justify-content: start; }
+  .mast .site-bar nav a:last-child { justify-content: end; }
+  html { scroll-padding-top: 6.7rem; }
+  .specialties { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width: 420px) {
+  .specialties { grid-template-columns: 1fr; gap: .7rem; }
+  .specialties li { display: grid; grid-template-columns: 2rem 1fr; align-items: start; gap: .8rem; padding-top: .8rem; }
+  .specialties b { margin-top: 0; }
+  .product-caption { padding-inline: 1rem; }
+}
+@media print { .site-bar nav { display: none; } }
